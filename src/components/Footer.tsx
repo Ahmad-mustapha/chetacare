@@ -26,11 +26,11 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-3">
             <h4 className="text-white/60 font-medium mb-6 uppercase tracking-wider text-sm">Company</h4>
             <ul className="space-y-4">
-              <li><a href="/about" className="text-white hover:text-white/70 transition-colors">About Us</a></li>
-              <li><a href="/how-it-works" className="text-white hover:text-white/70 transition-colors">How It Works</a></li>
-              <li><a href="/faq" className="text-white hover:text-white/70 transition-colors">FAQ</a></li>
-              <li><a href="/blog" className="text-white hover:text-white/70 transition-colors">Blog</a></li>
-              <li><a href="/partner" className="text-white hover:text-white/70 transition-colors">Partner With Us</a></li>
+              <li><Link to="/about" className="text-white hover:text-white/70 transition-colors">About Us</Link></li>
+              <li><Link to="#" className="text-white hover:text-white/70 transition-colors">How It Works</Link></li>
+              <li><Link to="/faq" className="text-white hover:text-white/70 transition-colors">FAQ</Link></li>
+              <li><Link to="/blog" className="text-white hover:text-white/70 transition-colors">Blog</Link></li>
+              <li><Link to="#" className="text-white hover:text-white/70 transition-colors">Partner With Us</Link></li>
             </ul>
           </div>
 
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-8 text-sm text-white/80">
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <a href="/security" className="hover:text-white transition-colors">Security</a>
+            <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
           
           <p className="text-sm text-white/80">

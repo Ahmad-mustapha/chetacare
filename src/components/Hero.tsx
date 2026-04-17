@@ -1,6 +1,6 @@
 import React from 'react';
-import hero1 from '../assets/hero1.png';
-import hero2 from '../assets/hero2.png';
+const hero1 = "/assets/hero1.png";
+const hero2 = "/assets/hero2.png";
 
 const Hero: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import oldWomanGlass from '../assets/old_woman_glass.png';
+const oldWomanGlass = "/assets/old_woman_glass.png";
 
 const HowWeWork: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import whoWeAreImg from '../../assets/who_we_are.png';
+const whoWeAreImg = "/assets/who_we_are.png";
 
 const WhoWeAre: React.FC = () => {
   return (

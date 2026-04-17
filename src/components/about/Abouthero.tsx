@@ -1,5 +1,5 @@
 import React from 'react';
-import hero1 from '../../assets/hero1.png';
+const hero1 = "/assets/hero1.png";
 
 const Abouthero: React.FC = () => {
   return (

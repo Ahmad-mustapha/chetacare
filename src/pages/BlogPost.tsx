@@ -114,7 +114,7 @@ const BlogPost: React.FC = () => {
                                         Don't just read about managing hypertension, get support to actually do it.
                                     </p>
                                     <Link
-                                        to="/get-started"
+                                        to="#"
                                         className="inline-block border border-[#D1FADF] bg-[#FFFFFF] text-[#1A7A4A] px-10 py-4 rounded-xl font-bold hover:bg-[#F2FFF8] transition-all shadow-sm"
                                     >
                                         Talk to the support team

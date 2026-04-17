@@ -1,8 +1,8 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import secure1 from '../assets/secure1.png';
-import secure2 from '../assets/secure2.png';
-import secure3 from '../assets/secure3.png';
+const secure1 = "/assets/secure1.png";
+const secure2 = "/assets/secure2.png";
+const secure3 = "/assets/secure3.png";
 
 
 const Currentfocus: React.FC = () => {

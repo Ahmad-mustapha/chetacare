@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Why Many Nigerians May Have High Blood Pressure Without Knowing',
     description: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls...',
-    image: '/src/assets/blog1.jpg',
+    image: '/assets/blog1.jpg',
     fullContent: [
       {
         type: 'paragraph',
@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Foods That Can Raise Blood Sugar Levels More Quickly',
     description: 'Many people living with or at risk of diabetes are often advised to “watch their diet.” However, this advice can seem very unclear...',
-    image: '/src/assets/blog2.jpg',
+    image: '/assets/blog2.jpg',
     fullContent: [
       {
         type: 'paragraph',
@@ -261,7 +261,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Early Signs of Diabetes Many Nigerians Often Ignore',
     description: 'Diabetes is a long-term health condition that affects how the body regulates blood sugar (glucose). Learn the early warning signs that are often overlooked.',
-    image: '/src/assets/blog3.jpg',
+    image: '/assets/blog3.jpg',
     fullContent: [
       {
         type: 'paragraph',
@@ -403,7 +403,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Why Young Nigerians Are Developing High Blood Pressure',
     description: 'Traditionally, hypertension was more common among older adults. However, in recent years, there has been a noticeable increase in younger adults being diagnosed.',
-    image: '/src/assets/blog4.jpg',
+    image: '/assets/blog4.jpg',
     fullContent: [
       {
         type: 'paragraph',
@@ -530,7 +530,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: "Nigeria’s Silent Health Emergency: Why Chronic Diseases Are Rising Faster Than We Think",
     description: 'Across Nigeria, a silent health emergency is unfolding. Chronic diseases such as hypertension and diabetes are rising rapidly, often undetected until severe complications occur.',
-    image: '/src/assets/blogimg.png',
+    image: '/assets/blogimg.png',
     fullContent: [
       {
         type: 'paragraph',

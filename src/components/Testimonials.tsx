@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import testimony1 from '../assets/testimony1.png';
-import testimony2 from '../assets/testimony2.png';
-import testimony3 from '../assets/testimony3.png';
-import testimony4 from '../assets/testimony4.png';
+const testimony1 = "/assets/testimony1.png";
+const testimony2 = "/assets/testimony2.png";
+const testimony3 = "/assets/testimony3.png";
+const testimony4 = "/assets/testimony4.png";
 
 const testimonials = [
   {

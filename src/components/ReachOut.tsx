@@ -17,7 +17,7 @@ const ReachOut: React.FC = () => {
             </p>
 
             <Link
-              to="/get-started"
+              to="#"
               className="inline-block bg-[#1A7A4A] text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-green-800 transition-all shadow-md"
             >
               Talk to Chetacare

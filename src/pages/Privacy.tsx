@@ -172,7 +172,7 @@ const Privacy: React.FC = () => {
             </div>
 
             <div className="w-full md:w-2/5 flex justify-center md:justify-end self-end">
-              <img src="/src/assets/policyhero.png" alt="Privacy Policy Illustration" className="w-full max-w-[400px] object-contain block align-bottom" />
+              <img src="/assets/policyhero.png" alt="Privacy Policy Illustration" className="w-full max-w-[400px] object-contain block align-bottom" />
             </div>
           </div>
         </div>
