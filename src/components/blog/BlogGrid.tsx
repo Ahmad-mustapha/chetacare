@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 
-const BlogGrid: React.FC = () => {
+interface BlogGridProps {
+  limit?: number;
+}
+
+const BlogGrid: React.FC<BlogGridProps> = ({ limit }) => {
+  const posts = typeof limit === 'number' ? blogPosts.slice(0, limit) : blogPosts;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {blogPosts.map((post) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {posts.map((post) => (
         <Link 
           key={post.id} 
           to={`/blog/${post.id}`}
@@ -48,4 +54,3 @@ const BlogGrid: React.FC = () => {
 };
 
 export default BlogGrid;
-

@@ -7,7 +7,7 @@ const ContactDetails: React.FC = () => {
       <h2 className="text-3xl font-bold text-[#101828] leading-tight">
         We're happy to monitor your health and answer any question
       </h2>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-6">
         {/* Phone */}
         <div className="space-y-3">
@@ -24,7 +24,11 @@ const ContactDetails: React.FC = () => {
             <Mail size={24} />
             <h3 className="text-xl font-bold text-[#101828]">Mail Address</h3>
           </div>
-          <p className="text-[#475467] text-lg font-medium">info@example.com</p>
+          <div className="space-y-2">
+            <p className="text-[#475467] text-lg font-medium">Oluwafemi@chetacare.com</p>
+            <p className="text-[#475467] text-lg font-medium">Support@chetacare.com</p>
+            <p className="text-[#475467] text-lg font-medium">Partnership@chetacare.com</p>
+          </div>
         </div>
 
         {/* Organization */}

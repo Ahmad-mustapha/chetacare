@@ -12,7 +12,7 @@ const BlogPost: React.FC = () => {
         return <div className="min-h-screen flex items-center justify-center">Post not found</div>;
     }
 
-    const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
+    const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 2);
 
     return (
         <div className="bg-white min-h-screen">
@@ -25,7 +25,7 @@ const BlogPost: React.FC = () => {
             </div>
 
             {/* Article Header */}
-            <article className="pb-24">
+            <article className="pb-12">
                 <div className="container-wide">
                     <div className="max-w-4xl">
                         <div className="inline-block px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-sm font-medium rounded-full border border-[#D1FADF] mb-6">
@@ -125,9 +125,9 @@ const BlogPost: React.FC = () => {
                     </div>
 
                     {/* Related Articles */}
-                    <div className="pt-32 border-t border-gray-100 mt-32">
+                    <div className="pt-8 border-t border-gray-100 mt-32">
                         <h2 className="text-3xl md:text-[40px] font-bold text-[#101828] mb-12">Related Articles</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                             {relatedPosts.map((rPost) => (
                                 <Link key={rPost.id} to={`/blog/${rPost.id}`} className="group block cursor-pointer">
                                     <div className="relative aspect-[1.4/1] rounded-[24px] overflow-hidden mb-6">
@@ -150,9 +150,9 @@ const BlogPost: React.FC = () => {
                         <div className="text-center">
                             <Link
                                 to="/blog"
-                                className="inline-block border border-[#D1FADF] bg-[#FFFFFF] text-[#101828] px-10 py-4 rounded-xl font-bold hover:bg-[#F2FFF8] transition-all shadow-sm"
+                                className="inline-flex items-center gap-2 px-4 md:px-8 py-3 border border-[#1A7A4A] text-[#1A7A4A] rounded-[8px] xl:rounded-[12px] font-medium hover:bg-[#1A7A4A] hover:text-white transition-all shadow-sm"
                             >
-                                View all articles
+                                View all articles <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
                     </div>
@@ -166,4 +166,3 @@ const BlogPost: React.FC = () => {
 };
 
 export default BlogPost;
-

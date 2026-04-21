@@ -38,12 +38,10 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-3">
             <h4 className="text-white/60 font-medium mb-6 uppercase tracking-wider text-sm">Social Media</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-white hover:text-white/70 transition-colors">Twitter / X</a></li>
-              <li><a href="#" className="text-white hover:text-white/70 transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="text-white hover:text-white/70 transition-colors">Instagram</a></li>
-              <li><a href="#" className="text-white hover:text-white/70 transition-colors">Facebook</a></li>
-              <li><a href="#" className="text-white hover:text-white/70 transition-colors">YouTube</a></li>
-              <li><a href="mailto:hello@chetarcare.com" className="text-white hover:text-white/70 transition-colors">Email</a></li>
+              <li><a href="https://x.com/chetacare" className="text-white hover:text-white/70 transition-colors">Twitter / X</a></li>
+              <li><a href="https://www.linkedin.com/company/chetacare" className="text-white hover:text-white/70 transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/chetacare_" className="text-white hover:text-white/70 transition-colors">Instagram</a></li>
+              <li><a href="mailto:Support@chetacare.com" className="text-white hover:text-white/70 transition-colors">Email</a></li>
             </ul>
           </div>
         </div>
@@ -55,7 +53,7 @@ const Footer: React.FC = () => {
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
-          
+
           <p className="text-sm text-white/80">
             © {new Date().getFullYear()} Chetacare. All rights reserved.
           </p>

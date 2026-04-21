@@ -23,7 +23,7 @@ const BlogSection: React.FC = () => {
 
         {/* Blog Grid Component */}
         <div className="mb-12">
-          <BlogGrid />
+          <BlogGrid limit={2} />
         </div>
 
         {/* View All Button */}

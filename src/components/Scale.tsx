@@ -19,10 +19,6 @@ const Scale: React.FC = () => {
   return (
     <section className="py-16 bg-[#F7FBF9]">
       <div className="container-wide">
-        <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium text-[#1F2A24] leading-tight mb-14">
-          Scale of Impact Visuals
-        </h2>
-
         <div className="flex flex-col md:flex-row bg-[#F9FAFB] border border-[#E5E7EB] overflow-hidden">
           {stats.map((stat, index) => (
             <div

@@ -147,7 +147,7 @@ const privacyData = [
   {
     title: "16. Contact Us",
     content: "If you have questions about this Privacy Policy or how your data is handled, please contact Chetacare.",
-    content2: "Email: info@chetacare.com"
+    content2: "Email: Support@chetacare.com"
   }
 ];
 

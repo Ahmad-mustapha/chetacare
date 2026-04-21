@@ -128,7 +128,7 @@ const termsData = [
   {
     title: "18. Contact Information",
     content: "For questions regarding these Terms:",
-    content2: "Chetacare Email: Website: www.chetacare.com"
+    content2: "Email: Support@chetacare.com | Website: www.chetacare.com"
   }
 ];
 
