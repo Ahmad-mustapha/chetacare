@@ -1,62 +1,120 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, ArrowRight, Heart } from 'lucide-react';
+import { FaXTwitter, FaLinkedinIn, FaInstagram, FaRegEnvelope } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#1A7A4A] text-white pt-20 pb-10">
-      <div className="container-wide">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-          {/* Brand Column */}
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-2xl font-bold tracking-tight">Chetacare</span>
+    <footer className="bg-[#101828] text-white pt-24 pb-12 overflow-hidden relative">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1A7A4A] opacity-[0.03] rounded-full -mr-64 -mt-64 blur-3xl" />
+
+      <div className="container-wide relative z-10">
+        <div className="flex flex-col lg:flex-row flex-wrap justify-between gap-12 lg:gap-8 mb-20">
+          {/* Brand & Mission */}
+          <div className="w-full lg:w-[350px] pr-0 lg:pr-12">
+            <Link to="/" className="block w-[155px] mb-8">
+              <img src="/assets/chetacare.png" alt="logo" className='w-full h-full object-contain' />
+            </Link>
+            <p className="text-gray-400 text-lg mb-8 leading-relaxed max-w-sm">
+              Healthcare that stays with you before, during, and after treatment. Built in Nigeria, for Africa.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+                <div className="p-2 bg-white/5 rounded-lg">
+                  <Phone size={18} />
+                </div>
+                <span className="font-medium">+234 807 445 8695</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
+                <div className="p-2 bg-white/5 rounded-lg">
+                  <Mail size={18} />
+                </div>
+                <span className="font-medium">Support@chetacare.com</span>
+              </div>
             </div>
-            <p className="text-white/80 text-lg max-w-sm mb-6 leading-relaxed">
-              Healthcare that stays with you before, during, and after treatment.
-            </p>
-            <p className="text-white font-medium italic">
-              Built in Nigeria, for Africa.
-            </p>
           </div>
 
-          {/* Spacer */}
-          <div className="hidden lg:block lg:col-span-1" />
-
-          {/* Links Column - Company */}
-          <div className="lg:col-span-3">
-            <h4 className="text-white/60 font-medium mb-6 uppercase tracking-wider text-sm">Company</h4>
+          {/* Quick Links */}
+          <div className="min-w-[150px]">
+            <h4 className="text-white font-bold mb-8 text-lg">Company</h4>
             <ul className="space-y-4">
-              <li><Link to="/about" className="text-white hover:text-white/70 transition-colors">About Us</Link></li>
-              <li><Link to="#" className="text-white hover:text-white/70 transition-colors">How It Works</Link></li>
-              <li><Link to="/faq" className="text-white hover:text-white/70 transition-colors">FAQ</Link></li>
-              <li><Link to="/blog" className="text-white hover:text-white/70 transition-colors">Blog</Link></li>
-              <li><Link to="#" className="text-white hover:text-white/70 transition-colors">Partner With Us</Link></li>
+              {['About Us', 'How It Works', 'FAQ', 'Blog'].map((item) => (
+                <li key={item}>
+                  <Link
+                    to={`/${item.toLowerCase().replace(/\s+/g, '')}`}
+                    className="text-gray-400 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
+                  >
+                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
+                    {item}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  to="/partner"
+                  className="text-gray-400 hover:text-green-400 hover:translate-x-1 transition-all flex items-center gap-2 group"
+                >
+                  <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
+                  Partner With Us
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Links Column - Social Media */}
-          <div className="lg:col-span-3">
-            <h4 className="text-white/60 font-medium mb-6 uppercase tracking-wider text-sm">Social Media</h4>
+          {/* Services/Support (Optional expansion) */}
+          <div className="min-w-[150px]">
+            <h4 className="text-white font-bold mb-8 text-lg">Resources</h4>
             <ul className="space-y-4">
-              <li><a href="https://x.com/chetacare" className="text-white hover:text-white/70 transition-colors">Twitter / X</a></li>
-              <li><a href="https://www.linkedin.com/company/chetacare" className="text-white hover:text-white/70 transition-colors">LinkedIn</a></li>
-              <li><a href="https://www.instagram.com/chetacare_" className="text-white hover:text-white/70 transition-colors">Instagram</a></li>
-              <li><a href="mailto:Support@chetacare.com" className="text-white hover:text-white/70 transition-colors">Email</a></li>
+              {['Contact Us', 'Privacy Policy', 'Terms of Service', 'Security'].map((item) => (
+                <li key={item}>
+                  <Link
+                    to={`/${item.toLowerCase().replace(/\s+/g, '')}`}
+                    className="text-gray-400 hover:text-white hover:translate-x-1 transition-all group flex items-center gap-2"
+                  >
+                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
+                    {item}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Newsletter / Social */}
+          <div className="w-full lg:w-[300px]">
+            <h4 className="text-white font-bold mb-8 text-lg">Stay Connected</h4>
+            <p className="text-gray-400 mb-6 font-medium">Follow our journey on social media.</p>
+            <div className="flex gap-4 mb-8">
+              {[
+                { icon: <FaXTwitter size={20} />, href: 'https://x.com/chetacare', label: 'Twitter' },
+                { icon: <FaLinkedinIn size={20} />, href: 'https://www.linkedin.com/company/chetacare', label: 'LinkedIn' },
+                { icon: <FaInstagram size={20} />, href: 'https://www.instagram.com/chetacare_', label: 'Instagram' },
+                { icon: <FaRegEnvelope size={20} />, href: 'mailto:Support@chetacare.com', label: 'Email' },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:scale-110 transition-all border border-white/5"
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-8 text-sm text-white/80">
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <a href="#" className="hover:text-white transition-colors">Security</a>
-          </div>
-
-          <p className="text-sm text-white/80">
-            © {new Date().getFullYear()} Chetacare. All rights reserved.
+          <p className="text-sm text-gray-500 font-medium">
+            © {currentYear} Chetacare. All rights reserved.
           </p>
+          <div className="flex items-center gap-6 text-sm text-gray-500">
+            <span className='flex items-center gap-1'>Made with <Heart className="text-gray-500" size={16} /> for Africa</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -64,3 +122,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

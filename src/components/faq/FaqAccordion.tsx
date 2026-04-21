@@ -52,7 +52,7 @@ const faqData: FaqItem[] = [
   },
   {
     question: "How can organizations or partners work with Chetacare?",
-    answer: "We partner with corporate organizations, insurance providers, and healthcare facilities to improve patient outcomes. Please reach out to our partnerships team through the contact page."
+    answer: "We partner with corporate organizations, insurance providers, and healthcare facilities to improve patient outcomes. You can learn more and reach out to our team on our dedicated Partner With Us page."
   }
 ];
 

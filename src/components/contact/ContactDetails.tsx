@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
 const ContactDetails: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const ContactDetails: React.FC = () => {
             <Phone size={24} />
             <h3 className="text-xl font-bold text-[#101828]">Phone Number</h3>
           </div>
-          <p className="text-[#475467] text-lg font-medium">+1 0123 456 789</p>
+          <p className="text-[#475467] text-lg font-medium">+234 807 445 8695</p>
         </div>
 
         {/* Mail */}
@@ -25,23 +25,11 @@ const ContactDetails: React.FC = () => {
             <h3 className="text-xl font-bold text-[#101828]">Mail Address</h3>
           </div>
           <div className="space-y-2">
-            <p className="text-[#475467] text-lg font-medium">Oluwafemi@chetacare.com</p>
             <p className="text-[#475467] text-lg font-medium">Support@chetacare.com</p>
-            <p className="text-[#475467] text-lg font-medium">Partnership@chetacare.com</p>
           </div>
         </div>
-
-        {/* Organization */}
-        <div className="space-y-3">
-          <div className="flex items-center space-x-3 text-[#1A7A4A]">
-            <Clock size={24} />
-            <h3 className="text-xl font-bold text-[#101828]">Organization</h3>
-          </div>
-          <p className="text-[#475467] text-lg font-medium">ABC Holdings</p>
-        </div>
-
         {/* Address */}
-        <div className="space-y-3">
+        {/* <div className="space-y-3">
           <div className="flex items-center space-x-3 text-[#1A7A4A]">
             <MapPin size={24} />
             <h3 className="text-xl font-bold text-[#101828]">Address</h3>
@@ -51,7 +39,7 @@ const ContactDetails: React.FC = () => {
             Motorway <br />
             Suite 469 Abuja, Nigeria.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

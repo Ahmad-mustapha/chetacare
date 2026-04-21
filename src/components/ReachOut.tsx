@@ -13,7 +13,7 @@ const ReachOut: React.FC = () => {
             </h2>
 
             <p className="text-[#475467] text-[16px] md:text-[18px] lg:text-[20px] max-w-2xl mx-auto mb-10 leading-relaxed">
-              We help you live longer, healthier lives by connecting you with verified a doctor and continuous care.
+              We help you live longer, healthier life by connecting you with a verified doctor and continuous care.
             </p>
 
             <Link

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 const hero1 = "/assets/hero1.png";
 const hero2 = "/assets/hero2.png";
 
@@ -27,9 +27,12 @@ const Hero: React.FC = () => {
             <button className="bg-[#1A7A4A] text-white px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg hover:shadow-green-200/50 text-center">
               Get Started
             </button>
-            <button className="bg-white text-[#1A7A4A] border-1 border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center">
+            <Link 
+              to="/partner" 
+              className="bg-white text-[#1A7A4A] border border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center"
+            >
               Partner With Us
-            </button>
+            </Link>
           </div>
 
         </div>

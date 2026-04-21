@@ -5,6 +5,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Blog', path: '/blog' },
+  // { name: 'Partner With Us', path: '/partner' },
   { name: 'Contact Us', path: '/contact' },
   { name: 'FAQ', path: '/faq' },
 ];
@@ -29,8 +30,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white py-6 border-b border-gray-100 sticky top-0 z-[100]">
       <div className="container-wide flex items-center justify-between">
-        <Link to="/" className="w-[154px] h-[28px]">
-          <img src="/assets/chetacarelogo.png" alt="logo" className='w-full h-full object-contain' />
+        <Link to="/" className="w-[155px] md:w-[170] lg:w-[200px]">
+          <img src="/assets/chetacare.png" alt="logo" className='w-full h-full object-contain' />
         </Link>
 
         {/* Desktop Links */}
