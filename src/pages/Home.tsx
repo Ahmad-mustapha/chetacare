@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-page">
       <Seo
-        title="Chronic Disease Care | Chetacare"
+        title="Chetacare | Chronic Disease Care"
         description="Chetacare provides chronic disease care support with preventive guidance, education, and ongoing help for people managing hypertension, diabetes, and related conditions."
         structuredData={[
           {

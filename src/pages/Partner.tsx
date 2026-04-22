@@ -7,7 +7,7 @@ const Partner: React.FC = () => {
   return (
     <div className="bg-white">
       <Seo
-        title="Partner With Chetacare"
+        title="Chetacare | Partner With Us"
         description="Explore partnership opportunities with Chetacare across chronic disease care, healthcare delivery, and digital health collaboration."
       />
       {/* Hero Section */}

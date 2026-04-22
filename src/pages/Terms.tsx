@@ -137,7 +137,7 @@ const Terms: React.FC = () => {
   return (
     <div className="bg-white">
       <Seo
-        title="Terms of Service | Chetacare"
+        title="Chetacare | Terms of Service"
         description="Review the terms that govern use of the Chetacare platform and chronic disease care support services."
       />
       {/* Hero Section */}

@@ -8,7 +8,7 @@ const Faq: React.FC = () => {
   return (
     <div className="bg-white">
       <Seo
-        title="Chetacare FAQ"
+        title="Chetacare | FAQ"
         description="Read answers to common questions about Chetacare, chronic disease support, and how our care experience works."
       />
       {/* Header Section */}

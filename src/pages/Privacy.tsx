@@ -156,7 +156,7 @@ const Privacy: React.FC = () => {
   return (
     <div className="bg-white">
       <Seo
-        title="Privacy Policy | Chetacare"
+        title="Chetacare | Privacy Policy"
         description="Read the Chetacare privacy policy for details on how personal, health, and website information is handled."
       />
       {/* Hero Section */}

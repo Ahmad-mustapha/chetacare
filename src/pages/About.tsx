@@ -11,7 +11,7 @@ const About: React.FC = () => {
   return (
     <div className="about-page">
       <Seo
-        title="About Chetacare | Chronic Disease Care"
+        title="Chetacare | About Chronic Disease Care"
         description="Learn about Chetacare's mission to make chronic disease care more accessible through preventive support, education, and a patient-centered digital experience."
       />
       <Abouthero />

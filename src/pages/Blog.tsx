@@ -8,7 +8,7 @@ const Blog: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       <Seo
-        title="Health Blog | Chetacare"
+        title="Chetacare | Health Blog"
         description="Explore Chetacare articles on hypertension, diabetes, preventive health, and chronic disease care."
         structuredData={{
           '@context': 'https://schema.org',

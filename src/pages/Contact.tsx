@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       <Seo
-        title="Contact Chetacare"
+        title="Chetacare | Contact"
         description="Contact Chetacare to ask questions about chronic disease care support, partnerships, and preventive health guidance."
       />
       {/* Header Section */}

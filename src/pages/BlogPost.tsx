@@ -13,7 +13,7 @@ const BlogPost: React.FC = () => {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <Seo
-                    title="Article Not Found | Chetacare"
+                    title="Chetacare | Article Not Found"
                     description="The requested Chetacare article could not be found."
                     noIndex
                 />
@@ -27,7 +27,7 @@ const BlogPost: React.FC = () => {
     return (
         <div className="bg-white min-h-screen">
             <Seo
-                title={`${post.title} | Chetacare`}
+                title={`Chetacare | ${post.title}`}
                 description={post.description}
                 image={post.image}
                 type="article"
