@@ -1,10 +1,15 @@
 import React from 'react';
 import { Handshake, Mail, ArrowRight, CheckCircle2, Globe, Users, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 const Partner: React.FC = () => {
   return (
     <div className="bg-white">
+      <Seo
+        title="Partner With Chetacare"
+        description="Explore partnership opportunities with Chetacare across chronic disease care, healthcare delivery, and digital health collaboration."
+      />
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-gradient-to-b from-[#f0f9f4] to-white">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#1A7A4A]/5 rounded-bl-[100px] -z-10" />

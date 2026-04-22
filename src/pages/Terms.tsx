@@ -1,5 +1,6 @@
 import React from 'react';
 import ReachOut from '../components/ReachOut';
+import Seo from '../components/Seo';
 
 const termsData = [
   {
@@ -135,6 +136,10 @@ const termsData = [
 const Terms: React.FC = () => {
   return (
     <div className="bg-white">
+      <Seo
+        title="Terms of Service | Chetacare"
+        description="Review the terms that govern use of the Chetacare platform and chronic disease care support services."
+      />
       {/* Hero Section */}
       <section className="bg-[#F9FEFB] pt-20 pb-0 overflow-hidden">
         <div className="container-wide">

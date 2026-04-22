@@ -83,21 +83,24 @@ const Testimonials: React.FC = () => {
     },
   });
 
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(true);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const updateButtons = useCallback(() => {
+  const handleSelectionChange = useCallback(() => {
     if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
-    updateButtons();
-    emblaApi.on('select', updateButtons);
-    emblaApi.on('reInit', updateButtons);
-  }, [emblaApi, updateButtons]);
+
+    emblaApi.on('select', handleSelectionChange);
+    emblaApi.on('reInit', handleSelectionChange);
+
+    return () => {
+      emblaApi.off('select', handleSelectionChange);
+      emblaApi.off('reInit', handleSelectionChange);
+    };
+  }, [emblaApi, handleSelectionChange]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -106,6 +109,9 @@ const Testimonials: React.FC = () => {
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
+
+  const canScrollPrev = emblaApi ? emblaApi.canScrollPrev() : false;
+  const canScrollNext = emblaApi ? emblaApi.canScrollNext() : true;
 
   return (
     <section className="py-16 lg:py-24 bg-[#F7FBF9] overflow-hidden">
@@ -125,7 +131,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative" data-selected-index={selectedIndex}>
           {/* Left Arrow */}
           <button
             onClick={scrollPrev}

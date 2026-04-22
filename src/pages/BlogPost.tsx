@@ -3,19 +3,56 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, User, Calendar, Clock } from 'lucide-react';
 import ReachOut from '../components/ReachOut';
 import { blogPosts } from '../data/blogData';
+import Seo from '../components/Seo';
 
 const BlogPost: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const post = blogPosts.find(p => p.id === Number(id));
 
     if (!post) {
-        return <div className="min-h-screen flex items-center justify-center">Post not found</div>;
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <Seo
+                    title="Article Not Found | Chetacare"
+                    description="The requested Chetacare article could not be found."
+                    noIndex
+                />
+                Post not found
+            </div>
+        );
     }
 
     const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 2);
 
     return (
         <div className="bg-white min-h-screen">
+            <Seo
+                title={`${post.title} | Chetacare`}
+                description={post.description}
+                image={post.image}
+                type="article"
+                structuredData={{
+                    '@context': 'https://schema.org',
+                    '@type': 'Article',
+                    headline: post.title,
+                    description: post.description,
+                    image: `https://chetacare.com${post.image}`,
+                    author: {
+                        '@type': 'Organization',
+                        name: post.author,
+                    },
+                    publisher: {
+                        '@type': 'Organization',
+                        name: 'Chetacare',
+                        logo: {
+                            '@type': 'ImageObject',
+                            url: 'https://chetacare.com/assets/chetacarelogo.png',
+                        },
+                    },
+                    datePublished: post.date,
+                    mainEntityOfPage: `https://chetacare.com/blog/${post.id}`,
+                }}
+            />
             {/* Breadcrumb / Back Navigation */}
             <div className="container-wide pt-12 pb-8">
                 <Link to="/blog" className="flex items-center gap-2 text-[#475467] hover:text-[#1A7A4A] transition-colors font-medium">

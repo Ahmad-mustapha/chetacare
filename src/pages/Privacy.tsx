@@ -1,5 +1,6 @@
 import React from 'react';
 import ReachOut from '../components/ReachOut';
+import Seo from '../components/Seo';
 
 const privacyData = [
   {
@@ -154,6 +155,10 @@ const privacyData = [
 const Privacy: React.FC = () => {
   return (
     <div className="bg-white">
+      <Seo
+        title="Privacy Policy | Chetacare"
+        description="Read the Chetacare privacy policy for details on how personal, health, and website information is handled."
+      />
       {/* Hero Section */}
       <section className="bg-[#F9FEFB] pt-20 pb-0 overflow-hidden">
         <div className="container-wide">

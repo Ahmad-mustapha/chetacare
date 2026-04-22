@@ -1,10 +1,15 @@
 import React from 'react';
 import ContactDetails from '../components/contact/ContactDetails';
 import ContactForm from '../components/contact/ContactForm';
+import Seo from '../components/Seo';
 
 const Contact: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
+      <Seo
+        title="Contact Chetacare"
+        description="Contact Chetacare to ask questions about chronic disease care support, partnerships, and preventive health guidance."
+      />
       {/* Header Section */}
       <section className="pt-20 pb-16 text-center">
         <div className="container-wide">

@@ -2,10 +2,15 @@ import React from 'react';
 import FaqAccordion from '../components/faq/FaqAccordion';
 import ReachOut from '../components/ReachOut';
 import { Link } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 const Faq: React.FC = () => {
   return (
     <div className="bg-white">
+      <Seo
+        title="Chetacare FAQ"
+        description="Read answers to common questions about Chetacare, chronic disease support, and how our care experience works."
+      />
       {/* Header Section */}
       <section className="pt-20 pb-12 text-center">
         <div className="container-wide">

@@ -5,9 +5,15 @@ import WhatDrivesUs from '../components/about/WhatDrivesUs';
 import WhatMakesUsBetter from '../components/about/WhatMakesUsBetter';
 import Abouthero from '../components/about/Abouthero.tsx';
 import ReachOut from '../components/ReachOut.tsx';
+import Seo from '../components/Seo';
+
 const About: React.FC = () => {
   return (
     <div className="about-page">
+      <Seo
+        title="About Chetacare | Chronic Disease Care"
+        description="Learn about Chetacare's mission to make chronic disease care more accessible through preventive support, education, and a patient-centered digital experience."
+      />
       <Abouthero />
       <WhoWeAre />
       <Mission />
@@ -19,4 +25,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-
