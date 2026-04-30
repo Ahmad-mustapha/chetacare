@@ -29,8 +29,8 @@ const BlogPost: React.FC = () => {
             <Seo
                 title={`Chetacare | ${post.title}`}
                 description={post.description}
-                image={post.image}
-                type="article"
+                ogImage={post.image}
+                twitterImage={post.image}
                 structuredData={{
                     '@context': 'https://schema.org',
                     '@type': 'Article',

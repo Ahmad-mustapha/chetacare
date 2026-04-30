@@ -10,6 +10,7 @@ import BlogPost from './pages/BlogPost';
 import Partner from './pages/Partner';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
@@ -28,6 +29,7 @@ const App: React.FC = () => {
           <Route path="blog/:id" element={<BlogPost />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
