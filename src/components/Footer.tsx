@@ -109,9 +109,14 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-gray-500 font-medium">
-            © {currentYear} Chetacare. All rights reserved.
-          </p>
+          <div className="space-y-2">
+            <p className="text-sm text-gray-500 font-medium">
+              © {currentYear} Chetacare. All rights reserved.
+            </p>
+            <p className="text-sm text-gray-400 max-w-xl">
+              Chetacare is proudly brought to life as a product of <span className="text-white font-semibold">SCION Pharmacy</span>, combining trusted pharmacy expertise with digital care.
+            </p>
+          </div>
           <div className="flex items-center gap-6 text-sm text-gray-500">
             <span className='flex items-center gap-1'>Made with <Heart className="text-gray-500" size={16} /> for Africa</span>
           </div>
