@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
               © {currentYear} Chetacare. All rights reserved.
             </p>
             <p className="text-sm text-gray-400 max-w-xl">
-              {/* Chetacare is proudly brought to life as a product of <span className="text-white font-semibold">SCION Pharmacy</span>, combining trusted pharmacy expertise with digital care. */}
+              Chetacare is proudly brought to life as a product of <span className="text-white font-semibold">SCION Pharmacy</span>, combining trusted pharmacy expertise with digital care.
             </p>
           </div>
           <div className="flex items-center gap-6 text-sm text-gray-500">
