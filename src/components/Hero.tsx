@@ -24,9 +24,12 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#1A7A4A] text-white px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg hover:shadow-green-200/50 text-center">
+            <Link 
+              to="/contact"
+              className="bg-[#1A7A4A] text-white px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg hover:shadow-green-200/50 text-center flex items-center justify-center"
+            >
               Get Started
-            </button>
+            </Link>
             <Link 
               to="/partner" 
               className="bg-white text-[#1A7A4A] border border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center"

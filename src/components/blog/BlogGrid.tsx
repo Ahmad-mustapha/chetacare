@@ -1,3 +1,4 @@
+// src/components/blog/BlogGrid.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -5,10 +6,16 @@ import { blogPosts } from '../../data/blogData';
 
 interface BlogGridProps {
   limit?: number;
+  activeCategory?: string;
 }
 
-const BlogGrid: React.FC<BlogGridProps> = ({ limit }) => {
-  const posts = typeof limit === 'number' ? blogPosts.slice(0, limit) : blogPosts;
+const BlogGrid: React.FC<BlogGridProps> = ({ limit, activeCategory = 'All Blog' }) => {
+  // 1. Updated filter logic: checks if the array includes the active category
+  const filteredPosts = activeCategory === 'All Blog' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category.includes(activeCategory));
+
+  const posts = typeof limit === 'number' ? filteredPosts.slice(0, limit) : filteredPosts;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -27,9 +34,13 @@ const BlogGrid: React.FC<BlogGridProps> = ({ limit }) => {
           </div>
 
           <div className="flex items-center justify-between mb-4">
-            <span className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-[10px] xl:text-xs font-medium rounded-full border border-[#D1FADF]">
-              {post.category}
-            </span>
+            <div className="flex flex-wrap gap-2">
+              {post.category.map((cat, index) => (
+                <span key={index} className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-[10px] xl:text-xs font-medium rounded-full border border-[#D1FADF]">
+                  {cat}
+                </span>
+              ))}
+            </div>
             <span className="text-gray-500 text-[10px] xl:text-xs flex items-center gap-1">
               <span className="w-1 h-1 bg-gray-400 rounded-full" />
               {post.readTime}

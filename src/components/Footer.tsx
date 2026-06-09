@@ -40,14 +40,19 @@ const Footer: React.FC = () => {
           <div className="min-w-[150px]">
             <h4 className="text-white font-bold mb-8 text-lg">Company</h4>
             <ul className="space-y-4">
-              {['About Us', 'How It Works', 'FAQ', 'Blog'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'About Us', path: '/about' },
+                { name: 'How It Works', path: '/#how-it-works' },
+                { name: 'FAQ', path: '/faq' },
+                { name: 'Blog', path: '/blog' }
+              ].map((item) => (
+                <li key={item.name}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, '')}`}
+                    to={item.path}
                     className="text-gray-400 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2 group"
                   >
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -67,14 +72,19 @@ const Footer: React.FC = () => {
           <div className="min-w-[150px]">
             <h4 className="text-white font-bold mb-8 text-lg">Resources</h4>
             <ul className="space-y-4">
-              {['Contact Us', 'Privacy Policy', 'Terms of Service', 'Security'].map((item) => (
-                <li key={item}>
+              {[
+                { name: 'Contact Us', path: '/contact' },
+                { name: 'Privacy Policy', path: '/privacy' },
+                { name: 'Terms of Service', path: '/terms' },
+                { name: 'Security', path: '/privacy' } // Temporarily routes to privacy until a security page is built
+              ].map((item) => (
+                <li key={item.name}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, '')}`}
+                    to={item.path}
                     className="text-gray-400 hover:text-white hover:translate-x-1 transition-all group flex items-center gap-2"
                   >
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
