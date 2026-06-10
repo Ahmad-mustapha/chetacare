@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/components/blog/BlogFilters.tsx
+import React from 'react';
 
 const categories = [
   'All Blog',
@@ -11,9 +12,13 @@ const categories = [
   'Lifestyle & Wellness'
 ];
 
-const BlogFilters: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('All Blog');
+// 1. Define the props we expect from Blog.tsx
+interface BlogFiltersProps {
+  activeCategory: string;
+  setActiveCategory: (category: string) => void;
+}
 
+const BlogFilters: React.FC<BlogFiltersProps> = ({ activeCategory, setActiveCategory }) => {
   return (
     <div className="border-b border-gray-100 mb-12 overflow-x-auto scrollbar-hide">
       <div className="flex items-center space-x-2 pb-4 min-w-max">

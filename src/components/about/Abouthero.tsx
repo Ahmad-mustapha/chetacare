@@ -32,9 +32,12 @@ const Abouthero: React.FC = () => {
             >
               Partner With Us
             </Link>
-            <button className="bg-white text-[#1A7A4A] border-2 border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center">
+            <Link 
+              to="/contact"
+              className="bg-white text-[#1A7A4A] border-2 border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
         </div>

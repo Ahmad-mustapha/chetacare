@@ -32,7 +32,7 @@ const BlogHero: React.FC = () => {
                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                   <div className="flex items-center space-x-3 mb-8">
                     <span className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-sm font-medium rounded-full border border-[#D1FADF]">
-                      {featuredPost.category}
+                      {featuredPost.category[0]}
                     </span>
                     <span className="text-[#475467] text-sm flex items-center gap-1.5 font-medium">
                       <span className="w-1.5 h-1.5 bg-gray-400 rounded-full" />

@@ -66,7 +66,7 @@ const BlogPost: React.FC = () => {
                 <div className="container-wide">
                     <div className="max-w-4xl">
                         <div className="inline-block px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-sm font-medium rounded-full border border-[#D1FADF] mb-6">
-                            {post.category}
+                            {post.category[0]}
                         </div>
                         <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-bold text-[#101828] leading-[1.1] mb-8 tracking-tight">
                             {post.title}
@@ -151,7 +151,7 @@ const BlogPost: React.FC = () => {
                                         Don't just read about managing hypertension, get support to actually do it.
                                     </p>
                                     <Link
-                                        to="#"
+                                        to="/contact"
                                         className="inline-block border border-[#D1FADF] bg-[#FFFFFF] text-[#1A7A4A] px-10 py-4 rounded-xl font-bold hover:bg-[#F2FFF8] transition-all shadow-sm"
                                     >
                                         Talk to the support team
@@ -171,7 +171,7 @@ const BlogPost: React.FC = () => {
                                         <img src={rPost.image} alt={rPost.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                     </div>
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-xs font-semibold rounded-full border border-[#D1FADF]">{rPost.category}</span>
+                                        <span className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-xs font-semibold rounded-full border border-[#D1FADF]">{rPost.category[0]}</span>
                                         <span className="text-[#475467] text-xs font-medium flex items-center gap-1.5">
                                             <span className="w-1 h-1 bg-gray-400 rounded-full" />
                                             {rPost.readTime}

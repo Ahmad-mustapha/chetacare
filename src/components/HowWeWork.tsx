@@ -3,7 +3,7 @@ const oldWomanGlass = "/assets/old_woman_glass.png";
 
 const HowWeWork: React.FC = () => {
   return (
-    <section className="py-8 md:py-20 bg-white">
+    <section id="how-it-works" className="py-24 bg-white">
       <div className="container-wide">
         {/* Badge */}
         <div className="inline-block px-4 py-2 bg-[#22C55E0D] border border-[#22C55E4D] rounded-md sm:rounded-lg mb-6">
