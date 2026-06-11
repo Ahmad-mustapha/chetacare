@@ -6,11 +6,9 @@ const HowWeWork: React.FC = () => {
     <section id="how-it-works" className="py-24 bg-white">
       <div className="container-wide">
         {/* Badge */}
-        <div className="inline-block px-4 py-2 bg-[#22C55E0D] border border-[#22C55E4D] rounded-md sm:rounded-lg mb-6">
-          <p className="text-[#1A7A4A] font-bold text-[14px] xl:text-[16px]">
-            How Chetacare Works
-          </p>
-        </div>
+        <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
+          How Chetacare Works
+        </h3>
 
         {/* Title */}
         <h2 className="text-[28px] md:text-[36px] lg:text-[48px] font-semibold text-[#1F2937] leading-tight mb-16 max-w-4xl">

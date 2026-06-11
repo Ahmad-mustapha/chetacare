@@ -1,38 +1,75 @@
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-const hero1 = "/assets/hero1.png";
-const hero2 = "/assets/hero2.png";
+
+// TODO: Update these paths to match exactly what you saved the Figma exports as in your public/assets/ folder
+const heroBg = "/assets/hero-bg.png";
+const heroMockup = "/assets/iphone.png"; // Export the free transparent iPhone 17 mockup here
 
 const Hero: React.FC = () => {
+  // Inline animation logic (0% to 100% opacity, 800ms)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Runs once
+        }
+      },
+      { threshold: 0.1 } // Triggers when 10% of the hero is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-12 pb-20 overflow-hidden bg-[#F7FBF9]">
-      <div className="container-wide flex flex-col lg:flex-row items-center justify-between gap-12">
-        {/* Left Column Content */}
-        <div className="w-full lg:w-[60%] max-w-2xl">
-          <div className="inline-block px-4 py-2 bg-[#22C55E0D] border border-[#22C55E4D] rounded-md sm:rounded-lg mb-8">
-            <p className="text-[#1A7A4A] font-medium text-[12px] lg:text-[14px]">
-              Predicting Risk. Preventing Complications. Delivering Continuous Care.
+    <section
+      ref={sectionRef}
+      className={`relative w-full min-h-[553px] flex items-center py-[80px] lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+      style={{
+        backgroundImage: `url('${heroBg}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#1A7A4A' // Fallback color while image loads
+      }}
+    >
+
+      {/* 50/50 Split Container with 20px gap */}
+      <div className="container-wide w-full flex flex-col lg:flex-row items-center justify-between gap-[20px] mx-auto z-10 px-6 lg:px-0">
+        
+        {/* Left Column Text (50%) */}
+        <div className="flex flex-col justify-center items-start w-full lg:w-[610px] gap-[32px]">
+          
+          <div className="flex flex-col gap-[32px] w-full">
+            <h1 className="text-[#FFFFFF] text-[38px] md:text-[50px] lg:text-[70px] font-medium leading-[1.1] lg:leading-[75px] tracking-[-2px]">
+              Smarter Monitoring for Hypertension & Diabetes.
+            </h1>
+
+            <p className="text-[#FFFFFF] text-[16px] lg:text-[20px] font-normal leading-[24px]">
+              Chetacare is building Africa’s predictive chronic disease management
+              infrastructure, starting with hypertension and diabetes.
             </p>
           </div>
 
-          <h1 className="text-[28px] md:text-[40px] lg:text-[50px] xl:text-[70px] font-medium text-[#1F2A24] leading-[36px] md:leading-[50px] xl:leading-[75px] mb-6 tracking-[-1px] md:tracking-[-2px]">
-            Predict Chronic Disease Risk Before Complications Happen.
-          </h1>
-
-          <p className="text-[14px] lg:text-[18px] xl:text-[20px] text-[#1F2A24] mb-10 leading-[20px] lg:leading-[22px] xl:leading-[24px] tracking-[-0.5px]">
-            Chetacare is building Africa's predictive chronic disease management
-            infrastructure, starting with hypertension and diabetes.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Buttons with 16px gap */}
+          <div className="flex flex-col sm:flex-row items-center gap-[16px] w-full sm:w-auto">
             <Link 
               to="/contact"
-              className="bg-[#1A7A4A] text-white px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg hover:shadow-green-200/50 text-center flex items-center justify-center"
+              className="bg-[#333333] text-[#FFFFFF] px-[32px] py-[16px] rounded-[12px] font-bold text-[18px] leading-[27px] hover:bg-gray-800 transition-all w-full sm:w-auto text-center"
             >
               Get Started
             </Link>
             <Link 
               to="/partner" 
-              className="bg-white text-[#1A7A4A] border border-[#1A7A4A] px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg sm:rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center"
+              className="bg-[#FFFFFF] text-[#1A7A4A] border border-[#1A7A4A] px-[32px] py-[16px] rounded-[12px] font-bold text-[18px] leading-[27px] hover:bg-gray-50 transition-all w-full sm:w-auto text-center"
             >
               Partner With Us
             </Link>
@@ -40,31 +77,18 @@ const Hero: React.FC = () => {
 
         </div>
 
-        {/* Right Column Images */}
-        <div className="relative w-full lg:w-[38%]">
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
-
-            <img
-              src={hero1}
-              alt="Doctor working on laptop"
-              className="w-full h-auto object-cover"
-            />
-          </div>
-
-          {/* Overlapping notification bubble - made smaller */}
-          <div className="absolute -bottom-24 -left-6 lg:-left-44 w-3/5 lg:w-3/5 max-w-[360px]">
-            <img
-              src={hero2}
-              alt="Chetacare prediction notification"
-              className="w-full"
-            />
-          </div>
+        {/* Right Column Image Container (50%) */}
+        <div className="w-full lg:w-[610px] flex flex-col items-center justify-center lg:px-[82px] mt-12 lg:mt-0">
+          <img
+            src={heroMockup}
+            alt="Chetacare App Mockup"
+            className="w-full max-w-[485px] h-auto object-contain drop-shadow-2xl"
+          />
         </div>
+
       </div>
     </section>
-
   );
 };
 
 export default Hero;
-

@@ -11,7 +11,7 @@ const testimonials = [
     id: 1,
     image: testimony1,
     name: 'Grace Adeleke',
-    role: '58, peri-urban Nigeria',
+    role: 'peri-urban Nigeria',
     quote:
       'Chetacare helps me manage my blood pressure every day. I get reminders, and I feel safe knowing someone is monitoring me.',
     stars: 5,
@@ -48,7 +48,7 @@ const testimonials = [
     id: 5,
     image: testimony1,
     name: 'Grace Adeleke',
-    role: '58, peri-urban Nigeria',
+    role: 'peri-urban Nigeria',
     quote:
       'Chetacare helps me manage my blood pressure every day. I get reminders, and I feel safe knowing someone is monitoring me.',
     stars: 5,

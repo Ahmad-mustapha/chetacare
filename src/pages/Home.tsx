@@ -5,6 +5,7 @@ import HowWeWork from '../components/HowWeWork';
 import WhoAreWeFor from '../components/WhoAreWeFor';
 import Scale from '../components/Scale';
 import Currentfocus from '../components/Currentfocus';
+import DataSecurity from '../components/DataSecurity';
 import Testimonials from '../components/Testimonials';
 import BlogSection from '../components/BlogSection';
 import ReachOut from '../components/ReachOut';
@@ -40,6 +41,7 @@ const Home: React.FC = () => {
       <WhoAreWeFor />
       <Scale />
       <Currentfocus />
+      <DataSecurity />
       <Testimonials />
       <BlogSection />
       <ReachOut />
