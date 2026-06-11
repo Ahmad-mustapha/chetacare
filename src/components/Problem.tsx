@@ -29,21 +29,24 @@ const Problem: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-[80px] bg-[#FFFFFF] transition-opacity duration-[800ms] ease-in-out ${
+      // Mobile: py-[32px], Desktop: py-[80px]
+      className={`py-[32px] lg:py-[80px] bg-[#FFFFFF] transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      {/* Container: Flex row on desktop, flex col on mobile */}
-      <div className="container-wide mx-auto px-6 lg:px-[100px] flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 lg:gap-5">
+      {/* Container: Mobile px-[16px] with gap-[64px], Desktop px-[100px] */}
+      <div className="container-wide mx-auto px-[16px] lg:px-[100px] flex flex-col lg:flex-row justify-between items-center lg:items-start gap-[64px] lg:gap-5">
         
-        {/* Left Column: Text & Cards (Max width 610px) */}
-        <div className="flex flex-col w-full lg:w-[610px] gap-16">
+        {/* Left Column: Text & Cards */}
+        {/* Mobile: gap-[32px], Desktop: gap-[64px] */}
+        <div className="flex flex-col w-full lg:w-[610px] gap-[32px] lg:gap-[64px]">
           
           {/* Top Text Block */}
-          <div className="flex flex-col gap-8">
+          {/* Mobile: gap-[16px], Desktop: gap-[32px] */}
+          <div className="flex flex-col gap-[16px] lg:gap-[32px]">
             
             {/* Header Group */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-[16px]">
               <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
                 The Challenge
               </h3>
@@ -52,25 +55,26 @@ const Problem: React.FC = () => {
               </h2>
             </div>
 
-            {/* Body Content */}
-            <div className="flex flex-col gap-4 text-[#282828] text-[18px] leading-[27px]">
+            {/* Body Content - Gap 20px between paragraphs */}
+            <div className="flex flex-col gap-[20px] text-[#282828] text-[18px] leading-[26px] lg:leading-[27px]">
               <p>
                 Millions live with hypertension and diabetes without continuous monitoring, 
-                leading to avoidable strokes, heart failure, kidney disease, and emergency hospitalizations.
+                leading to avoidable strokes, heart failure, kidney disease, and emergency hospitalizations. 
+                Healthcare systems react late. Patients fall through the gaps between clinic visits.
               </p>
-              <p>
-                Healthcare systems react late. Patients fall through the gaps between clinic visits.{' '}
-                <span className="font-semibold text-[#1F2A24]">Chetacare closes those gaps.</span>
+              {/* Note: This is 700 bold on mobile per Figma, 600 semibold on desktop */}
+              <p className="font-bold lg:font-semibold text-[#282828] lg:text-[#1F2A24]">
+                Chetacare closes those gaps.
               </p>
             </div>
 
           </div>
 
-          {/* Stats Cards (Backgrounds and borders removed per Update #7) */}
-          <div className="flex flex-col sm:flex-row gap-6 lg:gap-5">
+          {/* Stats Cards - Flex Column on Mobile, Row on Desktop */}
+          <div className="flex flex-col sm:flex-row gap-[20px] lg:gap-5">
             
             {/* Card 1 */}
-            <div className="flex flex-col gap-3 flex-1">
+            <div className="flex flex-col gap-[12px] flex-1">
               <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">150M+</h4>
               <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
                 Adults in Africa living with hypertension
@@ -78,7 +82,7 @@ const Problem: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="flex flex-col gap-3 flex-1">
+            <div className="flex flex-col gap-[12px] flex-1">
               <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">80%</h4>
               <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
                 Of diabetes cases in Africa undiagnosed
@@ -86,7 +90,7 @@ const Problem: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="flex flex-col gap-3 flex-1">
+            <div className="flex flex-col gap-[12px] flex-1">
               <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">50%</h4>
               <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
                 Of diagnosed patients stop treatment after leaving the clinic
@@ -97,7 +101,8 @@ const Problem: React.FC = () => {
         </div>
 
         {/* Right Column: Image Container */}
-        <div className="w-full lg:w-[420px] flex justify-center mt-8 lg:mt-0">
+        {/* This is completely hidden on mobile (hidden) and flex on desktop (lg:flex) */}
+        <div className="hidden lg:flex w-full lg:w-[420px] justify-center mt-8 lg:mt-0">
           <img 
             src={problemImage} 
             alt="Healthcare professional with patient" 
