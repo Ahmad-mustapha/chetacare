@@ -49,7 +49,7 @@ const DataSecurity: React.FC = () => {
               Chetacare operates with strong clinical and ethical standards.
             </h2>
             <p className="text-[#1F2A24] font-normal text-[16px] md:text-[18px] leading-[27px]">
-              Your data is confidential and secured by HIPAA, GDPR, and NDPR standards.
+            Your data is confidential and secured by <strong>HIPAA</strong>, <strong>GDPR</strong>, and <strong>NDPR</strong> standards.
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ const DataSecurity: React.FC = () => {
           to="/contact"
           className="bg-[#1A7A4A] text-[#FFFFFF] px-[32px] py-[16px] rounded-[12px] font-bold text-[18px] leading-[27px] hover:bg-green-800 transition-all text-center w-full sm:w-auto mt-4"
         >
-          Get Started
+          Talk to Chetacare
         </Link>
 
       </div>

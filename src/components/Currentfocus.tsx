@@ -41,9 +41,9 @@ const Currentfocus: React.FC = () => {
         {/* Text Frame with 64px gap */}
         <div className="flex flex-col items-center gap-16 w-full max-w-[1136px]">
           
-          {/* Main Heading (Unified to #1F2A24 as per Figma) */}
+          {/* Main Heading Snippet from Currentfocus.tsx */}
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] lg:leading-[58px] text-center">
-            We currently focus on hypertension and diabetes, two of Africa’s most common chronic conditions. Our predictive care system is designed to expand to many other long-term health conditions over time.
+            We currently focus on <span className="font-bold">hypertension and diabetes</span>, two of Africa’s most common chronic conditions. Our predictive care system is designed to expand to many other long-term health conditions over time.
           </h2>
 
           {/* Subheading / Disclaimer */}
