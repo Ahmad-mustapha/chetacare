@@ -67,14 +67,19 @@ const Footer: React.FC = () => {
           <div className="min-w-[150px]">
             <h4 className="text-white font-bold mb-8 text-lg">Resources</h4>
             <ul className="space-y-4">
-              {['Contact Us', 'Privacy Policy', 'Terms of Service', 'Security'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Contact Us', path: '/contact' },
+                { label: 'Privacy Policy', path: '/privacy' },
+                { label: 'Terms of Service', path: '/terms' },
+                { label: 'Security', path: '/security' },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/\s+/g, '')}`}
+                    to={item.path}
                     className="text-gray-400 hover:text-white hover:translate-x-1 transition-all group flex items-center gap-2"
                   >
                     <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-5 transition-all" />
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
