@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, ArrowRight, Heart } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Heart, MapPin } from 'lucide-react';
 import { FaXTwitter, FaLinkedinIn, FaInstagram, FaRegEnvelope } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
@@ -21,6 +21,12 @@ const Footer: React.FC = () => {
               Healthcare that stays with you before, during, and after treatment. Built in Nigeria, for Africa.
             </p>
             <div className="space-y-4">
+              <div className="flex items-start gap-3 text-gray-400 hover:text-white transition-colors group">
+                <div className="p-2 bg-white/5 rounded-lg flex-shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <span className="font-medium leading-relaxed">No 4 Abepe Oduwaye Community, Adedeji close, Ido-Eruwa road. Ologuneru, Ibadan.</span>
+              </div>
               <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg">
                   <Phone size={18} />
@@ -71,7 +77,6 @@ const Footer: React.FC = () => {
                 { label: 'Contact Us', path: '/contact' },
                 { label: 'Privacy Policy', path: '/privacy' },
                 { label: 'Terms of Service', path: '/terms' },
-                { label: 'Security', path: '/security' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
