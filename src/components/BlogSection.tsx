@@ -28,7 +28,7 @@ const BlogSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`py-[3rem] lg:py-[5rem] bg-[#FFFFFF] flex flex-col items-center transition-opacity duration-[800ms] ease-in-out ${
+      className={`bg-[#F8F8F8] py-[3rem] lg:py-[5rem] flex flex-col items-center transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -50,7 +50,7 @@ const BlogSection: React.FC = () => {
 
         {/* Blog Grid Component (Updated limit to 3 based on the 3-column Figma layout) */}
         <div className="w-full">
-          <BlogGrid limit={3} />
+          <BlogGrid limit={4} />
         </div>
 
         {/* View All Button Container */}

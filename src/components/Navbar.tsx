@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -11,6 +11,7 @@ const navLinks = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Hook to track the current URL path
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -32,23 +33,28 @@ const Navbar: React.FC = () => {
           <img src="/assets/chetacarelogo.png" alt="Chetacare" className="w-full h-full object-contain" />
         </Link>
 
-        {/* Desktop Links - Exact 40px gap and #282828 color */}
-        <div className="hidden lg:flex items-center gap-[40px] text-[#282828] font-normal text-[16px]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="hover:text-[#1A7A4A] transition-colors leading-[24px]"
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* Desktop Links - Dynamic highlight added */}
+        <div className="hidden lg:flex items-center gap-[40px] font-normal text-[16px]">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`transition-colors leading-[24px] ${
+                  isActive ? 'text-[#1A7A4A] font-medium' : 'text-[#282828] hover:text-[#1A7A4A]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Desktop CTA & Mobile Toggle */}
         <div className="flex items-center">
           
-          {/* Desktop Get Started Button - Exact Figma Dimensions */}
+          {/* Desktop Get Started Button */}
           <Link
             to="/contact"
             className="hidden lg:flex bg-[#1A7A4A] text-[#FFFFFF] w-[153px] h-[53px] rounded-[12px] font-bold text-[18px] hover:bg-green-800 transition-all items-center justify-center"
@@ -89,21 +95,26 @@ const Navbar: React.FC = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col py-[24px] w-full">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="flex items-center px-[16px] py-[12px] w-full hover:bg-gray-50 active:bg-gray-100"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span className="text-[#101828] font-semibold text-[16px] leading-[24px]">
-                  {link.name}
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="flex items-center px-[16px] py-[12px] w-full hover:bg-gray-50 active:bg-gray-100"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className={`text-[16px] leading-[24px] transition-colors ${
+                    isActive ? 'text-[#1A7A4A] font-bold' : 'text-[#101828] font-semibold'
+                  }`}>
+                    {link.name}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
-          {/* FIXED: Proper Get Started Button for Mobile */}
+          {/* Get Started Button for Mobile */}
           <div className="flex flex-col items-center px-[16px] pb-[48px] w-full">
             <Link
               to="/contact"
