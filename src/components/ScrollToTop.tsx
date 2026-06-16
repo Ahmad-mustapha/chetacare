@@ -1,18 +1,24 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ScrollToTop = () => {
-    const { pathname } = useLocation();
+export default function ScrollToTop() {
+  const { pathname, hash } = useLocation();
 
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        });
-    }, [pathname]);
+  useEffect(() => {
+    if (hash) {
+      // Prevent immediate execution to allow the DOM to fully render/settle
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
+    } else {
+      // No hash? Just scroll to the top of the new page
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]); // Trigger whenever path or hash changes
 
-    return null;
-};
-
-export default ScrollToTop;
+  return null;
+}

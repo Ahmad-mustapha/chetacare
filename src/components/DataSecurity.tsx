@@ -31,6 +31,7 @@ const DataSecurity: React.FC = () => {
 
   return (
     <section
+      id="security"
       ref={sectionRef}
       className={`py-[80px] bg-[#F8F8F8] flex flex-col items-center justify-center transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'

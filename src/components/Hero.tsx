@@ -25,12 +25,11 @@ const Hero: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-// ... inside your Hero.tsx ...
   return (
     <section
       ref={sectionRef}
-      // Ensure overflow is visible so the iPhone can bleed down into the next section
-      className={`relative w-full lg:h-[34.566rem] flex items-center pt-[1.875rem] pb-[3.125rem] px-4 lg:py-0 lg:px-0 transition-opacity duration-[800ms] ease-in-out ${
+      // FIX: Changed to items-stretch, removed bottom padding (pb-0), and kept top padding so the image can touch the floor.
+      className={`relative w-full lg:min-h-[34.566rem] flex items-stretch pt-[1.875rem] pb-0 px-4 lg:pt-16 lg:pb-0 lg:px-0 transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
@@ -39,48 +38,55 @@ const Hero: React.FC = () => {
         backgroundPosition: 'center',
       }}
     >
-      {/* Green Overlay - Sits perfectly over the background image */}
-      <div className="absolute inset-0 bg-brand-primary/80 z-0 mix-blend-multiply pointer-events-none"></div>
+      {/* Green Overlay */}
+      <div className="absolute inset-0 bg-[#1A7A4A]/80 z-0 pointer-events-none"></div>
 
-      <div className="container-wide w-full max-w-[90rem] h-full flex flex-col lg:flex-row items-center justify-between mx-auto z-10 relative">
+      {/* FIX: Changed items-center to items-stretch so columns take full height */}
+      <div className="container-wide w-full max-w-[90rem] h-full flex flex-col lg:flex-row items-stretch gap-5 mx-auto z-10 relative">
         
-        <div className="flex flex-col justify-center items-start w-full lg:w-[38.125rem] gap-4 lg:gap-8 lg:mt-0 mt-8">
+        {/* Left Column: Text */}
+        {/* FIX: Added pb-12 lg:pb-16 here so the text still has breathing room at the bottom, even though the section doesn't */}
+        <div className="flex flex-col justify-center items-start w-full lg:w-1/2 gap-4 lg:gap-8 mt-8 lg:mt-0 relative z-20 pb-12 lg:pb-16">
           <div className="flex flex-col gap-4 lg:gap-8 w-full">
-            {/* FIX: Changed font-medium to font-normal */}
-            <h1 className="text-white font-small text-[2.25rem] md:text-[3.125rem] lg:text-[4.375rem] leading-[40px] lg:leading-[4.6875rem] tracking-tight lg:tracking-[-0.125rem] lg:w-[38.125rem]">
+            <h1 className="text-white font-normal text-[2.25rem] md:text-[3.125rem] lg:text-[4.375rem] leading-[2.5rem] lg:leading-[4.6875rem] tracking-tight lg:tracking-[-0.125rem]">
               Smarter Monitoring for <span className="text-brand-stable">Hypertension</span> & <span className="text-brand-stable">Diabetes</span>
             </h1>
 
             <p className="text-white text-[1rem] lg:text-[1.25rem] font-normal leading-relaxed">
               Chetacare is building Africa’s predictive chronic disease management
-              infrastructure, starting with hypertension and diabetes.
+              infrastructure, starting with <strong>hypertension</strong> and <strong>diabetes</strong>.
             </p>
           </div>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch lg:items-center gap-4 w-full sm:w-auto z-20">
+          {/* Buttons Container (Frame 21) */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1rem] z-20">
+            
+            {/* Primary Button (Dark) */}
             <Link 
               to="/contact"
-              className="bg-[#333333] text-white px-8 py-4 rounded-[0.75rem] font-bold text-[1.125rem] hover:bg-gray-800 transition-all text-center w-full lg:w-[11.637rem] whitespace-nowrap"
+              className="flex bg-[#333333] justify-center items-center w-[11.625rem] h-[3.325rem] px-[2rem] py-[1rem] rounded-[0.75rem] font-bold text-[1.125rem] leading-[1.6875rem] text-white hover:bg-gray-800 transition-all text-center whitespace-nowrap"
             >
               Get Started
             </Link>
+            
+            {/* Secondary Button (White) */}
             <Link 
               to="/partner" 
-              className="bg-white text-brand-primary border border-brand-primary px-8 py-4 rounded-[0.75rem] font-bold text-[1.125rem] hover:bg-gray-50 transition-all text-center w-full lg:w-[11.637rem] whitespace-nowrap"
+              className="flex bg-white justify-center items-center w-[11.6375rem] h-[3.503rem] px-[2rem] py-[1rem] rounded-[0.75rem] border border-brand-primary font-bold text-[1.125rem] leading-[1.6875rem] text-brand-primary hover:bg-gray-50 transition-all text-center whitespace-nowrap"
             >
               Partner With Us
             </Link>
-          </div>
 
+          </div>
         </div>
 
         {/* Right Column: iPhone Mockup */}
-        <div className="w-full flex justify-center lg:block lg:absolute lg:w-[25rem] lg:right-[10.156rem] lg:bottom-0 mt-8 lg:mt-0 z-[10] pointer-events-none">
+        {/* FIX: Added items-end so the image pushes itself all the way down to the bottom of the section */}
+        <div className="w-full lg:w-1/2 flex justify-center items-end z-[10] pointer-events-none mt-8 lg:mt-0">
           <img
             src={heroMockup}
             alt="Chetacare App Mockup"
-            className="w-[21.4375rem] lg:w-full h-auto lg:h-full object-contain object-bottom drop-shadow-2xl pointer-events-auto"
+            className="w-[21.4375rem] lg:w-full max-w-[25rem] h-auto object-contain drop-shadow-2xl pointer-events-auto"
           />
         </div>
 
