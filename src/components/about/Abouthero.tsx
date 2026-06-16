@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-const hero1 = "/assets/hero1.png";
+const hero1 = "../../assets/hero1.png";
 
 const Abouthero: React.FC = () => {
   return (
