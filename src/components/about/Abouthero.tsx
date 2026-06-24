@@ -1,70 +1,99 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-// 1. Fixed the Vite Asset Dilemma by importing the image directly as a module
-const hero1 = 'assets/hero1.png';
+const heroImage = '/assets/AboutUs-hero.png';
 
-export default function AboutHero() {
+const AboutHero: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Trigger the 800ms opacity fade-in when scrolled into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   return (
-    <section className="py-16 lg:py-24 overflow-hidden bg-[#F7FBF9]">
-      {/* Container upgraded to align with global max-width and margins */}
-      <div className="container-wide w-full max-w-figma px-4 lg:px-100 mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+    <section
+      ref={sectionRef}
+      className={`w-full bg-white py-16 px-6 lg:py-20 lg:px-24 reveal-on-scroll ${
+        isVisible ? 'is-visible' : ''
+      }`}
+    >
+      {/* 50/50 Responsive Horizontal Split layout with standard 20px gap-5 */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-5 justify-between">
         
         {/* Left Column Content */}
-        <div className="w-full lg:w-[58%] flex flex-col items-center lg:items-start">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start gap-16">
           
-          {/* Header Section - Matches the design structure of BlogSection and Testimonials */}
-          <div className="flex flex-col items-center lg:items-start gap-4 lg:gap-6 w-full text-center lg:text-left mb-6">
-            <p className="text-brand-primary font-bold text-lg uppercase tracking-wider">
+          {/* Header Block */}
+          <div className="w-full flex flex-col justify-center items-start gap-4">
+            <span className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider">
               Our Origin
-            </p>
-            <h1 className="text-brand-dark font-medium text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] tracking-tight max-w-xl">
-              A Story That Drives Us
+            </span>
+            <h1 className="text-[#1F2A24] font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
+              A <span className="text-brand-primary">Story</span> That Drives Us
             </h1>
           </div>
 
-          {/* Description paragraphs stripped of arbitrary fractional adjustments */}
-          <div className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed space-y-4 text-center lg:text-left mb-8 max-w-2xl">
-            <p>
-              Every day in Africa, millions of people live with chronic diseases like hypertension and diabetes. Many take medications, visit hospitals, and hope for the best, but too often, emergencies come first. Families lose loved ones. Lives are disrupted. Communities bear the cost.
-            </p>
-            <p>
-              We asked ourselves: “Why should preventable complications happen when technology and care can intervene early?”
-            </p>
-            <p className="font-medium text-brand-dark">
-              That question became our mission.
-            </p>
-          </div>
+          {/* Body Block with 8px increments spacing scale */}
+          <div className="w-full flex flex-col justify-center items-start gap-8">
+            <div className="text-[#1F2A24] text-base lg:text-lg leading-relaxed space-y-4">
+              <p>
+                Every day, millions of people live with chronic diseases like hypertension and diabetes. Many take medications, visit hospitals, and hope for the best, but too often, emergencies come first. Families lose loved ones. Lives are disrupted. Communities bear the cost.
+              </p>
+              <p>
+                We asked ourselves: <strong>“Why should preventable complications happen when technology and care can intervene early?”</strong>
+              </p>
+              <p className="text-[#1F2A24]">
+                That question became our mission.
+              </p>
+            </div>
 
-          {/* Cleaned Button Group Elements */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link 
-              to="/partner"
-              className="bg-brand-primary text-white py-4 px-8 rounded-xl font-bold text-base hover:bg-green-800 transition-all shadow-md hover:shadow-brand-primary/20 text-center flex items-center justify-center min-w-[180px]"
-            >
-              Partner With Us
-            </Link>
-            <Link 
-              to="/contact"
-              className="bg-white text-brand-primary border-2 border-brand-primary py-4 px-8 rounded-xl font-bold text-base hover:bg-gray-50 transition-all text-center flex items-center justify-center min-w-[180px]"
-            >
-              Get Started
-            </Link>
+            {/* Button Layout Row */}
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4">
+              <Link 
+                to="/partner"
+                className="bg-[#1A7A4A] text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-green-800 transition-all text-center flex items-center justify-center min-w-[180px] h-[54px]"
+              >
+                Partner With Us
+              </Link>
+              <Link 
+                to="/contact"
+                className="bg-white text-[#1A7A4A] border border-[#1A7A4A] py-4 px-8 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center min-w-[150px] h-[54px]"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
 
         </div>
 
-        {/* Right Column Images Frame */}
-        <div className="w-full lg:w-[42%] max-w-md lg:max-w-none">
-          <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-[4/3] lg:aspect-auto">
-            <img
-              src={hero1}
-              alt="Doctor working on laptop"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        {/* Right Column Image Container (Clean wrapper) */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0">
+          <img
+            src={heroImage}
+            alt="Chetacare background hero asset"
+            className="w-full max-w-[491px] h-auto rounded-2xl figma-glow-shadow transition-transform duration-300 hover:scale-[1.01]"
+          />
         </div>
 
       </div>
     </section>
   );
-}
+};
+
+export default AboutHero;

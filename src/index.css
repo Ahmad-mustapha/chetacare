@@ -48,3 +48,38 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Custom glowing shadow from Figma redesign */
+.figma-glow-shadow {
+  box-shadow: -3px -2px 5.8px 3px rgba(0, 218, 252, 0.11),
+              0px 1px 12.5px 5px rgba(244, 146, 255, 0.33);
+}
+
+/* Scroll animation utilities */
+.reveal-on-scroll {
+  opacity: 0;
+  transition: opacity 800ms ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+}
+
+/* Multi-layered custom glowing shadow for mission cards */
+.mission-glow-shadow {
+  box-shadow: -4px -3px 7.1px -17px rgba(208, 254, 207, 0.33),
+              0px 10px 5.6px rgba(244, 146, 255, 0.08),
+              -1px 4px 7.7px 1px rgba(0, 218, 252, 0.11);
+}
+
+/* Card drop shadow for the Drives section */
+.drives-card-shadow {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Ensure overlay card images cover perfectly */
+.card-bg-overlay {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
