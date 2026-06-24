@@ -1,59 +1,115 @@
-import React from 'react';
-import { User } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { User, Globe } from 'lucide-react';
 import { LuCross } from "react-icons/lu";
-import { FaEarthAmericas } from "react-icons/fa6";
 import { RiBuilding2Line } from "react-icons/ri";
 
+const imgIndividuals = "/assets/Who-we-serve-Individuals.png";
+const imgProviders = "/assets/Who-we-serve-HealthcareProviders.png";
+const imgEmployers = "/assets/Who-we-serve-Employers.png";
+const imgGovNGOs = "/assets/Who-we-serve-Governments.png";
+
 const WhoAreWeFor: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
   const cards = [
     {
-      icon: <User className="w-6 h-6 text-[#1A7A4A]" />,
       title: "Individuals",
-      description: "Live confidently with hypertension and diabetes through continuous support, reminders, and early medical attention."
+      description: "Live confidently with hypertension and diabetes through continuous support, reminders, and early medical attention.",
+      icon: <User className="w-[37.5px] h-[37.5px] text-white" />,
+      bgImage: imgIndividuals
     },
     {
-      icon: <LuCross className="w-6 h-6 text-[#1A7A4A]" />,
       title: "Healthcare Providers",
-      description: "Extend care beyond the hospital. Monitor patients remotely and reduce avoidable complications."
+      description: "Extend care beyond the hospital. Monitor patients remotely and reduce avoidable complications.",
+      icon: <LuCross className="w-[37.5px] h-[37.5px] text-white" />,
+      bgImage: imgProviders
     },
     {
-      icon: <RiBuilding2Line className="w-6 h-6 text-[#1A7A4A]" />,
       title: "Employers",
-      description: "Support workforce health through preventive chronic disease programs that reduce absenteeism and emergency care costs."
+      description: "Support workforce health through preventive chronic disease programs that reduce absenteeism and emergency care costs.",
+      icon: <RiBuilding2Line className="w-[37.5px] h-[37.5px] text-white" />,
+      bgImage: imgEmployers
     },
     {
-      icon: <FaEarthAmericas className="w-6 h-6 text-[#1A7A4A]" />,
       title: "Governments & NGOs",
-      description: "Deploy scalable chronic disease programs reaching underserved communities using conversational and voice technology."
+      description: "Deploy scalable chronic disease programs reaching underserved communities using conversational and voice technology.",
+      icon: <Globe className="w-[37.5px] h-[37.5px] text-white" />,
+      bgImage: imgGovNGOs
     }
   ];
 
-
   return (
-    <section className="py-8 md:py-14 bg-white">
-      <div className="container-wide">
-        <h2 className="text-[32px] lg:text-[44px] xl:text-[48px] font-medium text-[#1F2A24] text-center mb-16 leading-[50px] tracking-[-2px]">
-          Who We Serve
-        </h2>
+    <section 
+      ref={sectionRef}
+      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] reveal-on-scroll ${
+        isVisible ? 'is-visible' : ''
+      }`}
+    >
+      <div className="w-full max-w-[1242px] mx-auto flex flex-col items-center gap-12 lg:gap-[64px]">
+        
+        {/* Title Block */}
+        <div className="w-full flex flex-col items-center text-center gap-4 max-w-[1242px]">
+          <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider font-sans">
+            WHO WE SERVE
+          </span>
+          <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] tracking-normal font-sans">
+            Care management made easy for everyone
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* 2-Column Grid Layout Area matching the specified overlay architecture */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-[20px]">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="p-3 md:p-6 border border-[#DDEEE5] rounded-[8px] md:rounded-[12px] xl:rounded-[16px] hover:border-[#22C55933] transition-all hover:shadow-xl hover:shadow-green-50/50 flex flex-col items-start"
+              className="w-full min-h-[256px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 md:p-10 group transition-transform duration-300 hover:scale-[1.01]"
+              style={{ backgroundImage: `url(${card.bgImage})` }}
             >
-              <div className="w-12 h-12 flex items-center justify-center border border-[#DDEEE5] rounded-xl mb-10">
-                {card.icon}
+              {/* Tint Layer: Black with 60% opacity overlay matching Figma constraints */}
+              <div className="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/65 z-0" />
+
+              {/* Foreground Content Frame - Set to z-10 to stay on top of tint */}
+              <div className="relative z-10 flex flex-col gap-6 w-full">
+                
+                {/* Custom Sized Icon Wrapper */}
+                <div className="w-[60px] h-[60px] rounded-[11.25px] flex items-center justify-center bg-transparent shrink-0">
+                  {card.icon}
+                </div>
+
+                {/* Typography Stack */}
+                <div className="flex flex-col gap-3 w-full">
+                  <h3 className="text-white font-bold text-[24px] leading-[32px] font-sans">
+                    {card.title}
+                  </h3>
+                  <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                    {card.description}
+                  </p>
+                </div>
+
               </div>
-              <h3 className="text-[20px] lg:text-[28px] font-semibold text-[#1F2A24]">
-                {card.title}
-              </h3>
-              <p className="text-[#4B5563] text-[14px] md:text-[16px] xl:text-[18px] md:leading-[24px] xl:leading-[26px]">
-                {card.description}
-              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Why Many Nigerians May Have High Blood Pressure Without Knowing',
     description: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls...',
-    image: '/assets/blog1.jpg',
+    image: '/assets/blog1.png',
     fullContent: [
       {
         type: 'paragraph',
@@ -146,7 +146,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Foods That Can Raise Blood Sugar Levels More Quickly',
     description: 'Many people living with or at risk of diabetes are often advised to “watch their diet.” However, this advice can seem very unclear...',
-    image: '/assets/blog2.jpg',
+    image: '/assets/blog2.png',
     fullContent: [
       {
         type: 'paragraph',
@@ -261,7 +261,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: 'Early Signs of Diabetes Many Nigerians Often Ignore',
     description: 'Diabetes is a long-term health condition that affects how the body regulates blood sugar (glucose). Learn the early warning signs that are often overlooked.',
-    image: '/assets/blog3.jpg',
+    image: '/assets/blog3.png',
     fullContent: [
       {
         type: 'paragraph',

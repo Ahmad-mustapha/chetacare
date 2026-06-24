@@ -83,3 +83,17 @@ body {
   background-position: center;
   position: relative;
 }
+
+/* Problem Section Component Formats */
+.problem-stat-card {
+  @apply w-full lg:w-[555px] min-h-[96px] bg-white border border-[#F3F3F3] rounded-[12px] p-6 lg:px-8 lg:py-6 flex flex-row items-center gap-6 lg:gap-[32px] transition-all duration-300;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.problem-stat-number {
+  @apply text-[#1A7A4A] font-bold text-[32px] lg:text-[35px] leading-[46px] w-[110px] shrink-0;
+}
+
+.problem-stat-text {
+  @apply text-[#1F2A24] font-medium text-[18px] lg:text-[20px] leading-[24px] flex-grow;
+}

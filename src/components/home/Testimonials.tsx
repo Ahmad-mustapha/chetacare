@@ -112,8 +112,8 @@ export default function Testimonials() {
           <p className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider">
             Testimonials
           </p>
-          <h2 className="text-[#1F2A24] font-medium text-[2rem] md:text-[2.5rem] lg:text-5xl leading-[1.1] lg:leading-[3rem]">
-            What are our users <br className="hidden sm:block" /> saying about us?
+          <h2 className="text-[#1F2A24] font-medium text-[28px] md:text-[32px] leading-[40px]">
+            What are our users saying about us?
           </h2>
         </div>
 

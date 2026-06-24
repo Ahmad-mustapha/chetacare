@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const Scale: React.FC = () => {
-  // Inline animation logic (0% to 100% opacity, scroll-triggered, 800ms)
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -10,7 +9,7 @@ const Scale: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Runs once when scrolled into view
+          observer.disconnect(); 
         }
       },
       { threshold: 0.1 }
@@ -23,41 +22,44 @@ const Scale: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Updated stats based on the Figma layers
+  // Ordered strictly as per the Figma layer tree sequence: 2,500+ -> 40+ -> 85%
   const stats = [
     {
       value: "2,500+",
       label: "People reached across Africa"
     },
     {
-      value: "85%",
-      label: "Customer Satisfaction"
-    },
-    {
       value: "40+",
       label: "Emergency interventions prevented"
+    },
+    {
+      value: "85%",
+      label: "Customer Satisfaction"
     }
   ];
 
   return (
     <section 
       ref={sectionRef}
-      className={`py-[80px] bg-[#F8F8F8] transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#F8F8F8] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="container-wide mx-auto lg:px-[100px]">
-        {/* Flex container for the stats (gap-5 = 20px gap on desktop to match Figma) */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-5">
+      <div className="w-full max-w-[1242px] mx-auto">
+        {/* Main Flex Grid Wrapper: gap-[20px] on desktop matching Figma container layout */}
+        <div className="w-full flex flex-col md:flex-row items-stretch justify-between gap-8 md:gap-[20px]">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex-1 w-full flex flex-col justify-start items-start p-8 gap-6"
+              className="flex-1 w-full flex flex-col justify-start items-start p-6 lg:p-8 gap-4 lg:gap-[24px]"
             >
-              <h3 className="text-[#1A7A4A] text-[48px] lg:text-[70px] font-medium leading-[1.07] tracking-[-2px]">
+              {/* Stat Value Styling */}
+              <h3 className="text-[#1A7A4A] font-medium text-[52px] lg:text-[70px] leading-[1.07] lg:leading-[75px] tracking-[-2px] font-sans">
                 {stat.value}
               </h3>
-              <p className="text-[#1F2A24] text-[18px] lg:text-[20px] font-medium leading-[1.2]">
+              
+              {/* Stat Label Styling */}
+              <p className="text-[#1F2A24] font-medium text-[18px] lg:text-[20px] leading-[24px] font-sans max-w-[247px]">
                 {stat.label}
               </p>
             </div>

@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// TODO: Update this path if you rename the image uploaded from Figma
-const problemImage = "/assets/problemImage.png"; 
-
 const Problem: React.FC = () => {
-  // Inline animation logic (0% to 100% opacity, scroll-triggered, 800ms)
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -13,7 +9,7 @@ const Problem: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Runs once when scrolled into view
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
@@ -29,85 +25,65 @@ const Problem: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      // Mobile: py-[32px], Desktop: py-[80px]
-      className={`py-[32px] lg:py-[80px] bg-[#FFFFFF] transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      {/* Container: Mobile px-[16px] with gap-[64px], Desktop px-[100px] */}
-      <div className="container-wide mx-auto px-[16px] lg:px-[100px] flex flex-col lg:flex-row justify-between items-center lg:items-start gap-[64px] lg:gap-5">
+      <div className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-[20px]">
         
-        {/* Left Column: Text & Cards */}
-        {/* Mobile: gap-[32px], Desktop: gap-[64px] */}
-        <div className="flex flex-col w-full lg:w-[610px] gap-[32px] lg:gap-[64px]">
-          
-          {/* Top Text Block */}
-          {/* Mobile: gap-[16px], Desktop: gap-[32px] */}
-          <div className="flex flex-col gap-[16px] lg:gap-[32px]">
-            
-            {/* Header Group */}
-            <div className="flex flex-col gap-[16px]">
-              <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
-                The Challenge
-              </h3>
-              <h2 className="text-[#1F2A24] font-medium text-[32px] leading-[40px]">
-                Chronic diseases are rising rapidly across Africa.
-              </h2>
-            </div>
-
-            {/* Body Content - Gap 20px between paragraphs */}
-            <div className="flex flex-col gap-[20px] text-[#282828] text-[18px] leading-[26px] lg:leading-[27px]">
-              <p>
-                Millions live with hypertension and diabetes without continuous monitoring, 
-                leading to avoidable strokes, heart failure, kidney disease, and emergency hospitalizations. 
-                Healthcare systems react late. Patients fall through the gaps between clinic visits.
-              </p>
-              {/* Note: This is 700 bold on mobile per Figma, 600 semibold on desktop */}
-              <p className="font-bold lg:font-semibold text-[#282828] lg:text-[#1F2A24]">
-                Chetacare closes those gaps.
-              </p>
-            </div>
-
+        {/* Left Column: Text Container */}
+        <div className="w-full lg:w-[610px] flex flex-col items-start gap-8 lg:gap-[64px]">
+          <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px]">
+            <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider">
+              THE CHALLENGE
+            </span>
+            <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">
+              Chronic diseases are rising rapidly across Africa.
+            </h2>
           </div>
 
-          {/* Stats Cards - Flex Column on Mobile, Row on Desktop */}
-          <div className="flex flex-col sm:flex-row gap-[20px] lg:gap-5">
-            
-            {/* Card 1 */}
-            <div className="flex flex-col gap-[12px] flex-1">
-              <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">150M+</h4>
-              <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
-                Adults in Africa living with hypertension
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="flex flex-col gap-[12px] flex-1">
-              <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">80%</h4>
-              <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
-                Of diabetes cases in Africa undiagnosed
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="flex flex-col gap-[12px] flex-1">
-              <h4 className="text-[#1A7A4A] font-bold text-[24px] leading-[32px]">50%</h4>
-              <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px]">
-                Of diagnosed patients stop treatment after leaving the clinic
-              </p>
-            </div>
-
+          <div className="w-full flex flex-col items-start gap-6 text-[#282828] text-[18px] leading-[150%]">
+            <p>
+              Millions are diagnosed but receive little follow-up care between hospital visits. 
+              Missed medications, delayed attention, and poor monitoring often lead to preventable 
+              emergencies such as stroke, heart failure, and kidney disease.
+            </p>
+            <p>
+              Healthcare should not begin when complications occur.
+            </p>
+            <p className="text-[#1A7A4A] font-bold">
+              Chetacare closes those gaps.
+            </p>
           </div>
         </div>
 
-        {/* Right Column: Image Container */}
-        {/* This is completely hidden on mobile (hidden) and flex on desktop (lg:flex) */}
-        <div className="hidden lg:flex w-full lg:w-[420px] justify-center mt-8 lg:mt-0">
-          <img 
-            src={problemImage} 
-            alt="Healthcare professional with patient" 
-            className="w-full max-w-[420px] h-auto lg:h-[540px] object-cover rounded-[24px] bg-[#D9D9D9] shadow-sm"
-          />
+        {/* Right Column: Stats Container */}
+        <div className="w-full lg:w-[610px] flex flex-col items-stretch lg:items-end gap-6 lg:gap-[32px]">
+          
+          {/* Card 1 */}
+          <div className="problem-stat-card">
+            <div className="problem-stat-number">150M+</div>
+            <div className="problem-stat-text">
+              Adults in Africa living with hypertension across Africa
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="problem-stat-card">
+            <div className="problem-stat-number">80%</div>
+            <div className="problem-stat-text">
+              Of diabetes cases in Africa remain undiagnosed
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="problem-stat-card">
+            <div className="problem-stat-number">50%</div>
+            <div className="problem-stat-text">
+              Of diagnosed patients stop treatment after leaving the clinic
+            </div>
+          </div>
+
         </div>
 
       </div>

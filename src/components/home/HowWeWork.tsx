@@ -1,102 +1,109 @@
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import React from 'react';
-const oldWomanGlass = "/assets/old_woman_glass.png";
+
+const heroMockup = "/assets/iPhone-full.png"; 
 
 const HowWeWork: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="how-it-works" className="py-24 bg-[#F8F8F8]">
-      <div className="container-wide">
-        {/* Badge */}
-        <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
-          How Chetacare Works
-        </h3>
-
-        {/* Title */}
-        <h2 className="text-[28px] md:text-[36px] mt-4 lg:text-[32px] font-semibold text-[#1F2937] leading-tight mb-16 max-w-4xl"> {/* text-[#1F2A24] font-medium text-[32px] leading-[40px] */}
-          Continuous Chronic Disease Care,<br /> Delivered to You
-        </h2>
-
-        <div className="flex flex-col lg:flex-row gap-12 lg:items-stretch">
-          {/* Left Column: Image - 1/3 width */}
-          <div className="relative lg:w-1/2">
-            <div className="rounded-2xl md:rounded-[30px] overflow-hidden max-w-none h-full">
-              <img
-                src={oldWomanGlass}
-                alt="Elderly African woman with glasses smiling"
-                className="w-full h-full aspect-[4/5] lg:aspect-auto object-cover"
-              />
-            </div>
+    <section
+      id="how-it-works"
+      ref={sectionRef}
+      className={`w-full bg-[#F8F8F8] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <div className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-[68px]">
+        
+        {/* Left Column: Text & Steps Content */}
+        <div className="w-full lg:w-[596px] flex flex-col items-start gap-8 lg:gap-[64px]">
+          
+          {/* Section Header */}
+          <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px]">
+            <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] tracking-wider uppercase">
+              HOW CHETACARE WORKS
+            </h3>
+            <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">
+              Continuous Chronic Disease Care, <br /> Delivered to You
+            </h2>
           </div>
 
-          {/* Right Column: Steps - 2/3 width */}
-          <div className="flex flex-col justify-between lg:w-1/2">
-            <div className="space-y-0">
-              {/* Step 01 */}
-              <div className="border-b border-gray-100 py-5 lg:py-7">
-                <div className="flex gap-6 lg:gap-8">
-                  <span className="text-[28px] xl:text-[30px] font-medium text-[#9F9F9F] leading-[40px] pt-1">01</span>
-                  <div>
-                    <h3 className="text-[#1A7A4A] text-[24px] lg:text-[28px] xl:text-[30px] font-semibold mb-3 leading-tight xl:leading-[40px]">
-                      Get Started & Know Your Health
-                    </h3>
-                    <p className="text-[#6B7280] text-[16px] lg:text-[17px] xl:text-[18px] leading-relaxed xl:leading-[26px]">
-                      Join easily via WhatsApp and complete a quick health assessment.
-                      We gather important details like your medical history, medications,
-                      and lifestyle to understand your risk level.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 02 */}
-              <div className="border-b border-gray-100 py-5 lg:py-7">
-                <div className="flex gap-6 lg:gap-8">
-                  <span className="text-[28px] xl:text-[30px] font-medium text-[#9F9F9F] leading-[40px] pt-1">02</span>
-                  <div>
-                    <h3 className="text-[#1A7A4A] text-[24px] lg:text-[28px] xl:text-[30px] font-semibold mb-3 leading-tight xl:leading-[40px]">
-                      Continuous Monitoring & Support
-                    </h3>
-                    <p className="text-[#6B7280] text-[16px] lg:text-[17px] xl:text-[18px] leading-relaxed xl:leading-[26px]">
-                      Track your health daily through simple check-ins on WhatsApp.
-                      Receive medication reminders, personalized lifestyle tips, and
-                      ongoing support to help you stay on track.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 03 */}
-              <div className="py-5 lg:py-7">
-                <div className="flex gap-6 lg:gap-8">
-                  <span className="text-[28px] xl:text-[30px] font-medium text-[#9F9F9F] leading-[40px] pt-1">03</span>
-                  <div>
-                    <h3 className="text-[#1A7A4A] text-[24px] lg:text-[28px] xl:text-[30px] font-semibold mb-3 leading-tight xl:leading-[40px]">
-                      Smart Care & Early Intervention
-                    </h3>
-                    <p className="text-[#6B7280] text-[16px] lg:text-[17px] xl:text-[18px] leading-relaxed xl:leading-[26px]">
-                      Our system monitors your data and flags any risks. Clinicians step
-                      in when needed providing guidance, adjusting care, and helping
-                      prevent serious complications.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {/* Steps Container */}
+          <div className="w-full flex flex-col items-start gap-8 lg:gap-[32px]">
+            
+            {/* Step 1 */}
+            <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
+              <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
+                Get Started & Know Your Health
+              </h4>
+              <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
+                Join easily via WhatsApp and complete a quick health assessment. We gather important details like your medical history, medications, and lifestyle to understand your risk level.
+              </p>
             </div>
 
-            <div className="">
-              <blockquote className="text-[#1F2937] text-[18px] lg:text-[20px] font-medium italic leading-relaxed">
-                "From daily monitoring to early intervention, Chetacare keeps patients safe, connected, and supported."
-              </blockquote>
-
-              <Link 
-                to="/contact" 
-                className="inline-flex justify-center items-center bg-[#1A7A4A] text-white px-8 py-4 lg:px-10 lg:py-4 rounded-lg lg:rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg hover:shadow-green-200/50 mt-6 text-center"
-              >
-                Get Started
-              </Link>
+            {/* Step 2 */}
+            <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
+              <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
+                Continuous Monitoring & Support
+              </h4>
+              <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
+                Track your health daily through simple check-ins on WhatsApp. Receive medication reminders, personalized lifestyle tips, and ongoing support to help you stay on track.
+              </p>
             </div>
+
+            {/* Step 3 */}
+            <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
+              <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
+                Smart Care & Early Intervention
+              </h4>
+              <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
+                Our system monitors your data and flags any risks. Clinicians step in when needed providing guidance, adjusting care, and helping prevent serious complications.
+              </p>
+            </div>
+
           </div>
+
+          {/* Action Button */}
+          <div className="w-full flex justify-start pt-2">
+            <Link 
+              to="/contact" 
+              className="flex justify-center items-center bg-[#1A7A4A] text-white w-full sm:w-[149.15px] h-[53.2px] rounded-[12px] font-medium text-[18px] leading-[150%] hover:bg-[#135c37] transition-all text-center whitespace-nowrap"
+            >
+              Get Started
+            </Link>
+          </div>
+
         </div>
+
+        {/* Right Column: Demo Video / Mockup Container */}
+        <div className="w-full lg:w-[610px] h-[500px] lg:h-[738px] bg-[#F3F3F3] flex items-center justify-center rounded-[24px] overflow-hidden p-6">
+          <img 
+            src={heroMockup} 
+            alt="Chetacare Transparent iPhone Mockup Display" 
+            className="w-full max-w-[310px] h-auto max-h-[641px] object-contain"
+          />
+        </div>
+
       </div>
     </section>
   );
