@@ -4,12 +4,13 @@ import Problem from '../components/home/Problem';
 import HowWeWork from '../components/home/HowWeWork';
 import WhoAreWeFor from '../components/home/WhoAreWeFor';
 import Scale from '../components/home/Scale';
-import Currentfocus from '../components/CurrentFocus';
+import Currentfocus from '../components/home/CurrentFocus';
 import DataSecurity from '../components/home/DataSecurity';
 import Testimonials from '../components/home/Testimonials';
-import BlogSection from '../components/BlogSection';
+import BlogSection from '../components/home/BlogSection';
 import ReachOut from '../components/ReachOut';
 import Seo from '../components/Seo';
+import OurPartners from '../components/home/OurPartners';
 
 const Home: React.FC = () => {
   return (
@@ -43,6 +44,7 @@ const Home: React.FC = () => {
       <Currentfocus />
       <DataSecurity />
       <Testimonials />
+      <OurPartners />
       <BlogSection />
       <ReachOut />
     </div>

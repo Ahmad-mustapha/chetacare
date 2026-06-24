@@ -40,7 +40,7 @@ const DataSecurity: React.FC = () => {
       <div className="container-wide flex flex-col items-center px-6 lg:px-[100px] gap-16">
         
         {/* Top Text Block */}
-        <div className="flex flex-col items-center text-center gap-8 max-w-[610px]">
+        <div className="flex flex-col items-center text-center gap-8 max-w-[700px]">
           <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
             Data Security
           </h3>

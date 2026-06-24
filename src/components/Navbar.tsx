@@ -29,8 +29,8 @@ const Navbar: React.FC = () => {
       <div className="w-full mx-auto flex items-center justify-between pl-[16px] pr-[12px] lg:py-[18px] lg:px-[100px]">
         
         {/* Logo */}
-        <Link to="/" className="w-[148px] h-[28px] lg:w-[154px] lg:h-[29px] z-[101]">
-          <img src="/assets/chetacarelogo.png" alt="Chetacare" className="w-full h-full object-contain" />
+        <Link to="/" className="w-[148px] h-[28px] lg:w-[210px] lg:h-[40px] z-[101]">
+          <img src="/assets/Full-Logo-Transparent.png" alt="Chetacare" className="w-full h-full object-contain" />
         </Link>
 
         {/* Desktop Links - Dynamic highlight added */}
