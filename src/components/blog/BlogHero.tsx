@@ -12,9 +12,9 @@ const BlogHero: React.FC = () => {
       <div className="container-wide">
         {/* Blog Header */}
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-1.5 border border-[#D1FADF] bg-[#ECFDF3] rounded-md mb-6">
-            <span className="text-[#039855] font-medium text-sm">Blog</span>
-          </div>
+          <p className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider mb-4">
+            Blog
+          </p>
           <h1 className="text-[30px] md:text-[50px] lg:text-[64px] font-bold text-[#101828] tracking-tight mb-6 leading-tight">
             Insights for Better Health
           </h1>

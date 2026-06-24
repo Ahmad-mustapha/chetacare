@@ -3,8 +3,8 @@ import WhoWeAre from '../components/about/WhoWeAre';
 import Mission from '../components/about/Mission';
 import WhatDrivesUs from '../components/about/WhatDrivesUs';
 import WhatMakesUsBetter from '../components/about/WhatMakesUsBetter';
-import Abouthero from '../components/about/Abouthero.tsx';
-import ReachOut from '../components/ReachOut.tsx';
+import AboutHero from '../components/about/AboutHero';
+import ReachOut from '../components/ReachOut';
 import Seo from '../components/Seo';
 
 const About: React.FC = () => {
@@ -14,7 +14,7 @@ const About: React.FC = () => {
         title="Chetacare | About Chronic Disease Care"
         description="Learn about Chetacare's mission to make chronic disease care more accessible through preventive support, education, and a patient-centered digital experience."
       />
-      <Abouthero />
+      <AboutHero />
       <WhoWeAre />
       <Mission />
       <WhatDrivesUs />

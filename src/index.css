@@ -7,20 +7,23 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
+  
+  /* Existing Colors */
   --color-brand-green: #15803d;
-
   --color-brand-dark: #1f2937;
   --color-brand-light-green: #f0fdf4;
+
+  /* NEW: Figma Specific Brand Colors */
+  --color-brand-primary: #1A7A4A;
+  --color-brand-stable: #22C55E;
 
   --animate-float: float 3s ease-in-out infinite;
 
   @keyframes float {
-
     0%,
     100% {
       transform: translateY(0);
     }
-
     50% {
       transform: translateY(-10px);
     }
@@ -34,7 +37,6 @@
 }
 
 :root {
-
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light;
   color: #1f2937;

@@ -8,22 +8,22 @@ const WhoAreWeFor: React.FC = () => {
   const cards = [
     {
       icon: <User className="w-6 h-6 text-[#1A7A4A]" />,
-      title: "For Individuals",
+      title: "Individuals",
       description: "Live confidently with hypertension and diabetes through continuous support, reminders, and early medical attention."
     },
     {
       icon: <LuCross className="w-6 h-6 text-[#1A7A4A]" />,
-      title: "For Healthcare Providers",
+      title: "Healthcare Providers",
       description: "Extend care beyond the hospital. Monitor patients remotely and reduce avoidable complications."
     },
     {
       icon: <RiBuilding2Line className="w-6 h-6 text-[#1A7A4A]" />,
-      title: "For Employers",
+      title: "Employers",
       description: "Support workforce health through preventive chronic disease programs that reduce absenteeism and emergency care costs."
     },
     {
       icon: <FaEarthAmericas className="w-6 h-6 text-[#1A7A4A]" />,
-      title: "For Governments & NGOs",
+      title: "Governments & NGOs",
       description: "Deploy scalable chronic disease programs reaching underserved communities using conversational and voice technology."
     }
   ];
@@ -33,7 +33,7 @@ const WhoAreWeFor: React.FC = () => {
     <section className="py-8 md:py-14 bg-white">
       <div className="container-wide">
         <h2 className="text-[32px] lg:text-[44px] xl:text-[48px] font-medium text-[#1F2A24] text-center mb-16 leading-[50px] tracking-[-2px]">
-          Who Chetacare Is For
+          Who We Serve
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

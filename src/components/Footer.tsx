@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                 { name: 'Contact Us', path: '/contact' },
                 { name: 'Privacy Policy', path: '/privacy' },
                 { name: 'Terms of Service', path: '/terms' },
-                { name: 'Security', path: '/privacy' } // Temporarily routes to privacy until a security page is built
+                { name: 'Security', path: '/#security' } // Temporarily routes to security section until a dedicated security page is built
               ].map((item) => (
                 <li key={item.name}>
                   <Link
