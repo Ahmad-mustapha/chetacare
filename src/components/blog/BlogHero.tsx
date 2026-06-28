@@ -1,70 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-
+import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 
 const BlogHero: React.FC = () => {
-  const featuredPost = blogPosts[0]; // Using the first post as featured
+  const featuredPost = blogPosts[0];
 
   return (
-    <section className="pt-20 pb-16">
-      <div className="container-wide">
-        {/* Blog Header */}
-        <div className="text-center mb-20">
-          <p className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider mb-4">
-            Blog
-          </p>
-          <h1 className="text-[30px] md:text-[50px] lg:text-[64px] font-bold text-[#101828] tracking-tight mb-6 leading-tight">
+    <section className="pt-20 pb-0 px-4 md:px-[100px] flex flex-col items-center gap-20 w-full max-w-[1440px] mx-auto">
+      <div className="text-center flex flex-col items-center gap-4 max-w-[800px] w-full">
+        <p className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase tracking-wider">
+          Blog
+        </p>
+        
+        <div className="flex flex-col items-center gap-8 w-full">
+          <h1 className="p-0 text-4xl md:text-6xl lg:text-[64px] font-bold text-[#1F2A24] tracking-[-2px] leading-tight lg:leading-[75px]">
             Insights for Better Health
           </h1>
-          <p className="text-lg md:text-[20px] text-[#475467] max-w-3xl mx-auto">
+          <p className="text-base md:text-[20px] font-normal text-[#282828] leading-relaxed md:leading-[24px] max-w-[720px]">
             Expert advice, practical tips, and insights to help you manage your health, stay consistent with care, and prevent complications before they arise.
           </p>
         </div>
+      </div>
 
-        {/* Featured Post Card */}
-        {featuredPost && (
-          <Link to={`/blog/${featuredPost.id}`} className="block group">
-            <div className="bg-[#F9FAFB] border border-[#EAECF0] rounded-[32px] overflow-hidden transition-all duration-300 hover:border-[#D1FADF] hover:shadow-lg">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Content Side */}
-                <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                  <div className="flex items-center space-x-3 mb-8">
-                    <span className="px-3 py-1 bg-[#F2FFF8] text-[#1A7A4A] text-sm font-medium rounded-full border border-[#D1FADF]">
-                      {featuredPost.category[0]}
-                    </span>
-                    <span className="text-[#475467] text-sm flex items-center gap-1.5 font-medium">
-                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full" />
-                      {featuredPost.readTime}
-                    </span>
-                  </div>
+      {featuredPost && (
+        <Link to={`/blog/${featuredPost.id}`} className="block group w-full">
+          <div className="bg-[#F9FAFB] border border-[#F3F3F3] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] rounded-[20px] overflow-hidden transition-all duration-300 hover:shadow-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-8 md:p-8 flex flex-col justify-between gap-8">
+                <div className="flex items-center justify-between gap-4 w-full">
+                  <span className="px-4 py-2 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-normal rounded-full border border-[#D1FADF] leading-[20px]">
+                    {featuredPost.category[0] || 'Mental Health'}
+                  </span>
+                  <span className="text-[#4F4F4F] text-base font-normal leading-6 flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-[#555555]" />
+                    {featuredPost.readTime || '7 min read'}
+                  </span>
+                </div>
 
-                  <h2 className="text-3xl md:text-[48px] font-bold text-[#101828] leading-[1.1] mb-6 group-hover:text-[#1A7A4A] transition-colors">
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-2xl md:text-3xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight lg:leading-[48px] group-hover:text-[#1A7A4A] transition-colors">
                     {featuredPost.title}
                   </h2>
-
-                  <p className="text-[#475467] text-lg mb-10 leading-relaxed">
+                  <p className="text-[#1F2A24] text-base md:text-[18px] font-normal leading-relaxed lg:leading-[26px]">
                     {featuredPost.description}
                   </p>
-
-                  <div className="flex items-center gap-2 text-[#101828] font-bold text-lg group-hover:gap-3 transition-all">
-                    Read more <ArrowRight className="w-5 h-5 ml-1" />
-                  </div>
                 </div>
 
-                {/* Image Side */}
-                <div className="h-[400px] lg:h-auto overflow-hidden">
-                  <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="flex items-center gap-2 text-[#1F2A24] text-[18px] font-normal leading-[26px] py-2 group-hover:gap-3 transition-all">
+                  Read more <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
+
+              <div className="h-[300px] sm:h-[400px] lg:h-auto overflow-hidden">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title} 
+                  className="w-full h-full object-cover transition-transform duration-500" 
+                />
+              </div>
             </div>
-          </Link>
-        )}
-      </div>
+          </div>
+        </Link>
+      )}
     </section>
   );
 };
 
 export default BlogHero;
-
