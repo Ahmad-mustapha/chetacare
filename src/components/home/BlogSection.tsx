@@ -47,9 +47,10 @@ const BlogSection: React.FC = () => {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[28px]">
           {featuredPosts.map((post: BlogPost) => (
-            <div 
+            <Link 
               key={post.id}
-              className="w-full min-h-[615px] bg-white border border-[#D5D5D8] rounded-[10px] flex flex-col items-start overflow-hidden transition-transform duration-300 hover:scale-[1.01]"
+              to={`/blog/${post.id}`}
+              className="w-full min-h-[615px] bg-white border border-[#D5D5D8] rounded-[10px] flex flex-col items-start overflow-hidden transition-transform duration-300 hover:scale-[1.01] group text-left"
             >
               <img 
                 src={post.image} 
@@ -73,7 +74,7 @@ const BlogSection: React.FC = () => {
                 </div>
 
                 <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px] mt-2">
-                  <h3 className="text-[#1F2A24] font-medium text-[22px] lg:text-[24px] leading-[32px] font-sans line-clamp-2 h-[64px]">
+                  <h3 className="text-[#1F2A24] font-medium text-[22px] lg:text-[24px] leading-[32px] font-sans line-clamp-2 h-[64px] group-hover:text-[#1A7A4A] transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-[#282828] font-normal text-[16px] lg:text-[18px] leading-[26px] font-sans line-clamp-3 h-[78px]">
@@ -81,16 +82,16 @@ const BlogSection: React.FC = () => {
                   </p>
                 </div>
 
-                <Link 
-                  to={`/blog/${post.id}`}
-                  className="mt-auto pt-4 flex flex-row items-center justify-start gap-2 text-[#282828] font-normal text-[18px] leading-[26px] font-sans group/link"
+                {/* Changed to a div to prevent nesting links; responds to full-card hover via parent group */}
+                <div 
+                  className="mt-auto pt-4 flex flex-row items-center justify-start gap-2 text-[#282828] font-normal text-[18px] leading-[26px] font-sans group-hover:text-[#1A7A4A] transition-colors"
                 >
-                  <span className="group-hover/link:text-[#1A7A4A] transition-colors">Read more</span>
-                  <ArrowRight className="w-[14px] h-[14px] text-[#1A1A1A] group-hover/link:translate-x-1 transition-transform group-hover/link:text-[#1A7A4A]" />
-                </Link>
+                  <span className="group-hover:text-[#1A7A4A] transition-colors">Read more</span>
+                  <ArrowRight className="w-[14px] h-[14px] text-[#1A1A1A] group-hover:translate-x-1 transition-transform group-hover:text-[#1A7A4A]" />
+                </div>
 
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

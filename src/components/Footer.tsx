@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF, FaYoutube } from 'react-icons/fa6';
+import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF } from 'react-icons/fa6';
 
 const logoImage = "/assets/Full-Logo-Transparent.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#1A7A4A] text-white py-16 px-6 lg:py-16 lg:px-[100px] relative overflow-hidden">
+    <footer className="w-full bg-[#1A7A4A] text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden">
       <div className="max-w-[1240px] mx-auto flex flex-col gap-16">
         
         {/* Main Content Row Splitting left block and right links directory */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-[197px]">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-6 xl:gap-[145px]">
           
-          {/* Left Column: Brand Blocks & Contact rows */}
-          <div className="w-full lg:max-w-[470px] flex flex-col items-start gap-[23px]">
+          {/* Left Column: Brand Blocks & Contact rows aligned to 8px vertical grid */}
+          <div className="w-full lg:max-w-[400px] xl:max-w-[470px] flex flex-col items-start gap-6">
             
             {/* Brand Profile Stack */}
             <div className="w-full flex flex-col items-start gap-4">
@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Contact Grid with explicit Figma box colors */}
-            <div className="w-full flex flex-col items-start gap-4 max-w-[470px]">
+            <div className="w-full flex flex-col items-start gap-4">
               
               {/* Location Row */}
               <div className="flex flex-row items-center gap-4 w-full">
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A473] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <MapPin size={20} />
                 </div>
-                <span className="text-white font-normal text-[18px] leading-[26px] max-w-[470px] font-sans">
+                <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
                   No 4 Abepe Oduwaye Community, Adejedi Close, Ido-Eruwa Road. Ologuneru, Ibadan.
                 </span>
               </div>
@@ -67,11 +67,11 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side Links Matrix */}
-          <div className="flex flex-col sm:flex-row sm:flex-nowrap gap-12 lg:gap-[42px] lg:max-w-[630px] w-full justify-between">
+          {/* Right Side Links Matrix - Handles layout narrowing beautifully */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap gap-12 lg:gap-6 xl:gap-[42px] w-full justify-between">
             
             {/* Column 1: Company Directory */}
-            <div className="flex flex-col items-start gap-8 min-w-[124px]">
+            <div className="flex flex-col items-start gap-8 min-w-[140px] xl:min-w-[150px]">
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Company
               </h4>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Column 2: Resources Directory */}
-            <div className="flex flex-col items-start gap-8 min-w-[132px]">
+            <div className="flex flex-col items-start gap-8 min-w-[140px] xl:min-w-[160px]">
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Resources
               </h4>
@@ -102,11 +102,11 @@ const Footer: React.FC = () => {
                 Stay Connected
               </h4>
               
-              <p className="text-white font-normal text-[18px] leading-[26px] w-[320px] font-sans">
+              <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
                 Follow our journey on social media.
               </p>
               
-              <div className="flex flex-row items-center gap-2">
+              <div className="flex flex-row items-center gap-2 flex-wrap">
                 <a href="https://x.com/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Twitter">
                   <FaXTwitter size={30} />
                 </a>
@@ -119,9 +119,9 @@ const Footer: React.FC = () => {
                 <a href="https://www.facebook.com/people/Chetacare/100066576465988/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Facebook">
                   <FaFacebookF size={30} />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
+                {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
                   <FaYoutube size={30} />
-                </a>
+                </a> */}
               </div>
             </div>
 
