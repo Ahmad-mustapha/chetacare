@@ -57,6 +57,7 @@ const faqData: FaqItem[] = [
 ];
 
 const FaqAccordion: React.FC = () => {
+  // Defaulting to 0 keeps the first item active upon mounting, as shown in the Figma blueprint
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggleAccordion = (index: number) => {
@@ -64,42 +65,49 @@ const FaqAccordion: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-4 px-4 sm:px-0">
-      {faqData.map((item, index) => (
-        <div 
-          key={index} 
-          className="bg-[#F9FAFB] border border-[#EAECF0] rounded-lg overflow-hidden transition-all duration-300"
-        >
-          <button
-            className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none"
-            onClick={() => toggleAccordion(index)}
-          >
-            <span className="text-lg md:text-[19px] font-semibold text-[#101828]">
-              {item.question}
-            </span>
-            <span className="ml-4 flex-shrink-0 text-gray-500">
-              {openIndex === index ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-            </span>
-          </button>
+    <div className="w-full max-w-[1030px] mx-auto space-y-4 px-4 sm:px-0">
+      {faqData.map((item, index) => {
+        const isOpen = openIndex === index;
+        return (
           <div 
-            className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-            }`}
+            key={index} 
+            className="w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-lg shadow-[0px_4px_25px_-1px_rgba(12,12,13,0.05)] transition-all duration-300 overflow-hidden"
           >
-            <div className="p-6 pt-0 text-[#475467] text-[16px] leading-relaxed">
-              {item.answer}
+            <div className="p-6 md:p-8">
+              <button
+                className="w-full flex items-center justify-between text-left focus:outline-none cursor-pointer"
+                onClick={() => toggleAccordion(index)}
+                aria-expanded={isOpen}
+              >
+                <span className="text-lg md:text-[24px] font-medium leading-snug md:leading-[32px] text-[#1F2A24] pr-4">
+                  {item.question}
+                </span>
+                <span className="flex-shrink-0 text-[#1F2A24]">
+                  {isOpen ? (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  ) : (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </span>
+              </button>
+              
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+                }`}
+              >
+                <div className="text-[#1F2A24] text-base md:text-[16px] font-normal leading-[24px] max-w-[812px]">
+                  {item.answer}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
