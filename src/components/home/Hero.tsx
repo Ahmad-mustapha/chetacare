@@ -28,31 +28,31 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[80px] pb-0 transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[80px] pb-0 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
-        backgroundImage: `url('${heroBg}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: `url('${heroBg}')`
       }}
     >
       {/* Light Figma Overlay (White with 80% opacity) */}
       <div className="absolute inset-0 bg-white/80 z-0 pointer-events-none"></div>
 
       {/* Main Container */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[100px] flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 z-10 relative h-full">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[100px] flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-12 xl:gap-16 z-10 relative h-full">
         
         {/* Left Column: Text & Metrics Container */}
-        <div className="flex flex-col justify-start items-start w-full lg:w-1/2 max-w-[610px] gap-6 lg:gap-6 relative z-20 pb-12 lg:pb-0">
+        <div className="flex flex-col justify-start items-start w-full lg:w-1/2 max-w-[610px] gap-6 relative z-20 pb-0">
           
           {/* Main Heading and Subtitle Frame */}
           <div className="flex flex-col gap-6 lg:gap-8 w-full">
-            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] md:text-[3.25rem] lg:text-[70px] leading-[1.1] lg:leading-[75px] tracking-tight lg:tracking-[-2px] font-sans">
+            {/* Smooth font-size and leading progression across 4 breakpoints */}
+            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] xl:text-[70px] leading-[1.1] md:leading-[1.1] lg:leading-[1.1] xl:leading-[75px] tracking-tight xl:tracking-[-2px] font-sans">
               Smarter Monitoring for <span className="text-[#1A7A4A]">Hypertension</span> & <span className="text-[#1A7A4A]">Diabetes</span>
             </h1>
 
-            <p className="text-[#1F2A24] text-[1rem] lg:text-[20px] font-normal leading-relaxed lg:leading-[24px] font-sans">
+            {/* Subtitle font scale matched proportionally */}
+            <p className="text-[#1F2A24] text-[1rem] md:text-[1.125rem] lg:text-[1.25rem] xl:text-[20px] font-normal leading-relaxed md:leading-relaxed lg:leading-normal xl:leading-[24px] font-sans">
               Chetacare is building Africa’s predictive chronic disease management
               infrastructure, starting with hypertension and diabetes.
             </p>
@@ -82,7 +82,6 @@ const Hero: React.FC = () => {
 
             {/* Social Proof (Avatar Stack & Metrics) */}
             <div className="flex flex-row items-center gap-4">
-              {/* Added shrink-0 here to prevent the text from squishing the images on mobile */}
               <div className="flex -space-x-[15px] items-center shrink-0">
                 <img className="w-10 h-10 rounded-full border-4 border-white object-cover bg-gray-200" alt="User avatar 1" src="/assets/User1.png" />
                 <img className="w-10 h-10 rounded-full border-4 border-white object-cover bg-gray-200" alt="User avatar 2" src="/assets/User2.png" />

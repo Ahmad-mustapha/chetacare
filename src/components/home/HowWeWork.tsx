@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const heroMockup = "/assets/iPhone-full.png"; 
+const heroVideo = "/assets/iphone_video.mp4"; 
 
 const HowWeWork: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -95,12 +95,15 @@ const HowWeWork: React.FC = () => {
 
         </div>
 
-        {/* Right Column: Demo Video / Mockup Container */}
-        <div className="w-full lg:w-[610px] h-[500px] lg:h-[738px] bg-[#F3F3F3] flex items-center justify-center rounded-[24px] overflow-hidden p-6">
-          <img 
-            src={heroMockup} 
-            alt="Chetacare Transparent iPhone Mockup Display" 
-            className="w-full max-w-[310px] h-auto max-h-[641px] object-contain"
+        {/* Right Column: Demo Video Container */}
+        <div className="w-full lg:w-[610px] h-auto lg:h-[738px] bg-[#F3F3F3] flex items-center justify-center rounded-[24px] overflow-hidden py-10 px-6 lg:p-6">
+          <video 
+            src={heroVideo} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-contain pointer-events-none rounded-[16px]"
           />
         </div>
 
