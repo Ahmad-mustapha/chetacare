@@ -25,7 +25,10 @@ const Footer: React.FC = () => {
                 <div className="p-2 bg-white/5 rounded-lg flex-shrink-0">
                   <MapPin size={18} />
                 </div>
-                <span className="font-medium leading-relaxed">No 4 Abepe Oduwaye Community, Adedeji close, Ido-Eruwa road. Ologuneru, Ibadan.</span>
+                <div className="font-medium leading-relaxed">
+                  <p className="mb-2">No 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State.</p>
+                  <p>No 4 Abepe Oduwaye Community, Adedeji close, Ido-Eruwa road, Ologuneru, Ibadan.</p>
+                </div>
               </div>
               <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg">

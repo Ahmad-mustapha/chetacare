@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactDetails: React.FC = () => {
   return (
@@ -28,18 +28,32 @@ const ContactDetails: React.FC = () => {
             <p className="text-[#475467] text-lg font-medium">Support@chetacare.com</p>
           </div>
         </div>
-        {/* Address */}
-        {/* <div className="space-y-3">
+
+        {/* Main Office 1 */}
+        <div className="space-y-3">
           <div className="flex items-center space-x-3 text-[#1A7A4A]">
             <MapPin size={24} />
-            <h3 className="text-xl font-bold text-[#101828]">Address</h3>
+            <h3 className="text-xl font-bold text-[#101828]">Main Office 1</h3>
           </div>
           <p className="text-[#475467] text-lg font-medium leading-relaxed">
-            77408 Gwagwalada <br />
-            Motorway <br />
-            Suite 469 Abuja, Nigeria.
+            No 28, Ologbo Quarters, <br />
+            Ologuneru - Eleyele, <br />
+            Ibadan, Oyo State, Nigeria.
           </p>
-        </div> */}
+        </div>
+
+        {/* Main Office 2 */}
+        <div className="space-y-3">
+          <div className="flex items-center space-x-3 text-[#1A7A4A]">
+            <MapPin size={24} />
+            <h3 className="text-xl font-bold text-[#101828]">Main Office 2</h3>
+          </div>
+          <p className="text-[#475467] text-lg font-medium leading-relaxed">
+            No 4 Abepe Oduwaye Community, <br />
+            Adedeji close, Ido-Eruwa road, <br />
+            Ologuneru, Ibadan.
+          </p>
+        </div>
       </div>
     </div>
   );
