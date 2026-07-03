@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF } from 'react-icons/fa6';
 
-const logoImage = "/assets/Full-Logo-Transparent.png";
+const logoImage = "/assets/chetacarelogo.png";
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               </Link>
               <div className="flex flex-col gap-4 text-[18px] leading-[26px] font-sans">
                 <p className="font-normal text-white">
-                  Healthcare that stays with you before, <br /> during, and after treatment.
+                  Help that stays with you before, during, and after care.
                 </p>
                 <p className="font-semibold italic text-white">
                   Built in Nigeria, for Africa.
@@ -34,14 +34,29 @@ const Footer: React.FC = () => {
             {/* Contact Grid with explicit Figma box colors */}
             <div className="w-full flex flex-col items-start gap-4">
               
-              {/* Location Row */}
-              <div className="flex flex-row items-center gap-4 w-full">
+              {/* Location Rows */}
+              <div className="flex flex-row items-start gap-4 w-full">
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A473] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <MapPin size={20} />
                 </div>
-                <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  No 4 Abepe Oduwaye Community, Adejedi Close, Ido-Eruwa Road. Ologuneru, Ibadan.
-                </span>
+                <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
+                      Main Office 1
+                    </span>
+                    <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                      No. 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State, Nigeria.
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
+                      Main Office 2
+                    </span>
+                    <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                      No. 4 Abepe Oduwaye Community, Adedeji Close, Ido-Eruwa Road, Ologuneru, Ibadan.
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* Phone Row */}
@@ -80,7 +95,7 @@ const Footer: React.FC = () => {
                 <li><Link to="/#how-it-works" className="hover:underline">How It Works</Link></li>
                 <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
                 <li><Link to="/blog" className="hover:underline">Blog</Link></li>
-                <li><Link to="/partner" className="hover:underline">Partner with Us</Link></li>
+                <li><Link to="/partner" className="hover:underline">Partner With Us</Link></li>
               </ul>
             </div>
 

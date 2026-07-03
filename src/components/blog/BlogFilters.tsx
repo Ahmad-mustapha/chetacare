@@ -26,7 +26,7 @@ const BlogFilters: React.FC<BlogFiltersProps> = ({ activeCategory, setActiveCate
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`py-3 px-6 rounded-[8px] text-[14px] font-bold leading-[20px] transition-all duration-200 border ${
+              className={`py-3 px-6 rounded-[8px] text-[14px] font-semibold leading-[20px] transition-all duration-200 border ${
                 isActive
                   ? 'bg-[#E8F5EE] text-[#1A7A4A] border-transparent'
                   : 'bg-white text-[#777777] border-[#F3F3F3] hover:bg-gray-50'

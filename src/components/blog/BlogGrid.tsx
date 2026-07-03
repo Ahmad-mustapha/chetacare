@@ -1,22 +1,24 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
-import { blogPosts } from '../../data/blogData';
+import { blogPosts, type BlogPost } from '../../data/blogData';
 
 interface BlogGridProps {
   limit?: number;
   activeCategory?: string;
+  posts?: BlogPost[];
 }
 
-export default function BlogGrid({ limit, activeCategory = 'All Blog' }: BlogGridProps) {
-  const filteredPosts = activeCategory === 'All Blog' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category.includes(activeCategory));
+export default function BlogGrid({ limit, activeCategory = 'All Blog', posts }: BlogGridProps) {
+  const filteredPosts = activeCategory === 'All Blog'
+    ? blogPosts
+    : blogPosts.filter((post) => post.category.includes(activeCategory));
 
-  const posts = typeof limit === 'number' ? filteredPosts.slice(0, limit) : filteredPosts;
+  const visiblePosts = posts ?? filteredPosts;
+  const postsToRender = typeof limit === 'number' ? visiblePosts.slice(0, limit) : visiblePosts;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-x-[28px] w-full">
-      {posts.map((post) => {
+      {postsToRender.map((post) => {
         // If a specific filter is active, only show that category tag. 
         // Otherwise, fall back to showing just the first assigned category.
         const tagToDisplay = activeCategory !== 'All Blog' ? activeCategory : post.category[0];
@@ -42,7 +44,7 @@ export default function BlogGrid({ limit, activeCategory = 'All Blog' }: BlogGri
                   
                   {/* Meta Information Tags Row */}
                   <div className="flex items-center justify-between w-full">
-                    <span className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-normal rounded-full border border-[#D1FADF] leading-[20px]">
+                    <span className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-semibold rounded-full border border-[#D1FADF] leading-[20px]">
                       {tagToDisplay}
                     </span>
                     <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] flex items-center gap-2">
