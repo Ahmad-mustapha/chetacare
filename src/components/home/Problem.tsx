@@ -64,7 +64,7 @@ const Problem: React.FC = () => {
           <div className="problem-stat-card">
             <div className="problem-stat-number">150M+</div>
             <div className="problem-stat-text">
-              Adults in Africa living with hypertension across Africa
+              Adults in Africa living with hypertension
             </div>
           </div>
 
@@ -72,7 +72,7 @@ const Problem: React.FC = () => {
           <div className="problem-stat-card">
             <div className="problem-stat-number">80%</div>
             <div className="problem-stat-text">
-              Of diabetes cases in Africa remain undiagnosed
+              Diabetes cases in Africa remain undiagnosed
             </div>
           </div>
 

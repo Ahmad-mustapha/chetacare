@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, User, Calendar, Clock } from 'lucide-react';
-import ReachOut from '../components/ReachOut';
+import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { blogPosts } from '../data/blogData';
 import Seo from '../components/Seo';
 
@@ -17,15 +17,15 @@ export default function BlogPost() {
           noIndex
         />
         <p className="text-xl font-medium">Post not found</p>
-        <Link to="/blog" className="text-brand-primary font-bold hover:underline">
+        <Link to="/blog" className="text-[#1A7A4A] font-bold hover:underline">
           Return to blog feed
         </Link>
       </div>
     );
   }
 
-  // Filter out the current post, then pull the top 2 alternatives
-  const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 2);
+  // Increased slice to display exactly 3 related posts
+  const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 3);
 
   return (
     <div className="bg-white min-h-screen">
@@ -57,184 +57,202 @@ export default function BlogPost() {
         }}
       />
 
-      {/* Global layout container encapsulates both back navigation and article scope */}
-      <div className="container-wide w-full max-w-figma px-4 lg:px-100 mx-auto">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col">
         
-        {/* Breadcrumb / Back Navigation */}
-        <div className="pt-12 pb-8">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-brand-primary transition-colors font-medium">
-            <ArrowLeft size={18} />
-            <span>Back to articles</span>
-          </Link>
-        </div>
+        {/* Topic / Header Section (Read More (Blog) ---> Topic) */}
+        <section className="py-20 px-4 md:px-[100px] flex flex-col gap-10 w-full">
+          
+          <div className="flex flex-col gap-10 w-full">
+            {/* Back Navigation Link */}
+            <Link to="/blog" className="inline-flex items-center gap-2 py-2 pr-2 pl-0 text-[#4F4F4F] transition-colors text-[18px] leading-[26px] font-normal w-max">
+              <ArrowLeft className="w-4 h-5" />
+              <span>Back to articles</span>
+            </Link>
 
-        {/* Main Article Body Scope */}
-        <article className="pb-12">
-          <div className="max-w-4xl">
-            
-            {/* DISPLAYING ALL CATEGORIES (MAIN HEADER) - Interactive links connected to URL parameters */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {post.category.map((cat, index) => (
-                <Link
-                  key={index}
-                  to={`/blog?category=${encodeURIComponent(cat)}`}
-                  className="px-3 py-1 bg-brand-primary/5 text-brand-primary text-sm font-medium rounded-full border border-brand-primary/10 hover:bg-brand-primary/20 transition-colors"
-                >
-                  {cat}
-                </Link>
-              ))}
+            {/* Title and Category Badges Frame */}
+            <div className="flex flex-col gap-8 items-start w-full">
+              {/* Displaying ALL assigned categories for the post */}
+              <div className="flex flex-wrap gap-2">
+                {post.category.map((cat, index) => (
+                  <div key={index} className="py-2 px-4 bg-[#E8F5EE] rounded-full flex items-center justify-center">
+                    <span className="text-[#1A7A4A] text-[14px] font-normal leading-[20px]">
+                      {cat}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <h1 className="text-3xl md:text-5xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight lg:leading-[48px]">
+                {post.title}
+              </h1>
             </div>
+          </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-dark leading-[1.1] mb-8 tracking-tight">
-              {post.title}
-            </h1>
-
-            {/* Meta Attributes Deck */}
-            <div className="flex flex-wrap items-center gap-y-4 gap-x-6 text-gray-500 mb-12">
+          {/* Info Block with Custom Logo Asset */}
+          <div className="flex flex-col gap-6 w-full">
+            <div className="w-full h-[1px] bg-[#E5E7EB]" />
+            
+            <div className="flex flex-wrap items-center gap-4 text-[#4F4F4F] text-[18px] leading-[26px] font-normal">
               <div className="flex items-center gap-2">
-                <User size={18} className="text-brand-primary" />
-                <span className="font-semibold text-brand-dark">By {post.author}</span>
+                {/* Embedded the explicit checkmark icon component before the author name */}
+                <img 
+                  src="/assets/Checkmark-part-of-logo.png" 
+                  alt="Chetacare Team" 
+                  className="w-[28px] h-[25px] object-contain shrink-0" 
+                />
+                <span>By {post.author || 'Chetacare Team'}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={18} className="text-brand-primary" />
+                <Calendar className="w-[25px] h-[25px] text-[#555555]" />
                 <span>{post.date}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock size={18} className="text-brand-primary" />
+                <Clock className="w-[25px] h-[25px] text-[#555555]" />
                 <span>{post.readTime}</span>
               </div>
             </div>
           </div>
 
-          {/* Main Hero Image Frame */}
-          <div className="w-full aspect-[16/9] md:aspect-[2.4/1] rounded-3xl overflow-hidden mb-12 shadow-sm">
+          {/* Main Hero Image Container Frame */}
+          <div className="w-full h-[350px] md:h-[698px] rounded-[20px] overflow-hidden mt-8">
             <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
           </div>
 
-          {/* Dynamic Article Section Engine */}
-          <div className="max-w-4xl">
-            <div className="space-y-12">
-              {post.fullContent.map((section, index) => {
-                if (section.type === 'heading') {
-                  return (
-                    <section key={index} className={index === 0 ? "" : "border-t border-gray-100 pt-12"}>
-                      <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-6">
-                        {section.content}
-                      </h2>
-                    </section>
-                  );
-                }
-                if (section.type === 'paragraph') {
-                  return (
-                    <div key={index} className="text-gray-600 text-lg leading-relaxed">
-                      <p>{section.content}</p>
-                    </div>
-                  );
-                }
-                if (section.type === 'list') {
-                  return (
-                    <ul key={index} className="space-y-4 text-gray-600 text-lg leading-relaxed">
-                      {section.items?.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-2.5 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return null;
-              })}
-
-              {/* Inline Mid-Article Support Context Callout Box */}
-              <div className="pt-12">
-                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-10">
-                  <p className="text-brand-dark font-bold text-xl md:text-2xl mb-8 leading-tight">
-                    Don't just read about managing hypertension, get support to actually do it.
-                  </p>
-                  <Link
-                    to="/contact"
-                    className="inline-block border border-brand-primary/20 bg-white text-brand-primary px-10 py-4 rounded-xl font-bold hover:bg-brand-primary/5 transition-all shadow-sm"
-                  >
-                    Talk to the support team
-                  </Link>
-                </div>
-              </div>
+          {/* Socials Share Bar */}
+          <div className="flex items-center gap-8 py-2">
+            <span className="text-[20px] font-medium leading-[24px] text-[#1F2A24]">
+              Share to
+            </span>
+            <div className="flex items-center gap-2">
+              <button aria-label="Share on X" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
+                <FaXTwitter className="w-5 h-5" />
+              </button>
+              <button aria-label="Share on Facebook" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
+                <FaFacebookF className="w-5 h-5" />
+              </button>
+              <button aria-label="Share on LinkedIn" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
+                <FaLinkedinIn className="w-5 h-5" />
+              </button>
             </div>
           </div>
+        </section>
 
-          {/* Related Articles Segment */}
-          <div className="pt-8 border-t border-gray-100 mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-12">Related Articles</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {relatedPosts.map((rPost) => (
-                <Link key={rPost.id} to={`/blog/${rPost.id}`} className="group block cursor-pointer">
+        {/* Content Section (Read More (Blog) ---> Content) */}
+        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full max-w-[915px]">
+          {post.fullContent.map((section, index) => {
+            if (section.type === 'heading') {
+              return (
+                <div key={index} className="w-full flex flex-col gap-8">
+                  {index !== 0 && <div className="w-full h-[1px] bg-[#E5E7EB]" />}
+                  <h2 className="text-[32px] font-normal leading-[40px] text-black">
+                    {section.content}
+                  </h2>
+                </div>
+              );
+            }
+            if (section.type === 'paragraph') {
+              return (
+                <p key={index} className="text-[18px] font-normal leading-[26px] text-[#222222] w-full">
+                  {section.content}
+                </p>
+              );
+            }
+            if (section.type === 'list') {
+              return (
+                <ul key={index} className="flex flex-col gap-4 text-[18px] font-normal leading-[26px] text-[#222222] pl-4 list-disc">
+                  {section.items?.map((item, i) => (
+                    <li key={i} className="pl-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            return null;
+          })}
+
+          {/* Callout Action Box */}
+          <div className="w-full flex flex-col gap-8 mt-4">
+            <div className="w-full h-[1px] bg-[#E5E7EB]" />
+            <p className="text-black font-normal text-[32px] leading-[40px]">
+              Don’t just read about managing hypertension, get support to actually do it.
+            </p>
+            <Link
+              to="/contact"
+              className="w-max py-4 px-8 bg-[#1A7A4A] text-white text-[18px] font-bold leading-[27px] rounded-[12px] flex items-center justify-center text-center transition-colors hover:bg-[#15613c]"
+            >
+              Get Started
+            </Link>
+          </div>
+        </section>
+
+        {/* Related Articles Segment Area */}
+        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full border-t border-[#E5E7EB]">
+          <div className="pt-8">
+            <h2 className="text-[40px] font-medium leading-[48px] text-[#1F2A24]">
+              Related Articles
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[28px] w-full">
+            {relatedPosts.map((rPost) => (
+              <Link key={rPost.id} to={`/blog/${rPost.id}`} className="block h-full">
+                <article className="flex flex-col bg-white border border-[#F3F3F3] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] rounded-[10px] overflow-hidden h-full">
                   
-                  {/* Article Flex box architecture locks horizontal line heights for title/description changes */}
-                  <article className="flex flex-col h-full">
-                    
-                    <div className="relative aspect-[1.4/1] rounded-3xl overflow-hidden mb-6">
-                      <img src={rPost.image} alt={rPost.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
+                  {/* Zoom scale transition removed */}
+                  <div className="w-full h-[299px] overflow-hidden">
+                    <img 
+                      src={rPost.image} 
+                      alt={rPost.title} 
+                      className="w-full h-full object-cover rounded-t-[8px]" 
+                    />
+                  </div>
 
-                    {/* Metadata Header Row */}
-                    <div className="flex items-center justify-between mb-4">
-                      
-                      {/* DISPLAYING ALL CATEGORIES (RELATED FEED CARD) */}
-                      <div className="flex flex-wrap gap-1.5 max-w-[70%]">
-                        {rPost.category.map((cat, catIdx) => (
-                          <span 
-                            key={catIdx} 
-                            className="px-2.5 py-0.5 bg-brand-primary/5 text-brand-primary text-xs font-semibold rounded-full border border-brand-primary/10"
-                          >
-                            {cat}
-                          </span>
-                        ))}
+                  <div className="p-6 flex flex-col gap-[10px] flex-grow justify-between">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between w-full">
+                        {/* Strictly displaying ONLY the first category tag in related card form */}
+                        <div className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] border border-[#D1FADF] rounded-full text-[14px] font-normal leading-[20px]">
+                          {rPost.category[0] || 'Mental Health'}
+                        </div>
+                        <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-[#555555]" />
+                          {rPost.readTime || '5 min read'}
+                        </span>
                       </div>
 
-                      <span className="text-gray-500 text-xs font-medium flex items-center gap-1.5 shrink-0">
-                        <span className="w-1 h-1 bg-gray-400 rounded-full" />
-                        {rPost.readTime}
-                      </span>
+                      <h3 className="text-[24px] font-medium leading-[32px] text-[#222222] group-hover:text-[#1A7A4A] transition-colors line-clamp-2">
+                        {rPost.title}
+                      </h3>
+
+                      <p className="text-[#222222] text-[18px] font-normal leading-[26px] line-clamp-3">
+                        {rPost.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-primary transition-colors leading-snug">
-                      {rPost.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm mb-6 line-clamp-2 flex-grow">
-                      {rPost.description}
-                    </p>
-                    
-                    {/* mt-auto pushes button flags cleanly into place regardless of card string length splits */}
-                    <div className="flex items-center gap-2 text-brand-dark font-bold text-sm group-hover:gap-3 transition-all mt-auto">
-                      <span>Read more</span> 
-                      <ArrowRight size={16} className="text-brand-primary" />
+                    <div className="py-2 pr-2 pl-0 flex items-center gap-2 text-[#222222] font-normal text-[16px] leading-[24px] group-hover:gap-3 transition-all mt-auto">
+                      <span>Read more</span>
+                      <ArrowRight className="w-4 h-4 text-[#1A1A1A]" />
                     </div>
 
-                  </article>
-                </Link>
-              ))}
-            </div>
-
-            {/* Footer View All Context Action Pivot */}
-            <div className="text-center">
-              <Link
-                to="/blog"
-                className="inline-flex items-center gap-2 px-8 py-3 border border-brand-primary text-brand-primary rounded-xl font-medium hover:bg-brand-primary hover:text-white transition-all shadow-sm"
-              >
-                <span>View all articles</span> 
-                <ArrowRight className="w-4 h-4" />
+                  </div>
+                </article>
               </Link>
-            </div>
-
+            ))}
           </div>
-        </article>
-      </div>
 
-      {/* Shared Global ReachOut CTA Block Element */}
-      <ReachOut />
+          <div className="flex justify-center pt-4">
+            <Link
+              to="/blog"
+              className="py-4 px-7 border border-[#1A7A4A] text-[#1F2A24] text-[18px] font-medium leading-[27px] rounded-[12px] flex items-center justify-center gap-2 transition-colors hover:bg-gray-50"
+            >
+              <span>View all articles</span>
+              <ArrowRight className="w-5 h-5 text-[#1F2A24]" />
+            </Link>
+          </div>
+        </section>
+
+      </div>
     </div>
   );
 }

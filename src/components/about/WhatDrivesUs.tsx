@@ -31,7 +31,7 @@ const WhatDrivesUs: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#F8F8F8] py-16 px-6 lg:py-20 lg:px-24 flex flex-col items-center gap-16">
+    <section className="w-full bg-[#F9FAFB] py-16 px-6 lg:py-20 lg:px-24 flex flex-col items-center gap-16">
       
       {/* Title Header Block with 16px gap-4 */}
       <div className="w-full flex flex-col items-center text-center gap-4 max-w-[606px]">

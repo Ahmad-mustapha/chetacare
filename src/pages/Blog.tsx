@@ -5,17 +5,13 @@ import BlogGrid from '../components/blog/BlogGrid';
 import Seo from '../components/Seo';
 
 export default function Blog() {
-  // Synchronize state with URL query parameters for perfect preservation
   const [searchParams, setSearchParams] = useSearchParams();
-  
-  // Read category from URL, default to 'All Blog' if empty
   const activeCategory = searchParams.get('category') || 'All Blog';
 
-  // Handler passed down to BlogFilters to update the URL parameter safely
   const handleCategoryChange = (category: string) => {
     const newParams = new URLSearchParams(searchParams);
     if (category === 'All Blog') {
-      newParams.delete('category'); // Keep URL clean if viewing all
+      newParams.delete('category');
     } else {
       newParams.set('category', category);
     }
@@ -36,22 +32,15 @@ export default function Blog() {
         }}
       />
       
-      {/* Hero and Featured Post */}
       <BlogHero />
 
-      {/* Blog Feed Section */}
-      <section className="py-16 lg:py-24">
-        {/* Uniform layout token container applied directly */}
-        <div className="container-wide w-full max-w-figma px-4 lg:px-100 mx-auto">
-          
-          {/* Passed the URL state handlers down as props */}
+      <section className="py-20">
+        <div className="w-full max-w-[1440px] px-4 md:px-[100px] mx-auto flex flex-col gap-16">
           <BlogFilters 
             activeCategory={activeCategory} 
             setActiveCategory={handleCategoryChange} 
           />
-          
           <BlogGrid activeCategory={activeCategory} />
-          
         </div>
       </section>
     </div>

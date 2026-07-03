@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-[#FFFFFF] h-[72px] lg:h-[89px] sticky top-0 z-[100] shadow-[0px_2px_4px_rgba(145,145,145,0.25)] flex items-center">
-      <div className="w-full mx-auto flex items-center justify-between pl-[16px] pr-[12px] lg:py-[18px] lg:px-[100px]">
+      <div className="w-[1440px] mx-auto flex items-center justify-between pl-[16px] pr-[12px] lg:py-[18px] lg:px-[100px]">
         
         {/* Logo */}
         <Link to="/" className="w-[148px] h-[28px] lg:w-[210px] lg:h-[40px] z-[101]">
