@@ -44,7 +44,7 @@ const HowWeWork: React.FC = () => {
               HOW CHETACARE WORKS
             </h3>
             <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">
-              Continuous Chronic Disease Care, <br /> Delivered to You
+              Continuous chronic disease care, <br /> delivered to you
             </h2>
           </div>
 

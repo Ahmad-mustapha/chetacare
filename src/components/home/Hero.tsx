@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[80px] pb-0 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[72px] pb-0 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
@@ -39,15 +39,15 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-white/80 z-0 pointer-events-none"></div>
 
       {/* Main Container */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[100px] flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-12 xl:gap-16 z-10 relative h-full">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[100px] flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-5 z-10 relative h-full">
         
         {/* Left Column: Text & Metrics Container */}
-        <div className="flex flex-col justify-start items-start w-full lg:w-1/2 max-w-[610px] gap-6 relative z-20 pb-0">
+        <div className="flex flex-col justify-start items-start w-full lg:w-1/2 max-w-[610px] gap-16 relative z-20 pb-0">
           
           {/* Main Heading and Subtitle Frame */}
-          <div className="flex flex-col gap-6 lg:gap-8 w-full">
+          <div className="flex flex-col gap-4 lg:gap-8 w-full">
             {/* Smooth font-size and leading progression across 4 breakpoints */}
-            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] xl:text-[70px] leading-[1.1] md:leading-[1.1] lg:leading-[1.1] xl:leading-[75px] tracking-tight xl:tracking-[-2px] font-sans">
+            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[1.1] md:leading-[1.1] lg:leading-[1.1] xl:leading-[75px] tracking-tight xl:tracking-[-2px] font-sans">
               Smarter Monitoring for <span className="text-[#1A7A4A]">Hypertension</span> & <span className="text-[#1A7A4A]">Diabetes</span>
             </h1>
 
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Action and Social Proof Frame */}
-          <div className="flex flex-col gap-6 lg:gap-8 w-full">
+          <div className="flex flex-col gap-4 lg:gap-8 w-full">
             
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">

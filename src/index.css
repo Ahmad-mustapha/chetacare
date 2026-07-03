@@ -1,12 +1,57 @@
+/* --- 1. Load Local "Inter Display" Fonts --- */
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-ExtraBold.woff2') format('woff2');
+}
+
+/* --- 2. Load Standard "Inter" Fonts --- */
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 @import "@fontsource/inter/800.css";
+
 @import "tailwindcss";
 
+/* --- 3. Theme Configuration --- */
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* Priority 1: Inter Display (Local), Priority 2: Inter Standard (NPM) */
+  --font-sans: 'Inter Display', 'Inter', system-ui, sans-serif;
   
   /* Existing Colors */
   --color-brand-green: #15803d;
@@ -17,6 +62,7 @@
   --color-brand-primary: #1A7A4A;
   --color-brand-stable: #22C55E;
 
+  /* Animations */
   --animate-float: float 3s ease-in-out infinite;
 
   @keyframes float {
@@ -30,6 +76,7 @@
   }
 }
 
+/* --- 4. Base Layers & Utilities --- */
 @layer utilities {
   .container-wide {
     @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20;
@@ -37,7 +84,7 @@
 }
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter Display', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light;
   color: #1f2937;
   background-color: #ffffff;
@@ -48,6 +95,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* --- 5. Custom Figma UI Utilities --- */
 
 /* Custom glowing shadow from Figma redesign */
 .figma-glow-shadow {
@@ -91,7 +140,7 @@ body {
 }
 
 .problem-stat-number {
-  @apply text-[#1A7A4A] font-bold text-[32px] lg:text-[35px] leading-[46px] w-[110px] shrink-0;
+  @apply text-brand-primary font-semibold text-[32px] lg:text-[35px] leading-[46px] w-[110px] shrink-0;
 }
 
 .problem-stat-text {
