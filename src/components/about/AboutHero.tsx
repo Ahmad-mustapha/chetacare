@@ -37,7 +37,7 @@ const AboutHero: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-5 justify-between">
         
         {/* Left Column Content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start gap-16">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center items-start gap-8">
           
           {/* Header Block */}
           <div className="w-full flex flex-col justify-center items-start gap-4">
@@ -50,7 +50,7 @@ const AboutHero: React.FC = () => {
           </div>
 
           {/* Body Block with 8px increments spacing scale */}
-          <div className="w-full flex flex-col justify-center items-start gap-8">
+          <div className="w-full flex flex-col justify-center items-start gap-16">
             <div className="text-[#1F2A24] text-base lg:text-lg leading-relaxed space-y-4">
               <p>
                 Every day, millions of people live with chronic diseases like hypertension and diabetes. Many take medications, visit hospitals, and hope for the best, but too often, emergencies come first. Families lose loved ones. Lives are disrupted. Communities bear the cost.

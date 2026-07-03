@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 import type { BlogPost } from '../../data/blogData';
 
@@ -68,7 +68,8 @@ const BlogSection: React.FC = () => {
                       </span>
                     )}
                   </div>
-                  <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans whitespace-nowrap">
+                  <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans whitespace-nowrap flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-[#555555]" />
                     {post.readTime}
                   </span>
                 </div>

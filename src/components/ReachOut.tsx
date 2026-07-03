@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ctaBgImage = "/assets/Reach-Out-Background.png";
-const logoImage = "/assets/Full-Logo-Transparent.png";
+// const logoImage = "/assets/Full-Logo-Transparent.png";
 
 const ReachOut: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,24 +37,27 @@ const ReachOut: React.FC = () => {
       <div className="absolute inset-0 bg-white/80 z-0" />
 
       {/* Core Content Stack */}
-      <div className="relative z-10 max-w-[675px] w-full flex flex-col items-center text-center gap-6">
+      <div className="relative z-10 max-w-[675px] w-full flex flex-col items-center text-center gap-8">
         
         {/* Transparent Logo Node */}
-        <Link to="/" className="block w-[300px] h-auto mb-2">
+        {/* <Link to="/" className="block w-[300px] h-auto mb-2">
           <img 
             src={logoImage} 
             alt="Chetacare logo context" 
             className="w-full h-full object-contain filter brightness-90" 
           />
-        </Link>
+        </Link> */}
 
         {/* Typography Headers Group */}
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-[#1A7A4A] font-bold text-3xl md:text-[48px] md:leading-[48px] tracking-tight font-sans">
             Connecting individuals to the help they need for healthier and longer lives.
           </h3>
-          <p className="text-[#1A7A4A] font-normal text-lg md:text-[20px] leading-[24px] max-w-[623px] font-sans">
-            Speak with verified healthcare professionals on Chetacare
+          <p
+            className="w-full max-w-[668px] text-center font-medium text-[24px] leading-[32px] text-[#1F2A24]"
+            style={{ fontFamily: 'Inter Display' }}
+          >
+            Speak with verified healthcare professionals on <strong>Chetacare</strong>
           </p>
         </div>
 
