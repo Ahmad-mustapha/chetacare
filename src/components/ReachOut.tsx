@@ -28,13 +28,13 @@ const ReachOut: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`w-full h-[495px] relative flex items-center justify-center bg-cover bg-center px-6 transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto w-full h-[495px] flex items-center justify-center px-6 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{ backgroundImage: `url(${ctaBgImage})` }}
     >
       {/* Vector White Tint Overlay (80% Opacity) */}
-      <div className="absolute inset-0 bg-white/80 z-0" />
+      <div className="absolute inset-0 bg-white/80 z-0 pointer-events-none" />
 
       {/* Core Content Stack */}
       <div className="relative z-10 max-w-[675px] w-full flex flex-col items-center text-center gap-8">

@@ -4,11 +4,17 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF } from 'react-icons/fa6';
 
 const logoImage = "/assets/chetacarelogo.png";
+// const footerBg = "/assets/Hero-Background.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#1A7A4A] text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden">
-      <div className="max-w-[1240px] mx-auto flex flex-col gap-16">
+    <footer
+      className="w-full text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
+      // style={{ backgroundImage: `url('${footerBg}')` }}
+    >
+      <div className="absolute inset-0 bg-[#1A7A4A]/95 pointer-events-none" />
+
+      <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col gap-16">
         
         {/* Main Content Row Splitting left block and right links directory */}
         <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-6 xl:gap-[145px]">
