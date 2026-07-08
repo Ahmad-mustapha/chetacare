@@ -75,7 +75,7 @@ export default function BlogPost() {
               <div className="flex flex-wrap gap-2">
                 {post.category.map((cat, index) => (
                   <div key={index} className="py-2 px-4 bg-[#E8F5EE] rounded-full flex items-center justify-center">
-                    <span className="text-[#1A7A4A] text-[14px] font-normal leading-[20px]">
+                    <span className="text-[#1A7A4A] text-[14px] font-semibold leading-[20px]">
                       {cat}
                     </span>
                   </div>
@@ -212,7 +212,7 @@ export default function BlogPost() {
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center justify-between w-full">
                         {/* Strictly displaying ONLY the first category tag in related card form */}
-                        <div className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] border border-[#D1FADF] rounded-full text-[14px] font-normal leading-[20px]">
+                        <div className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] border border-[#D1FADF] rounded-full text-[14px] font-semibold leading-[20px]">
                           {rPost.category[0] || 'Mental Health'}
                         </div>
                         <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] flex items-center gap-2">

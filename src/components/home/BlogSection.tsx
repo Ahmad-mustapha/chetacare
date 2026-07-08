@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 import type { BlogPost } from '../../data/blogData';
 
@@ -63,12 +63,13 @@ const BlogSection: React.FC = () => {
                 <div className="w-full flex flex-row items-center justify-between gap-[32px] min-h-[36px]">
                   <div className="flex flex-wrap gap-2">
                     {post.category && post.category.length > 0 && (
-                      <span className="bg-[#E8F5EE] text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans px-4 py-2 rounded-[6px]">
+                      <span className="bg-[#E8F5EE] text-[#1A7A4A] text-[14px] font-semibold leading-[20px] font-sans px-4 py-2 rounded-[6px]">
                         {post.category[0]}
-                      </span>
+                      </span> 
                     )}
                   </div>
-                  <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans whitespace-nowrap">
+                  <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans whitespace-nowrap flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-[#555555]" />
                     {post.readTime}
                   </span>
                 </div>

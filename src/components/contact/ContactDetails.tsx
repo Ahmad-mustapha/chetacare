@@ -23,7 +23,7 @@ const ContactDetails: React.FC = () => {
           {/* Phone row */}
           <div className="flex items-start gap-4 w-full">
             <div className="w-[54px] h-[54px] bg-white border border-[#1A7A4A] rounded-[12px] flex items-center justify-center text-[#1A7A4A] shrink-0">
-              <Phone className="w-5 h-5" />
+              <Phone className="w-7 h-7" />
             </div>
             <div className="flex flex-col justify-center min-h-[54px]">
               <h3 className="text-[16px] font-bold leading-[24px] text-[#1F2A24]">
@@ -38,7 +38,7 @@ const ContactDetails: React.FC = () => {
           {/* Email row */}
           <div className="flex items-start gap-4 w-full">
             <div className="w-[54px] h-[54px] bg-white border border-[#1A7A4A] rounded-[12px] flex items-center justify-center text-[#1A7A4A] shrink-0">
-              <Mail className="w-5 h-5" />
+              <Mail className="w-7 h-7" />
             </div>
             <div className="flex flex-col justify-center min-h-[54px]">
               <h3 className="text-[16px] font-bold leading-[24px] text-[#1F2A24]">
@@ -53,7 +53,7 @@ const ContactDetails: React.FC = () => {
           {/* Address row */}
           <div className="flex items-start gap-4 w-full">
             <div className="w-[54px] h-[54px] bg-white border border-[#1A7A4A] rounded-[12px] flex items-center justify-center text-[#1A7A4A] shrink-0">
-              <MapPin className="w-5 h-5" />
+              <MapPin className="w-7.5 h-7.5" />
             </div>
             <div className="flex flex-col justify-center min-h-[54px] max-w-[540px]">
               <h3 className="text-[16px] font-bold leading-[24px] text-[#1F2A24]">

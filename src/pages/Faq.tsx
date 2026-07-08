@@ -27,7 +27,7 @@ export default function Faq() {
       </section>
 
       {/* Accordion List Content Area */}
-      <section className="pb-20 md:pb-24">
+      <section className="pb-20 md:pb-20">
         <div className="container-wide w-full">
           <FaqAccordion />
         </div>
@@ -35,7 +35,7 @@ export default function Faq() {
 
       {/* Bottom CTA Block - Tailored to Figma Frame 1000007835 & Frame 52 */}
       {/* Note: Top border line removed completely per request */}
-      <section className="py-16 md:py-20 bg-white flex justify-center items-center w-full">
+      <section className="py-16 md:pt-20 md:pb-40 bg-white flex justify-center items-center w-full">
         <div className="container-wide w-full text-center">
           <div className="flex flex-col items-center gap-8 max-w-[820px] mx-auto">
             

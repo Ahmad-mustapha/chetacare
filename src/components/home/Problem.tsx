@@ -32,13 +32,13 @@ const Problem: React.FC = () => {
       <div className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-[20px]">
         
         {/* Left Column: Text Container */}
-        <div className="w-full lg:w-[610px] flex flex-col items-start gap-8 lg:gap-[64px]">
+        <div className="w-full lg:w-[610px] flex flex-col items-start gap-8 lg:gap-4">
           <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px]">
             <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider">
               THE CHALLENGE
             </span>
             <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">
-              Chronic diseases are rising rapidly across Africa.
+              Chronic diseases like hypertension and diabetes are rising rapidly across Africa.
             </h2>
           </div>
 
@@ -51,7 +51,7 @@ const Problem: React.FC = () => {
             <p>
               Healthcare should not begin when complications occur.
             </p>
-            <p className="text-[#1A7A4A] font-bold">
+            <p className="font-bold">
               Chetacare closes those gaps.
             </p>
           </div>

@@ -29,10 +29,10 @@ const BlogHero: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-8 md:p-8 flex flex-col justify-between gap-8">
                 <div className="flex items-center justify-between gap-4 w-full">
-                  <span className="px-4 py-2 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-normal rounded-full border border-[#D1FADF] leading-[20px]">
-                    {featuredPost.category[0] || 'Mental Health'}
+                  <span className="px-4 py-2 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-semibold rounded-full border border-[#D1FADF] leading-[20px]">
+                    {featuredPost.category[0] || 'Chronic Conditions'}
                   </span>
-                  <span className="text-[#4F4F4F] text-base font-normal leading-6 flex items-center gap-2">
+                  <span className="text-[#4F4F4F] text-base font-normal leading-6 flex items-center gap-4">
                     <Clock className="w-5 h-5 text-[#555555]" />
                     {featuredPost.readTime || '7 min read'}
                   </span>
@@ -42,12 +42,12 @@ const BlogHero: React.FC = () => {
                   <h2 className="text-2xl md:text-3xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight lg:leading-[48px] group-hover:text-[#1A7A4A] transition-colors">
                     {featuredPost.title}
                   </h2>
-                  <p className="text-[#1F2A24] text-base md:text-[18px] font-normal leading-relaxed lg:leading-[26px]">
+                  <p className="text-[#1F2A24] text-base md:text-[18px] font-normal leading-relaxed lg:leading-[26px] lg:mt-2">
                     {featuredPost.description}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 text-[#1F2A24] text-[18px] font-normal leading-[26px] py-2 group-hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-[#1F2A24] text-[18px] font-normal leading-[26px] py-2 group-hover:gap-3 transition-all lg:mt-10">
                   Read more <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
