@@ -63,7 +63,7 @@ const BlogSection: React.FC = () => {
                 <div className="w-full flex flex-row items-center justify-between gap-[32px] min-h-[36px]">
                   <div className="flex flex-wrap gap-2">
                     {post.category && post.category.length > 0 && (
-                      <span className="bg-[#E8F5EE] text-[#1A7A4Aq] text-[14px] font-semibold leading-[20px] font-sans px-4 py-2 rounded-[6px]">
+                      <span className="bg-[#E8F5EE] text-[#1A7A4A] text-[14px] font-semibold leading-[20px] font-sans px-4 py-2 rounded-[6px]">
                         {post.category[0]}
                       </span> 
                     )}

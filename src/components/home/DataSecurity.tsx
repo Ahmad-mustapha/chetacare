@@ -63,7 +63,7 @@ const DataSecurity: React.FC = () => {
             className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '4px 4px 8px rgba(0, 218, 252, 0.08), 1px -1px 8px rgba(244, 146, 255, 0.25)' }}
           >
-            <img src={secure1} alt="Security Standard 1" className="h-[75px] w-auto max-w-full object-contain" />
+            <img src={secure1} alt="Security Standard 1" className="h-[60px] w-auto max-w-full object-contain" />
           </div>
 
           {/* Card 2 */}
@@ -71,7 +71,7 @@ const DataSecurity: React.FC = () => {
             className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '-3px -1px 8px rgba(0, 218, 252, 0.11), 0px 6px 8px rgba(244, 146, 255, 0.08)' }}
           >
-            <img src={secure2} alt="Security Standard 2" className="h-[75px] w-auto max-w-full object-contain" />
+            <img src={secure2} alt="Security Standard 2" className="h-[64px] w-auto max-w-full object-contain" />
           </div>
 
           {/* Card 3 */}
@@ -79,7 +79,7 @@ const DataSecurity: React.FC = () => {
             className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '3px 4px 6.1px rgba(0, 218, 252, 0.11), 0px -4px 8px rgba(244, 146, 255, 0.08)' }}
           >
-            <img src={secure3} alt="Security Standard 3" className="h-[75px] w-auto max-w-full object-contain" />
+            <img src={secure3} alt="Security Standard 3" className="h-[62px] w-auto max-w-full object-contain" />
           </div>
 
         </div>
