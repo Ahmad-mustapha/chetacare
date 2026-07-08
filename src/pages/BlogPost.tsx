@@ -90,32 +90,42 @@ export default function BlogPost() {
 
           {/* Info Block with Custom Logo Asset */}
           <div className="flex flex-col gap-6 w-full">
+            {/* Horizontal Separator Line */}
             <div className="w-full h-[1px] bg-[#E5E7EB]" />
             
-            <div className="flex flex-wrap items-center gap-4 text-[#4F4F4F] text-[18px] leading-[26px] font-normal">
+            {/* Metadata Row Container */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[#4F4F4F] text-[18px] leading-none font-normal">
+              {/* Author Info Block */}
               <div className="flex items-center gap-2">
-                {/* Embedded the explicit checkmark icon component before the author name */}
                 <img 
                   src="/assets/Checkmark-part-of-logo.png" 
                   alt="Chetacare Team" 
                   className="w-[28px] h-[25px] object-contain shrink-0" 
                 />
-                <span>By {post.author || 'Chetacare Team'}</span>
+                <span className="transform translate-y-[1px]">By {post.author || 'Chetacare Team'}</span>
               </div>
+
+              {/* Date Info Block */}
               <div className="flex items-center gap-2">
-                <Calendar className="w-[25px] h-[25px] text-[#555555]" />
-                <span>{post.date}</span>
+                <Calendar className="w-[25px] h-[25px] text-[#555555] shrink-0" />
+                <span className="transform translate-y-[1px]">{post.date}</span>
               </div>
+
+              {/* Read Time Info Block */}
               <div className="flex items-center gap-2">
-                <Clock className="w-[25px] h-[25px] text-[#555555]" />
-                <span>{post.readTime}</span>
+                <Clock className="w-[25px] h-[25px] text-[#555555] shrink-0" />
+                <span className="transform translate-y-[1px]">{post.readTime}</span>
               </div>
             </div>
           </div>
 
           {/* Main Hero Image Container Frame */}
-          <div className="w-full h-[350px] md:h-[698px] rounded-[20px] overflow-hidden mt-8">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+          <div className="w-full h-[350px] md:h-[698px] rounded-[20px] overflow-hidden">
+            <img 
+              src={post.image} 
+              alt={post.title} 
+              className="w-full h-full object-cover object-center" 
+            />
           </div>
 
           {/* Socials Share Bar */}
@@ -138,7 +148,7 @@ export default function BlogPost() {
         </section>
 
         {/* Content Section (Read More (Blog) ---> Content) */}
-        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full max-w-[915px]">
+        <section className="pt-0 px-4 md:px-[100px] pb-8 flex flex-col gap-8 w-full max-w-[915px]">
           {post.fullContent.map((section, index) => {
             if (section.type === 'heading') {
               return (
@@ -187,8 +197,9 @@ export default function BlogPost() {
         </section>
 
         {/* Related Articles Segment Area */}
-        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full border-t border-[#E5E7EB]">
-          <div className="pt-8">
+        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full">
+          <div className="pt-0">
+            <div className="w-full h-[1px] bg-[#E5E7EB] mb-20" />
             <h2 className="text-[40px] font-medium leading-[48px] text-[#1F2A24]">
               Related Articles
             </h2>
@@ -241,7 +252,7 @@ export default function BlogPost() {
             ))}
           </div>
 
-          <div className="flex justify-center pt-4">
+          <div className="flex justify-center pt-8">
             <Link
               to="/blog"
               className="py-4 px-7 border border-[#1A7A4A] text-[#1F2A24] text-[18px] font-medium leading-[27px] rounded-[12px] flex items-center justify-center gap-2 transition-colors hover:bg-gray-50"

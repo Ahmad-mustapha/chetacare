@@ -530,7 +530,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: "Nigeria’s Silent Health Emergency: Why Chronic Diseases Are Rising Faster Than We Think",
     description: 'Across Nigeria, a silent health emergency is unfolding. Chronic diseases such as hypertension and diabetes are rising rapidly, often undetected until severe complications occur.',
-    image: '/assets/blogimg.png',
+    image: '/assets/blog5.png',
     fullContent: [
       {
         type: 'paragraph',
@@ -583,7 +583,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        content: "Access preventive support through Chetacare today. ✅"
+        content: "Access preventive support through Chetacare today."
       }
     ]
   }
