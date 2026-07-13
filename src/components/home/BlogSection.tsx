@@ -41,7 +41,7 @@ const BlogSection: React.FC = () => {
             BLOGS
           </span>
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] font-sans max-w-[607px]">
-            Latest Insights & Health Tips
+            Latest insights & health tips
           </h2>
         </div>
 

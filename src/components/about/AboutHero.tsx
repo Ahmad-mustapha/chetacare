@@ -45,13 +45,13 @@ const AboutHero: React.FC = () => {
               Our Origin
             </span>
             <h1 className="text-[#1F2A24] font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
-              A <span className="text-brand-primary">Story</span> That Drives Us
+              A <span className="text-brand-primary">Story</span> That <br /> Drives Us
             </h1>
           </div>
 
           {/* Body Block with 8px increments spacing scale */}
           <div className="w-full flex flex-col justify-center items-start gap-16">
-            <div className="text-[#1F2A24] text-base lg:text-lg leading-relaxed space-y-4">
+            <div className="max-w-[555px] text-[#1F2A24] text-base lg:text-lg leading-relaxed space-y-4">
               <p>
                 Every day, millions of people live with chronic diseases like hypertension and diabetes. Many take medications, visit hospitals, and hope for the best, but too often, emergencies come first. Families lose loved ones. Lives are disrupted. Communities bear the cost.
               </p>

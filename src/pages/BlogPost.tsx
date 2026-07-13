@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
-import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
+// import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
+import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { blogPosts } from '../data/blogData';
 import Seo from '../components/Seo';
 
@@ -82,7 +83,7 @@ export default function BlogPost() {
                 ))}
               </div>
 
-              <h1 className="text-3xl md:text-5xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight lg:leading-[48px]">
+              <h1 className="text-3xl md:text-5xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight md:leading-[48px] lg:w-[70vw] xl:w-[50vw]">
                 {post.title}
               </h1>
             </div>
@@ -134,14 +135,28 @@ export default function BlogPost() {
               Share to
             </span>
             <div className="flex items-center gap-2">
-              <button aria-label="Share on X" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
-                <FaXTwitter className="w-5 h-5" />
+              {/* Facebook */}
+              <button 
+                aria-label="Share on Facebook" 
+                className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors"
+              >
+                <FaFacebook className="w-7 h-7" />
               </button>
-              <button aria-label="Share on Facebook" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
-                <FaFacebookF className="w-5 h-5" />
+
+              {/* LinkedIn */}
+              <button 
+                aria-label="Share on LinkedIn" 
+                className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors"
+              >
+                <FaLinkedin className="w-7 h-7" />
               </button>
-              <button aria-label="Share on LinkedIn" className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors">
-                <FaLinkedinIn className="w-5 h-5" />
+
+              {/* X (Twitter) */}
+              <button 
+                aria-label="Share on X" 
+                className="w-12 h-12 bg-white border border-[#B4B4B4] rounded-[12px] flex items-center justify-center text-[#B4B4B4] hover:text-[#1F2A24] hover:border-[#1F2A24] transition-colors"
+              >
+                <FaXTwitter className="w-7 h-7" />
               </button>
             </div>
           </div>

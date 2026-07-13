@@ -14,7 +14,7 @@ const BlogHero: React.FC = () => {
         </p>
         
         <div className="flex flex-col items-center gap-8 w-full">
-          <h1 className="p-0 text-4xl md:text-6xl lg:text-[64px] font-bold text-[#1F2A24] tracking-[-2px] leading-tight lg:leading-[75px]">
+          <h1 className="p-0 text-4xl md:text-6xl lg:text-[64px] font-semibold text-[#1F2A24] tracking-[-2px] leading-tight lg:leading-[75px]">
             Insights for Better Health
           </h1>
           <p className="text-base md:text-[20px] font-normal text-[#282828] leading-relaxed md:leading-[24px] max-w-[720px]">
@@ -52,7 +52,7 @@ const BlogHero: React.FC = () => {
                 </div>
               </div>
 
-              <div className="h-[300px] sm:h-[400px] lg:h-auto overflow-hidden">
+              <div className="h-[300px] sm:h-[400px] lg:h-auto overflow-hidden lg:pl-8">
                 <img 
                   src={featuredPost.image} 
                   alt={featuredPost.title} 

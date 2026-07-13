@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
+import { FaXTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa6';
 
 const ContactDetails: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const ContactDetails: React.FC = () => {
         
         <div className="flex flex-col gap-4 items-start w-full">
           <h2 className="text-[24px] font-bold leading-[32px] text-black">
-            We are Here to Help
+            We are here to help
           </h2>
           <p className="text-[18px] font-normal leading-[26px] text-[#1F2A24]">
             Talk to us. Ask questions. Start care. Explore partnerships.
@@ -88,7 +88,7 @@ const ContactDetails: React.FC = () => {
             aria-label="Follow us on X" 
             className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
           >
-            <FaXTwitter className="w-5 h-5" />
+            <FaXTwitter className="w-7 h-7" />
           </a>
           <a 
             href="https://linkedin.com/company/chetacare" 
@@ -97,7 +97,7 @@ const ContactDetails: React.FC = () => {
             aria-label="Follow us on LinkedIn" 
             className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
           >
-            <FaLinkedinIn className="w-5 h-5" />
+            <FaLinkedin className="w-7 h-7" />
           </a>
           <a 
             href="https://www.facebook.com/people/Chetacare/100066576465988/"
@@ -106,7 +106,7 @@ const ContactDetails: React.FC = () => {
             aria-label="Follow us on Facebook" 
             className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
           >
-            <FaFacebookF className="w-5 h-5" />
+            <FaFacebook className="w-7 h-7" />
           </a>
         </div>
       </div>

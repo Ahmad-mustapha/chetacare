@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
           {/* Main Heading and Subtitle Frame */}
           <div className="flex flex-col gap-4 lg:gap-8 w-full">
             {/* Smooth font-size and leading progression across 4 breakpoints */}
-            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] leading-[1.1] md:leading-[1.1] lg:leading-[1.1] xl:leading-[75px] tracking-tight xl:tracking-[-2px] font-sans">
+            <h1 className="text-[#1F2A24] font-bold text-[2.25rem] min-[1024px]:text-[3.5rem] min-[1280px]:text-[4rem] min-[1440px]:text-[4.375rem] leading-[1.1] md:leading-[1.1] lg:leading-[1.1] xl:leading-[75px] tracking-tight xl:tracking-[-2px] font-sans">
               Smarter Monitoring for <span className="text-[#1A7A4A]">Hypertension</span> & <span className="text-[#1A7A4A]">Diabetes</span>
             </h1>
 

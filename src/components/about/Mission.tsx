@@ -1,17 +1,22 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
+import { Heart, Shield, Target } from 'lucide-react';
 
 const Mission: React.FC = () => {
   const values = [
     {
       kicker: "Our Mission",
       description: "To prevent chronic disease complications and improve the quality of life for millions of Africans through continuous, accessible, and predictive healthcare.",
-      icon: <ShieldCheck className="w-6 h-7 text-[#1A7A4A]" />
+      icon: <Target className="w-full h-7 text-[#1A7A4A]" />
     },
     {
       kicker: "Our Vision",
       description: "A future where chronic disease complications are drastically reduced across Africa, where every patient has access to continuous support regardless of location, literacy level, or technology access.",
-      icon: <ShieldCheck className="w-6 h-7 text-[#1A7A4A]" />
+      icon: (
+        <div className="relative w-full h-7 flex items-center justify-center">
+          <Shield className="absolute inset-0 w-full h-7 text-[#1A7A4A]" />
+          <Heart className="relative w-3 h-3 text-[#1A7A4A] fill-[#1A7A4A]" />
+        </div>
+      )
     }
   ];
 

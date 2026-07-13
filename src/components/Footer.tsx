@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF } from 'react-icons/fa6';
+import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook } from 'react-icons/fa6';
 
-const logoImage = "/assets/chetacarelogo.png";
-// const footerBg = "/assets/Hero-Background.png";
+const logoImage = "/assets/chetacare-white-logo.png";
 
 const Footer: React.FC = () => {
   return (
@@ -25,7 +24,7 @@ const Footer: React.FC = () => {
             {/* Brand Profile Stack */}
             <div className="w-full flex flex-col items-start gap-4">
               <Link to="/" className="block w-[154px] h-[28.69px]">
-                <img src={logoImage} alt="Chetacare Inverse Logo" className="w-full h-full object-contain brightness-0 invert" />
+                <img src={logoImage} alt="Chetacare Inverse Logo" className="w-full h-full object-contain" />
               </Link>
               <div className="flex flex-col gap-4 text-[18px] leading-[26px] font-sans">
                 <p className="font-normal text-white">
@@ -48,7 +47,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col gap-1">
                     <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
-                      Main Office 1
+                      Address 1
                     </span>
                     <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
                       No. 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State, Nigeria.
@@ -56,10 +55,10 @@ const Footer: React.FC = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
-                      Main Office 2
+                      Address 2
                     </span>
                     <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                      No. 4 Abepe Oduwaye Community, Adedeji Close, Ido-Eruwa Road, Ologuneru, Ibadan.
+                      No. 4, Abepe Oduwaye Community, Adedeji Close, Ido-Eruwa Road, Ologuneru, Ibadan.
                     </span>
                   </div>
                 </div>
@@ -132,13 +131,13 @@ const Footer: React.FC = () => {
                   <FaXTwitter size={30} />
                 </a>
                 <a href="https://www.linkedin.com/company/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="LinkedIn">
-                  <FaLinkedinIn size={30} />
+                  <FaLinkedin size={30} />
                 </a>
                 <a href="https://www.tiktok.com/@chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="TikTok">
                   <FaTiktok size={30} />
                 </a>
                 <a href="https://www.facebook.com/people/Chetacare/100066576465988/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Facebook">
-                  <FaFacebookF size={30} />
+                  <FaFacebook size={30} />
                 </a>
                 {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
                   <FaYoutube size={30} />

@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Monday, April 14, 2025',
     author: 'Chetacare Team',
     title: 'Why Many Nigerians May Have High Blood Pressure Without Knowing',
-    description: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls...',
+    description: 'High blood pressure, also known as hypertension, is a long‑term health condition in which the force of blood against the walls of the arteries is persistently too high, increasing the workload on the heart and blood vessels and raising the risk of heart attack, stroke, kidney disease, and other complications.',
     image: '/assets/blog1.png',
     fullContent: [
       {
