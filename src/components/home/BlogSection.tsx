@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { blogPosts } from '../../data/blogData';
 import type { BlogPost } from '../../data/blogData';
+import BlogCard from '../blog/BlogCard';
 
 const BlogSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,52 +48,11 @@ const BlogSection: React.FC = () => {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[28px]">
           {featuredPosts.map((post: BlogPost) => (
-            <Link 
+            <BlogCard
               key={post.id}
-              to={`/blog/${post.id}`}
-              className="w-full min-h-[615px] bg-white border border-[#D5D5D8] rounded-[10px] flex flex-col items-start overflow-hidden transition-transform duration-300 hover:scale-[1.01] group text-left"
-            >
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-[299px] object-cover rounded-t-[8px] shrink-0"
-              />
-
-              <div className="p-6 flex flex-col items-start gap-4 lg:gap-[10px] w-full flex-grow">
-                
-                <div className="w-full flex flex-row items-center justify-between gap-[32px] min-h-[36px]">
-                  <div className="flex flex-wrap gap-2">
-                    {post.category && post.category.length > 0 && (
-                      <span className="bg-[#E8F5EE] text-[#1A7A4A] text-[14px] font-semibold leading-[20px] font-sans px-4 py-2 rounded-[6px]">
-                        {post.category[0]}
-                      </span> 
-                    )}
-                  </div>
-                  <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] font-sans whitespace-nowrap flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#555555]" />
-                    {post.readTime}
-                  </span>
-                </div>
-
-                <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px] mt-2">
-                  <h3 className="text-[#1F2A24] font-medium text-[22px] lg:text-[24px] leading-[32px] font-sans line-clamp-2 h-[64px] group-hover:text-[#1A7A4A] transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-[#282828] font-normal text-[16px] lg:text-[18px] leading-[26px] font-sans line-clamp-3 h-[78px]">
-                    {post.description}
-                  </p>
-                </div>
-
-                {/* Changed to a div to prevent nesting links; responds to full-card hover via parent group */}
-                <div 
-                  className="mt-auto pt-4 flex flex-row items-center justify-start gap-2 text-[#282828] font-normal text-[18px] leading-[26px] font-sans group-hover:text-[#1A7A4A] transition-colors"
-                >
-                  <span className="group-hover:text-[#1A7A4A] transition-colors">Read more</span>
-                  <ArrowRight className="w-[14px] h-[14px] text-[#1A1A1A] group-hover:translate-x-1 transition-transform group-hover:text-[#1A7A4A]" />
-                </div>
-
-              </div>
-            </Link>
+              post={post}
+              tagLabel={post.category[0]}
+            />
           ))}
         </div>
 

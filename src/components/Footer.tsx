@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook } from 'react-icons/fa6';
+import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa6';
 
 const logoImage = "/assets/chetacare-white-logo.png";
 
@@ -16,10 +16,12 @@ const Footer: React.FC = () => {
       <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col gap-16">
         
         {/* Main Content Row Splitting left block and right links directory */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-6 xl:gap-[145px]">
+        {/* Reduced the massive xl gap from 145px to 100px to give the right side more breathing room */}
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-8 xl:gap-[100px]">
           
-          {/* Left Column: Brand Blocks & Contact rows aligned to 8px vertical grid */}
-          <div className="w-full lg:max-w-[400px] xl:max-w-[470px] flex flex-col items-start gap-6">
+          {/* Left Column: Brand Blocks & Contact rows */}
+          {/* Reduced max-w from 470px to 400px to stop it from hoarding horizontal space */}
+          <div className="w-full lg:max-w-[340px] xl:max-w-[400px] flex flex-col items-start gap-6">
             
             {/* Brand Profile Stack */}
             <div className="w-full flex flex-col items-start gap-4">
@@ -36,7 +38,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact Grid with explicit Figma box colors */}
+            {/* Contact Grid */}
             <div className="w-full flex flex-col items-start gap-4">
               
               {/* Location Rows */}
@@ -87,8 +89,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side Links Matrix - Handles layout narrowing beautifully */}
-          <div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap gap-12 lg:gap-6 xl:gap-[42px] w-full justify-between">
+          {/* Right Side Links Matrix */}
+          {/* Swapped `w-full justify-between` to `flex-1 justify-start` so they pack to the left and leave empty space on the right for the icons to compress into! */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-12 lg:gap-8 xl:gap-16 flex-1 justify-start">
             
             {/* Column 1: Company Directory */}
             <div className="flex flex-col items-start gap-8 min-w-[140px] xl:min-w-[150px]">
@@ -117,7 +120,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Column 3: Social Connectivity Channels Row Grid */}
-            <div className="flex flex-col items-start gap-8 max-w-[320px]">
+            <div className="flex flex-col items-start gap-8 max-w-[400px]">
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Stay Connected
               </h4>
@@ -139,9 +142,12 @@ const Footer: React.FC = () => {
                 <a href="https://www.facebook.com/people/Chetacare/100066576465988/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Facebook">
                   <FaFacebook size={30} />
                 </a>
-                {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
                   <FaYoutube size={30} />
-                </a> */}
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Instagram">
+                  <FaInstagram size={30} />
+                </a>
               </div>
             </div>
 
