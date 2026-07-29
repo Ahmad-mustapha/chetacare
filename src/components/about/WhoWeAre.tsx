@@ -4,7 +4,7 @@ const whoWeAreImg = "/assets/AboutUs-Who-We-Are.png";
 
 const WhoWeAre: React.FC = () => {
   return (
-    <section className="w-full bg-[#F9FAFB] py-16 px-6 lg:py-20 lg:px-24">
+    <section className="w-full bg-[#F9FAFB] py-16 lg:py-20 section-px">
       {/* 50/50 Responsive Split layout with standard 20px gap-5 */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-5 justify-between">
         

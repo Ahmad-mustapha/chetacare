@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-white/80 z-0 pointer-events-none"></div>
 
       {/* Main Container */}
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[100px] flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-5 z-10 relative h-full">
+      <div className="w-full max-w-[1440px] mx-auto section-px flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-5 z-10 relative h-full">
         
         {/* Left Column: Text & Metrics Container */}
         <div className="flex flex-col justify-start items-start w-full lg:w-1/2 max-w-[610px] gap-16 relative z-20 pb-0">

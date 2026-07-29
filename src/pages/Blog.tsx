@@ -62,7 +62,7 @@ export default function Blog() {
       <BlogHero />
 
       <section className="py-20">
-        <div className="w-full max-w-[1440px] px-4 md:px-[100px] mx-auto flex flex-col gap-16">
+        <div className="w-full max-w-[1440px] section-px mx-auto flex flex-col gap-16">
           <BlogFilters 
             activeCategory={activeCategory} 
             setActiveCategory={handleCategoryChange} 

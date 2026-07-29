@@ -7,7 +7,7 @@ const BlogHero: React.FC = () => {
   const featuredPost = blogPosts[0];
 
   return (
-    <section className="pt-20 pb-0 px-4 md:px-[100px] flex flex-col items-center gap-20 w-full max-w-[1440px] mx-auto">
+    <section className="pt-20 pb-0 section-px flex flex-col items-center gap-20 w-full max-w-[1440px] mx-auto">
       <div className="text-center flex flex-col items-center gap-4 max-w-[800px] w-full">
         <p className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase tracking-wider">
           Blog

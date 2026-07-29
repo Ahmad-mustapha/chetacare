@@ -8,7 +8,7 @@ const logoImage = "/assets/chetacare-white-logo.png";
 const Footer: React.FC = () => {
   return (
     <footer
-      className="w-full text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
+      className="w-full text-white py-16 section-px relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
       // style={{ backgroundImage: `url('${footerBg}')` }}
     >
       <div className="absolute inset-0 bg-[#1A7A4A]/95 pointer-events-none" />

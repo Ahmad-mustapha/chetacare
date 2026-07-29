@@ -37,7 +37,7 @@ const DataSecurity: React.FC = () => {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="container-wide flex flex-col items-center px-6 lg:px-[100px] gap-16">
+      <div className="container-wide flex flex-col items-center gap-16">
         
         {/* Top Text Block */}
         <div className="flex flex-col items-center text-center gap-8 max-w-[700px]">

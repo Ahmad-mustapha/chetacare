@@ -60,7 +60,7 @@ const WhoAreWeFor: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] reveal-on-scroll ${
+      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] section-px reveal-on-scroll ${
         isVisible ? 'is-visible' : ''
       }`}
     >

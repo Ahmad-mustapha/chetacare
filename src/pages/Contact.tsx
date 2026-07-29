@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
       />
       
       {/* Outer wrapper maps exactly to Figma body padding (80px top/bottom -> py-20) and container gaps */}
-      <div className="w-full max-w-[1440px] mx-auto py-20 px-4 md:px-[100px] flex flex-col gap-20">
+      <div className="w-full max-w-[1440px] mx-auto py-20 section-px flex flex-col gap-20">
         
         {/* Title Container Section (Frame 1000007754 equivalent) with strict 32px gap (gap-8) */}
         <section className="text-center flex flex-col items-center gap-8 w-full">

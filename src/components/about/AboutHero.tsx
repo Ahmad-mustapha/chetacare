@@ -29,7 +29,7 @@ const AboutHero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-white py-16 px-6 lg:py-20 lg:px-24 reveal-on-scroll ${
+      className={`w-full bg-white py-16 lg:py-20 section-px reveal-on-scroll ${
         isVisible ? 'is-visible' : ''
       }`}
     >
