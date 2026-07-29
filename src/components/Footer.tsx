@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
               
               {/* Location Rows */}
               <div className="flex flex-row items-start gap-4 w-full">
-                <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A473] rounded-xl flex items-center justify-center text-[#D0FECF]">
+                <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <MapPin size={20} />
                 </div>
                 <div className="flex flex-col gap-4">
