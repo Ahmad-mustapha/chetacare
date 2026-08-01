@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         </section>
 
         {/* Main Split Content Layout - Configured with exact 20px row gaps between layout blocks */}
-        <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+        <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-5 items-start">
           
           {/* Left Column wrapper matching the target 610px width footprint proportions */}
           <div className="lg:col-span-6 w-full max-w-[610px]">

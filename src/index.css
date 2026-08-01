@@ -101,6 +101,16 @@
     @apply max-w-[1400px] mx-auto;
     padding-inline: var(--section-gutter);
   }
+
+  /* Horizontal scrollers keep their scroll behaviour but hide the visible bar. */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :root {

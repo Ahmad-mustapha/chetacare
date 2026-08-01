@@ -8,8 +8,8 @@ const WhoWeAre: React.FC = () => {
       {/* 50/50 Responsive Split layout with standard 20px gap-5 */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-5 justify-between">
         
-        {/* Left Column: Clean Image Wrapper */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center order-2 lg:order-1 mt-10 lg:mt-0">
+        {/* Left Column: Clean Image Wrapper — hidden while the layout is stacked */}
+        <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-center order-2 lg:order-1">
           <img
             src={whoWeAreImg}
             alt="Chetacare Team - Healthcare Professionals"

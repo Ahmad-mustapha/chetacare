@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/home/Hero';
 import Problem from '../components/home/Problem';
 import HowWeWork from '../components/home/HowWeWork';
-import WhoAreWeFor from '../components/home/WhoAreWeFor';
+import WhoAreWeFor from '../components/home/WhoWeServe';
 import Scale from '../components/home/Scale';
 import Currentfocus from '../components/home/CurrentFocus';
 import DataSecurity from '../components/home/DataSecurity';

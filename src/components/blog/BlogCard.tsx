@@ -14,7 +14,7 @@ export default function BlogCard({ post, tagLabel }: BlogCardProps) {
       className="group block cursor-pointer transition-all duration-300 h-full"
     >
       <article className="flex flex-col bg-white border border-[#F3F3F3] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] rounded-[10px] overflow-hidden h-full">
-        <div className="w-full h-[240px] sm:h-[299px] overflow-hidden">
+        <div className="w-full h-[180px] lg:h-[299px] overflow-hidden">
           <img
             src={post.image}
             alt={post.title}
@@ -22,10 +22,12 @@ export default function BlogCard({ post, tagLabel }: BlogCardProps) {
           />
         </div>
 
-        <div className="p-6 flex flex-col flex-grow justify-between gap-6">
-          <div className="flex flex-col gap-4">
+        <div className="p-4 lg:p-6 flex flex-col flex-grow justify-between gap-4 lg:gap-6">
+          <div className="flex flex-col gap-3 lg:gap-4">
             <div className="flex items-center justify-between w-full gap-4">
-              <span className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-semibold rounded-full border border-[#D1FADF] leading-[20px]">
+              {/* Below lg the pill can wrap; w-min keeps it hugging its longest
+                  line instead of leaving dead space on the right. */}
+              <span className="py-2 px-4 bg-[#F2FFF8] text-[#1A7A4A] text-[14px] font-semibold rounded-full border border-[#D1FADF] leading-[20px] w-min lg:w-auto text-center">
                 {tagLabel}
               </span>
               <span className="text-[#1F2A24] text-[14px] font-normal leading-[20px] flex items-center gap-2 whitespace-nowrap">
@@ -34,11 +36,11 @@ export default function BlogCard({ post, tagLabel }: BlogCardProps) {
               </span>
             </div>
 
-            <h3 className="text-[24px] font-medium text-[#1F2A24] leading-[32px] group-hover:text-[#1A7A4A] transition-colors line-clamp-2">
+            <h3 className="text-[20px] leading-[28px] lg:text-[24px] lg:leading-[32px] font-medium text-[#1F2A24] group-hover:text-[#1A7A4A] transition-colors line-clamp-2">
               {post.title}
             </h3>
 
-            <p className="text-[#282828] text-[18px] font-normal leading-[26px] line-clamp-3">
+            <p className="text-[#282828] text-[16px] leading-[24px] lg:text-[18px] lg:leading-[26px] font-normal line-clamp-3">
               {post.description}
             </p>
           </div>
