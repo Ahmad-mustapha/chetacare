@@ -21,7 +21,7 @@ const Mission: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-16 px-6 lg:py-20 lg:px-24">
+    <section className="w-full bg-white py-16 lg:py-20 section-px">
       {/* 2-Column Responsive Layout with Figma's 20px grid gap */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
         

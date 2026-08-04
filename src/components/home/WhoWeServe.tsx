@@ -60,7 +60,7 @@ const WhoAreWeFor: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] reveal-on-scroll ${
+      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] section-px reveal-on-scroll ${
         isVisible ? 'is-visible' : ''
       }`}
     >
@@ -91,7 +91,7 @@ const WhoAreWeFor: React.FC = () => {
               <div className="relative z-10 flex flex-col gap-6 w-full">
                 
                 {/* Custom Sized Icon Wrapper */}
-                <div className="w-[60px] h-[60px] rounded-[11.25px] flex items-center justify-center bg-transparent shrink-0">
+                <div className="h-[60px] rounded-[11.25px] flex items-center justify-start bg-transparent shrink-0">
                   {card.icon}
                 </div>
 

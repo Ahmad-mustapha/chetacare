@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa6';
+import { addresses, emailAddress, phoneNumber, socialLinks } from '../data/contactData';
 
 const logoImage = "/assets/chetacare-white-logo.png";
 
 const Footer: React.FC = () => {
   return (
     <footer
-      className="w-full text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
+      className="w-full text-white py-16 section-px relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
       // style={{ backgroundImage: `url('${footerBg}')` }}
     >
       <div className="absolute inset-0 bg-[#1A7A4A]/95 pointer-events-none" />
@@ -47,22 +47,13 @@ const Footer: React.FC = () => {
                   <MapPin size={20} />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
-                      Address 1
-                    </span>
-                    <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                      No. 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State, Nigeria.
-                    </span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-white font-semibold text-[18px] leading-[26px] font-sans">
-                      Address 2
-                    </span>
-                    <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                      No. 4, Abepe Oduwaye Community, Adedeji Close, Ido-Eruwa Road, Ologuneru, Ibadan.
-                    </span>
-                  </div>
+                  {addresses.map((address) => (
+                    <div key={address} className="flex flex-col gap-1">
+                      <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                        {address}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -72,7 +63,7 @@ const Footer: React.FC = () => {
                   <Phone size={20} />
                 </div>
                 <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  +234 807 445 8695
+                  {phoneNumber}
                 </span>
               </div>
 
@@ -82,7 +73,7 @@ const Footer: React.FC = () => {
                   <Mail size={20} />
                 </div>
                 <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  support@chetacare.com
+                  {emailAddress}
                 </span>
               </div>
 
@@ -130,24 +121,18 @@ const Footer: React.FC = () => {
               </p>
               
               <div className="flex flex-row items-center gap-2 flex-wrap">
-                <a href="https://x.com/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Twitter">
-                  <FaXTwitter size={30} />
-                </a>
-                <a href="https://www.linkedin.com/company/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="LinkedIn">
-                  <FaLinkedin size={30} />
-                </a>
-                <a href="https://www.tiktok.com/@chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="TikTok">
-                  <FaTiktok size={30} />
-                </a>
-                <a href="https://www.facebook.com/people/Chetacare/100066576465988/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Facebook">
-                  <FaFacebook size={30} />
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
-                  <FaYoutube size={30} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Instagram">
-                  <FaInstagram size={30} />
-                </a>
+                {socialLinks.map(({ name, href, icon: Icon, label }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all"
+                    aria-label={label}
+                  >
+                    <Icon size={30} />
+                  </a>
+                ))}
               </div>
             </div>
 

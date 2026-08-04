@@ -5,7 +5,7 @@ import Seo from '../components/Seo';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center bg-white px-6">
+    <div className="min-h-[70vh] flex items-center justify-center bg-white section-px">
       <Seo 
         title="404 - Page Not Found" 
         description="The page you are looking for doesn't exist or has been moved."

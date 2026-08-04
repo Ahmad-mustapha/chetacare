@@ -62,7 +62,7 @@ export default function BlogPost() {
       <div className="w-full max-w-[1440px] mx-auto flex flex-col">
         
         {/* Topic / Header Section (Read More (Blog) ---> Topic) */}
-        <section className="py-20 px-4 md:px-[100px] flex flex-col gap-10 w-full">
+        <section className="py-20 section-px flex flex-col gap-10 w-full">
           
           <div className="flex flex-col gap-10 w-full">
             {/* Back Navigation Link */}
@@ -84,7 +84,7 @@ export default function BlogPost() {
                 ))}
               </div>
 
-              <h1 className="text-3xl md:text-5xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight md:leading-[48px] lg:w-[70vw] xl:w-[50vw]">
+              <h1 className="text-3xl md:text-5xl lg:text-[48px] font-medium text-[#1F2A24] leading-tight md:leading-[48px] lg:w-[85%]">
                 {post.title}
               </h1>
             </div>
@@ -164,7 +164,7 @@ export default function BlogPost() {
         </section>
 
         {/* Content Section (Read More (Blog) ---> Content) */}
-        <section className="pt-0 px-4 md:px-[100px] pb-8 flex flex-col gap-8 w-full max-w-[915px]">
+        <section className="pt-0 section-px pb-8 flex flex-col gap-8 w-full max-w-[915px]">
           {post.fullContent.map((section, index) => {
             if (section.type === 'heading') {
               return (
@@ -213,7 +213,7 @@ export default function BlogPost() {
         </section>
 
         {/* Related Articles Segment Area */}
-        <section className="pt-0 px-4 md:px-[100px] pb-20 flex flex-col gap-8 w-full">
+        <section className="pt-0 section-px pb-20 flex flex-col gap-8 w-full">
           <div className="pt-0">
             <div className="w-full h-[1px] bg-[#E5E7EB] mb-20" />
             <h2 className="text-[40px] font-medium leading-[48px] text-[#1F2A24]">

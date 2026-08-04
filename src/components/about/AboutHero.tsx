@@ -29,7 +29,7 @@ const AboutHero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-white py-16 px-6 lg:py-20 lg:px-24 reveal-on-scroll ${
+      className={`w-full bg-white py-16 lg:py-20 section-px reveal-on-scroll ${
         isVisible ? 'is-visible' : ''
       }`}
     >
@@ -51,7 +51,7 @@ const AboutHero: React.FC = () => {
 
           {/* Body Block with 8px increments spacing scale */}
           <div className="w-full flex flex-col justify-center items-start gap-16">
-            <div className="max-w-[555px] text-[#1F2A24] text-base lg:text-lg leading-relaxed space-y-4">
+            <div className="max-w-[555px] text-[#1F2A24] text-base lg:text-lg leading-[26px] space-y-4">
               <p>
                 Every day, millions of people live with chronic diseases like hypertension and diabetes. Many take medications, visit hospitals, and hope for the best, but too often, emergencies come first. Families lose loved ones. Lives are disrupted. Communities bear the cost.
               </p>
@@ -64,16 +64,16 @@ const AboutHero: React.FC = () => {
             </div>
 
             {/* Button Layout Row */}
-            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4">
-              <Link 
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <Link
                 to="/partner"
-                className="bg-[#1A7A4A] text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-green-800 transition-all text-center flex items-center justify-center min-w-[180px] h-[54px]"
+                className="bg-[#1A7A4A] text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-green-800 transition-all text-center flex items-center justify-center w-full sm:w-auto sm:min-w-[180px] h-[54px]"
               >
                 Partner With Us
               </Link>
-              <Link 
+              <Link
                 to="/contact"
-                className="bg-white text-[#1A7A4A] border border-[#1A7A4A] py-4 px-8 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center min-w-[150px] h-[54px]"
+                className="bg-white text-[#1A7A4A] border border-[#1A7A4A] py-4 px-8 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all text-center flex items-center justify-center w-full sm:w-auto sm:min-w-[150px] h-[54px]"
               >
                 Get Started
               </Link>
@@ -82,8 +82,8 @@ const AboutHero: React.FC = () => {
 
         </div>
 
-        {/* Right Column Image Container (Clean wrapper) */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0">
+        {/* Right Column Image Container — hidden while the layout is stacked */}
+        <div className="hidden lg:flex w-full lg:w-1/2 justify-center items-center">
           <img
             src={heroImage}
             alt="Chetacare background hero asset"

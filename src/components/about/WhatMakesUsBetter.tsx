@@ -65,7 +65,7 @@ const WhatMakesUsBetter: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`w-full bg-white py-16 px-6 lg:py-20 lg:px-24 reveal-on-scroll ${
+      className={`w-full bg-white py-16 lg:py-20 section-px reveal-on-scroll ${
         isVisible ? 'is-visible' : ''
       }`}
     >
@@ -96,7 +96,7 @@ const WhatMakesUsBetter: React.FC = () => {
               <div className="relative z-10 flex flex-col gap-8 w-full">
                 
                 {/* Custom Sized Icon Wrapper */}
-                <div className="w-[60px] h-[60px] rounded-[11.25px] flex items-center justify-center bg-transparent shrink-0">
+                <div className="h-[60px] rounded-[11.25px] flex items-center justify-start bg-transparent shrink-0">
                   {item.icon}
                 </div>
 

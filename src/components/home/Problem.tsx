@@ -25,14 +25,14 @@ const Problem: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-[#FFFFFF] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#FFFFFF] py-12 md:py-16 lg:py-[80px] section-px transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-[20px]">
+      <div className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 md:gap-16 lg:gap-[20px]">
         
         {/* Left Column: Text Container */}
-        <div className="w-full lg:w-[610px] flex flex-col items-start gap-8 lg:gap-4">
+        <div className="w-full lg:flex-1 min-w-0 flex flex-col items-start gap-8 lg:gap-4">
           <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px]">
             <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider">
               THE CHALLENGE
@@ -58,7 +58,7 @@ const Problem: React.FC = () => {
         </div>
 
         {/* Right Column: Stats Container */}
-        <div className="w-full lg:w-[610px] flex flex-col items-stretch lg:items-end gap-6 lg:gap-[32px]">
+        <div className="w-full lg:flex-1 min-w-0 flex flex-col items-stretch lg:items-end gap-6 md:gap-8 lg:gap-[32px]">
           
           {/* Card 1 */}
           <div className="problem-stat-card">

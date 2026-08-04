@@ -1,10 +1,10 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa6';
+import { addresses, emailAddress, phoneNumber, socialLinks } from '../../data/contactData';
 
 const ContactDetails: React.FC = () => {
   return (
-    <div className="flex flex-col gap-10 w-full">
+    <div className="flex flex-col gap-16 lg:gap-10 w-full">
       
       {/* Contact info cards container */}
       <div className="flex flex-col gap-8 w-full">
@@ -30,7 +30,7 @@ const ContactDetails: React.FC = () => {
                 Phone Number
               </h3>
               <p className="text-[18px] font-normal leading-[26px] text-[#1F2A24]">
-                +234 807 445 8695
+                {phoneNumber}
               </p>
             </div>
           </div>
@@ -45,7 +45,7 @@ const ContactDetails: React.FC = () => {
                 Email Address
               </h3>
               <p className="text-[18px] font-normal leading-[26px] text-[#1F2A24]">
-                support@chetacare.com
+                {emailAddress}
               </p>
             </div>
           </div>
@@ -59,9 +59,13 @@ const ContactDetails: React.FC = () => {
               <h3 className="text-[16px] font-bold leading-[24px] text-[#1F2A24]">
                 Address
               </h3>
-              <p className="text-[18px] font-normal leading-[26px] text-[#1F2A24]">
-                No 4 Abepe Oduwaye Community, Adedeji Close, Ido-Eruwa Road. Ologuneru, Ibadan.
-              </p>
+              <div className="flex flex-col gap-4">
+                {addresses.map((address) => (
+                  <p key={address} className="text-[18px] font-normal leading-[26px] text-[#1F2A24]">
+                    {address}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -79,35 +83,19 @@ const ContactDetails: React.FC = () => {
           </p>
         </div>
 
-        {/* Buttons sequenced cleanly: X (Twitter) -> LinkedIn -> Facebook */}
-        <div className="flex items-center gap-2">
-          <a 
-            href="https://x.com/chetacare" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Follow us on X" 
-            className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
-          >
-            <FaXTwitter className="w-7 h-7" />
-          </a>
-          <a 
-            href="https://linkedin.com/company/chetacare" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Follow us on LinkedIn" 
-            className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
-          >
-            <FaLinkedin className="w-7 h-7" />
-          </a>
-          <a 
-            href="https://www.facebook.com/people/Chetacare/100066576465988/"
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Follow us on Facebook" 
-            className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
-          >
-            <FaFacebook className="w-7 h-7" />
-          </a>
+        <div className="flex items-center gap-2 flex-wrap">
+          {socialLinks.map(({ name, href, icon: Icon, label }) => (
+            <a
+              key={name}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="w-12 h-12 bg-white border border-[#43A373] rounded-[12px] flex items-center justify-center text-[#1A7A4A] transition-colors hover:bg-gray-50"
+            >
+              <Icon className="w-7 h-7" />
+            </a>
+          ))}
         </div>
       </div>
 
