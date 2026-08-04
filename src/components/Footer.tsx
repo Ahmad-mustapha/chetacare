@@ -121,14 +121,14 @@ const Footer: React.FC = () => {
               </p>
               
               <div className="flex flex-row items-center gap-2 flex-wrap">
-                {socialLinks.map(({ name, href, icon: Icon }) => (
+                {socialLinks.map(({ name, href, icon: Icon, label }) => (
                   <a
                     key={name}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all"
-                    aria-label={name}
+                    aria-label={label}
                   >
                     <Icon size={30} />
                   </a>

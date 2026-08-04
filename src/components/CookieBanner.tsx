@@ -8,10 +8,17 @@ declare global {
   }
 }
 
+// Analytics is suppressed for now. While this is false no tracking script is
+// loaded and the consent banner stays hidden, since there is nothing to consent
+// to. Flip to true to restore Google Analytics and the banner.
+const ANALYTICS_ENABLED = true;
+
 const CookieBanner: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (!ANALYTICS_ENABLED) return;
+
     // Check local storage to see if the user has already answered
     const consent = localStorage.getItem('chetacare_cookie_consent');
     if (!consent) {
@@ -34,6 +41,7 @@ const CookieBanner: React.FC = () => {
   };
 
   const enableAnalytics = () => {
+    if (!ANALYTICS_ENABLED) return;
     if (document.getElementById('ga-script')) return; // Prevent duplicate loading
 
     // 1. Dynamically inject the script tag into document head

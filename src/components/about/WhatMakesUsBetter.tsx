@@ -96,7 +96,7 @@ const WhatMakesUsBetter: React.FC = () => {
               <div className="relative z-10 flex flex-col gap-8 w-full">
                 
                 {/* Custom Sized Icon Wrapper */}
-                <div className="h-[60px] rounded-[11.25px] flex items-center justify-left bg-transparent shrink-0">
+                <div className="h-[60px] rounded-[11.25px] flex items-center justify-start bg-transparent shrink-0">
                   {item.icon}
                 </div>
 

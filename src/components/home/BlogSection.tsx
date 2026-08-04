@@ -49,12 +49,23 @@ const BlogSection: React.FC = () => {
     el.addEventListener('scroll', syncArrows, { passive: true });
 
     // Card widths are breakpoint-dependent, so re-measure when the box resizes.
-    const resizeObserver = new ResizeObserver(syncArrows);
-    resizeObserver.observe(el);
+    // ResizeObserver is missing in older browsers and in non-DOM environments,
+    // so fall back to window resize there rather than throwing.
+    let resizeObserver: ResizeObserver | undefined;
+    if (typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(syncArrows);
+      resizeObserver.observe(el);
+    } else {
+      window.addEventListener('resize', syncArrows);
+    }
 
     return () => {
       el.removeEventListener('scroll', syncArrows);
-      resizeObserver.disconnect();
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      } else {
+        window.removeEventListener('resize', syncArrows);
+      }
     };
   }, [syncArrows]);
 

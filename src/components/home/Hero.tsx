@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[72px] pb-0 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[72px] pb-0 bg-cover bg-no-repeat bg-[position:30%_25%] lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{

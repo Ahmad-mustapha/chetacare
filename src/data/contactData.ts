@@ -4,7 +4,7 @@
 // Consumed by both the site footer and the Contact page so the two cannot drift.
 
 import type { IconType } from 'react-icons';
-import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa6';
+import { FaXTwitter, FaLinkedin, FaTiktok, FaFacebook } from 'react-icons/fa6';
 
 export interface SocialLink {
   name: string;
@@ -29,7 +29,4 @@ export const socialLinks: SocialLink[] = [
   { name: 'LinkedIn', href: 'https://www.linkedin.com/company/chetacare/', icon: FaLinkedin, label: 'Follow us on LinkedIn' },
   { name: 'Facebook', href: 'https://www.facebook.com/people/Chetacare/100066576465988/', icon: FaFacebook, label: 'Follow us on Facebook' },
   { name: 'TikTok', href: 'https://www.tiktok.com/@chetacare', icon: FaTiktok, label: 'Follow us on TikTok' },
-  // TODO: replace with the real Chetacare profile URLs.
-  { name: 'YouTube', href: 'https://youtube.com', icon: FaYoutube, label: 'Follow us on YouTube' },
-  { name: 'Instagram', href: 'https://instagram.com', icon: FaInstagram, label: 'Follow us on Instagram' },
 ];

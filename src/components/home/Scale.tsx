@@ -51,7 +51,7 @@ const Scale: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex-1 w-full flex flex-col justify-start items-start p-6 lg:p-8 gap-4 lg:gap-[24px]"
+              className="flex-1 w-full flex flex-col justify-start items-center md:items-start p-6 lg:p-8 gap-4 lg:gap-[24px]"
             >
               {/* Stat Value Styling */}
               <h3 className="text-[#1A7A4A] font-medium text-[52px] lg:text-[70px] leading-[1.07] lg:leading-[75px] tracking-[-2px] font-sans">
@@ -59,7 +59,7 @@ const Scale: React.FC = () => {
               </h3>
               
               {/* Stat Label Styling */}
-              <p className="text-[#1F2A24] font-medium text-[18px] lg:text-[20px] leading-[24px] font-sans max-w-[247px]">
+              <p className="text-[#1F2A24] font-medium text-[18px] lg:text-[20px] leading-[24px] font-sans max-w-[247px] text-center md:text-left">
                 {stat.label}
               </p>
             </div>
