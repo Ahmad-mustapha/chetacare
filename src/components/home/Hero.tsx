@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const heroBg = "/assets/Hero-Background.png"; 
-const heroMockup = "/assets/iphone.png"; 
+// Hero background is art-directed per screen size (mobile / tablet / laptop / desktop default)
+const heroBgMobile = "/assets/Hero-Background-mobile.png";
+const heroBgTablet = "/assets/Hero-Background-tablet.png";
+const heroBgLaptop = "/assets/Hero-Background-laptop.png";
+const heroBgDesktop = "/assets/Hero-Background.png";
+const heroMockup = "/assets/iphone.png";
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,13 +32,23 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[72px] pb-0 bg-cover bg-no-repeat bg-[position:30%_25%] lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto lg:h-[667px] flex flex-col lg:flex-row items-stretch pt-12 md:pt-16 lg:pt-[72px] pb-0 overflow-hidden transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
-      style={{
-        backgroundImage: `url('${heroBg}')`
-      }}
     >
+      {/* Responsive background image (art-directed per breakpoint) */}
+      <picture>
+        <source media="(min-width: 1440px)" srcSet={heroBgDesktop} />
+        <source media="(min-width: 1024px)" srcSet={heroBgLaptop} />
+        <source media="(min-width: 768px)" srcSet={heroBgTablet} />
+        <img
+          src={heroBgMobile}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-[24%_5%] md:object-[24%_10%] lg:object-left-top z-0 pointer-events-none"
+        />
+      </picture>
+
       {/* Light Figma Overlay (White with 80% opacity) */}
       <div className="absolute inset-0 bg-white/80 z-0 pointer-events-none"></div>
 
