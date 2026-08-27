@@ -1,22 +1,27 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
+import { Heart, Shield, Target } from 'lucide-react';
 
 const Mission: React.FC = () => {
   const values = [
     {
       kicker: "Our Mission",
       description: "To prevent chronic disease complications and improve the quality of life for millions of Africans through continuous, accessible, and predictive healthcare.",
-      icon: <ShieldCheck className="w-6 h-7 text-[#1A7A4A]" />
+      icon: <Target className="w-full h-7 text-[#1A7A4A]" />
     },
     {
       kicker: "Our Vision",
       description: "A future where chronic disease complications are drastically reduced across Africa, where every patient has access to continuous support regardless of location, literacy level, or technology access.",
-      icon: <ShieldCheck className="w-6 h-7 text-[#1A7A4A]" />
+      icon: (
+        <div className="relative w-full h-7 flex items-center justify-center">
+          <Shield className="absolute inset-0 w-full h-7 text-[#1A7A4A]" />
+          <Heart className="relative w-3 h-3 text-[#1A7A4A] fill-[#1A7A4A]" />
+        </div>
+      )
     }
   ];
 
   return (
-    <section className="w-full bg-white py-16 px-6 lg:py-20 lg:px-24">
+    <section className="w-full bg-white py-16 lg:py-20 section-px">
       {/* 2-Column Responsive Layout with Figma's 20px grid gap */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
         

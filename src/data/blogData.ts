@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Monday, April 14, 2025',
     author: 'Chetacare Team',
     title: 'Why Many Nigerians May Have High Blood Pressure Without Knowing',
-    description: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls...',
+    description: 'High blood pressure, also known as hypertension, is a long‑term health condition in which the force of blood against the walls of the arteries is persistently too high, increasing the workload on the heart and blood vessels and raising the risk of heart attack, stroke, kidney disease, and other complications.',
     image: '/assets/blog1.png',
     fullContent: [
       {
@@ -530,7 +530,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Chetacare Team',
     title: "Nigeria’s Silent Health Emergency: Why Chronic Diseases Are Rising Faster Than We Think",
     description: 'Across Nigeria, a silent health emergency is unfolding. Chronic diseases such as hypertension and diabetes are rising rapidly, often undetected until severe complications occur.',
-    image: '/assets/blogimg.png',
+    image: '/assets/blog5.png',
     fullContent: [
       {
         type: 'paragraph',
@@ -583,7 +583,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        content: "Access preventive support through Chetacare today. ✅"
+        content: "Access preventive support through Chetacare today."
       }
     ]
   }

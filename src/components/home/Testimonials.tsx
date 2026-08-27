@@ -104,8 +104,8 @@ export default function Testimonials() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-16 lg:py-24 bg-[#F7FBF9] overflow-hidden">
-      <div className="container-wide w-full max-w-figma px-4 lg:px-100 mx-auto">
+    <section className="py-16 lg:py-24 bg-[#FFFFFF] overflow-hidden">
+      <div className="container-wide w-full mx-auto">
         
         {/* Header Section - Matches BlogSection alignment and scale rules */}
         <div className="flex flex-col items-center gap-6 lg:gap-8 w-full text-center mb-12">
@@ -134,7 +134,7 @@ export default function Testimonials() {
               {testimonialsData.map((t) => (
                 <div
                   key={t.id}
-                  className="flex-none w-[85%] sm:w-[48%] lg:w-[31%] bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
+                  className="flex-none w-[85%] sm:w-[48%] lg:w-[31%] bg-[#F9FAFB] border border-[#F3F3F3] rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
                 >
                   <StarRating count={t.stars} />
 

@@ -29,7 +29,7 @@ const HowWeWork: React.FC = () => {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className={`w-full bg-[#F9FAFB] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#F9FAFB] py-12 lg:py-[80px] section-px transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -44,7 +44,7 @@ const HowWeWork: React.FC = () => {
               HOW CHETACARE WORKS
             </h3>
             <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">
-              Continuous Chronic Disease Care, <br /> Delivered to You
+              Continuous chronic disease care, <br /> delivered to you
             </h2>
           </div>
 
@@ -54,7 +54,7 @@ const HowWeWork: React.FC = () => {
             {/* Step 1 */}
             <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
               <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
-                Get Started & Know Your Health
+                Get started & know your health
               </h4>
               <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
                 Join easily via WhatsApp and complete a quick health assessment. We gather important details like your medical history, medications, and lifestyle to understand your risk level.
@@ -64,7 +64,7 @@ const HowWeWork: React.FC = () => {
             {/* Step 2 */}
             <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
               <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
-                Continuous Monitoring & Support
+                Continuous monitoring & support
               </h4>
               <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
                 Track your health daily through simple check-ins on WhatsApp. Receive medication reminders, personalized lifestyle tips, and ongoing support to help you stay on track.
@@ -74,7 +74,7 @@ const HowWeWork: React.FC = () => {
             {/* Step 3 */}
             <div className="w-full flex flex-col items-start gap-3 lg:gap-[12px]">
               <h4 className="text-[#1A7A4A] font-bold text-[22px] lg:text-[24px] leading-[32px]">
-                Smart Care & Early Intervention
+                Smart care & early intervention
               </h4>
               <p className="text-[#1F2A24] font-normal text-[16px] lg:text-[18px] leading-[26px]">
                 Our system monitors your data and flags any risks. Clinicians step in when needed providing guidance, adjusting care, and helping prevent serious complications.
@@ -96,7 +96,7 @@ const HowWeWork: React.FC = () => {
         </div>
 
         {/* Right Column: Demo Video Container */}
-        <div className="w-full lg:w-[610px] h-auto lg:h-[738px] bg-[#F3F3F3] flex items-center justify-center rounded-[24px] overflow-hidden py-10 px-6 lg:p-6">
+        <div className="w-full lg:w-[610px] h-auto md:h-[710px] lg:h-[738px] bg-[#F3F3F3] flex items-center justify-center rounded-[24px] overflow-hidden py-10 px-6 md:p-8 lg:p-6">
           <video 
             src={heroVideo} 
             autoPlay 

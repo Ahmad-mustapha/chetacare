@@ -1,29 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaXTwitter, FaLinkedinIn, FaTiktok, FaFacebookF } from 'react-icons/fa6';
+import { addresses, emailAddress, phoneNumber, socialLinks } from '../data/contactData';
 
-const logoImage = "/assets/Full-Logo-Transparent.png";
+const logoImage = "/assets/chetacare-white-logo.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#1A7A4A] text-white py-16 px-6 md:px-12 xl:px-[100px] relative overflow-hidden">
-      <div className="max-w-[1240px] mx-auto flex flex-col gap-16">
+    <footer
+      className="w-full text-white py-16 section-px relative overflow-hidden bg-cover bg-no-repeat bg-center lg:bg-left-top"
+      // style={{ backgroundImage: `url('${footerBg}')` }}
+    >
+      <div className="absolute inset-0 bg-[#1A7A4A]/95 pointer-events-none" />
+
+      <div className="relative z-10 max-w-[1240px] mx-auto flex flex-col gap-16">
         
         {/* Main Content Row Splitting left block and right links directory */}
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-6 xl:gap-[145px]">
+        {/* Reduced the massive xl gap from 145px to 100px to give the right side more breathing room */}
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-8 xl:gap-[100px]">
           
-          {/* Left Column: Brand Blocks & Contact rows aligned to 8px vertical grid */}
-          <div className="w-full lg:max-w-[400px] xl:max-w-[470px] flex flex-col items-start gap-6">
+          {/* Left Column: Brand Blocks & Contact rows */}
+          {/* Reduced max-w from 470px to 400px to stop it from hoarding horizontal space */}
+          <div className="w-full lg:max-w-[340px] xl:max-w-[400px] flex flex-col items-start gap-6">
             
             {/* Brand Profile Stack */}
             <div className="w-full flex flex-col items-start gap-4">
               <Link to="/" className="block w-[154px] h-[28.69px]">
-                <img src={logoImage} alt="Chetacare Inverse Logo" className="w-full h-full object-contain brightness-0 invert" />
+                <img src={logoImage} alt="Chetacare Inverse Logo" className="w-full h-full object-contain" />
               </Link>
               <div className="flex flex-col gap-4 text-[18px] leading-[26px] font-sans">
                 <p className="font-normal text-white">
-                  Healthcare that stays with you before, <br /> during, and after treatment.
+                  Help that stays with you before, during, and after care.
                 </p>
                 <p className="font-semibold italic text-white">
                   Built in Nigeria, for Africa.
@@ -31,17 +38,23 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact Grid with explicit Figma box colors */}
+            {/* Contact Grid */}
             <div className="w-full flex flex-col items-start gap-4">
               
-              {/* Location Row */}
-              <div className="flex flex-row items-center gap-4 w-full">
-                <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A473] rounded-xl flex items-center justify-center text-[#D0FECF]">
+              {/* Location Rows */}
+              <div className="flex flex-row items-start gap-4 w-full">
+                <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <MapPin size={20} />
                 </div>
-                <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  No 4 Abepe Oduwaye Community, Adejedi Close, Ido-Eruwa Road. Ologuneru, Ibadan.
-                </span>
+                <div className="flex flex-col gap-4">
+                  {addresses.map((address) => (
+                    <div key={address} className="flex flex-col gap-1">
+                      <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                        {address}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Phone Row */}
@@ -50,7 +63,7 @@ const Footer: React.FC = () => {
                   <Phone size={20} />
                 </div>
                 <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  +234 807 445 8695
+                  {phoneNumber}
                 </span>
               </div>
 
@@ -60,15 +73,16 @@ const Footer: React.FC = () => {
                   <Mail size={20} />
                 </div>
                 <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
-                  support@chetacare.com
+                  {emailAddress}
                 </span>
               </div>
 
             </div>
           </div>
 
-          {/* Right Side Links Matrix - Handles layout narrowing beautifully */}
-          <div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap gap-12 lg:gap-6 xl:gap-[42px] w-full justify-between">
+          {/* Right Side Links Matrix */}
+          {/* Swapped `w-full justify-between` to `flex-1 justify-start` so they pack to the left and leave empty space on the right for the icons to compress into! */}
+          <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-12 lg:gap-8 xl:gap-16 flex-1 justify-start">
             
             {/* Column 1: Company Directory */}
             <div className="flex flex-col items-start gap-8 min-w-[140px] xl:min-w-[150px]">
@@ -80,7 +94,7 @@ const Footer: React.FC = () => {
                 <li><Link to="/#how-it-works" className="hover:underline">How It Works</Link></li>
                 <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
                 <li><Link to="/blog" className="hover:underline">Blog</Link></li>
-                <li><Link to="/partner" className="hover:underline">Partner with Us</Link></li>
+                <li><Link to="/partner" className="hover:underline">Partner With Us</Link></li>
               </ul>
             </div>
 
@@ -97,7 +111,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Column 3: Social Connectivity Channels Row Grid */}
-            <div className="flex flex-col items-start gap-8 max-w-[320px]">
+            <div className="flex flex-col items-start gap-8 max-w-[400px]">
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Stay Connected
               </h4>
@@ -107,21 +121,18 @@ const Footer: React.FC = () => {
               </p>
               
               <div className="flex flex-row items-center gap-2 flex-wrap">
-                <a href="https://x.com/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Twitter">
-                  <FaXTwitter size={30} />
-                </a>
-                <a href="https://www.linkedin.com/company/chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="LinkedIn">
-                  <FaLinkedinIn size={30} />
-                </a>
-                <a href="https://www.tiktok.com/@chetacare" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="TikTok">
-                  <FaTiktok size={30} />
-                </a>
-                <a href="https://www.facebook.com/people/Chetacare/100066576465988/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="Facebook">
-                  <FaFacebookF size={30} />
-                </a>
-                {/* <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all" aria-label="YouTube">
-                  <FaYoutube size={30} />
-                </a> */}
+                {socialLinks.map(({ name, href, icon: Icon, label }) => (
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-[#208552] border border-[#43A373] flex items-center justify-center text-[#D0FECF] hover:text-white transition-all"
+                    aria-label={label}
+                  >
+                    <Icon size={30} />
+                  </a>
+                ))}
               </div>
             </div>
 

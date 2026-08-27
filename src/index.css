@@ -1,12 +1,57 @@
+/* --- 1. Load Local "Inter Display" Fonts --- */
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/InterDisplay-ExtraBold.woff2') format('woff2');
+}
+
+/* --- 2. Load Standard "Inter" Fonts --- */
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 @import "@fontsource/inter/800.css";
+
 @import "tailwindcss";
 
+/* --- 3. Theme Configuration --- */
 @theme {
-  --font-sans: 'Inter', system-ui, sans-serif;
+  /* Priority 1: Inter Display (Local), Priority 2: Inter Standard (NPM) */
+  --font-sans: 'Inter Display', 'Inter', system-ui, sans-serif;
   
   /* Existing Colors */
   --color-brand-green: #15803d;
@@ -17,6 +62,7 @@
   --color-brand-primary: #1A7A4A;
   --color-brand-stable: #22C55E;
 
+  /* Animations */
   --animate-float: float 3s ease-in-out infinite;
 
   @keyframes float {
@@ -30,14 +76,45 @@
   }
 }
 
+/* --- 4. Base Layers & Utilities --- */
+/* Single source of truth for section side padding, used by every section on
+   every page. Change these three values and the whole site follows.
+     375 -> 16px | 768 -> 40px | 1024 -> 64px | 1440+ -> 100px
+   The 1024 value interpolates smoothly from 64px up to 100px at 1440, then
+   caps, so 1024-1439 no longer inherits the full 1440 gutter. */
+:root {
+  --section-gutter: 16px;
+}
+@media (min-width: 768px) {
+  :root { --section-gutter: 40px; }
+}
+@media (min-width: 1024px) {
+  :root { --section-gutter: clamp(64px, 8.65385vw - 24.6154px, 100px); }
+}
+
 @layer utilities {
+  .section-px {
+    padding-inline: var(--section-gutter);
+  }
+
   .container-wide {
-    @apply max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20;
+    @apply max-w-[1400px] mx-auto;
+    padding-inline: var(--section-gutter);
+  }
+
+  /* Horizontal scrollers keep their scroll behaviour but hide the visible bar. */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter Display', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light;
   color: #1f2937;
   background-color: #ffffff;
@@ -48,6 +125,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* --- 5. Custom Figma UI Utilities --- */
 
 /* Custom glowing shadow from Figma redesign */
 .figma-glow-shadow {
@@ -86,12 +165,12 @@ body {
 
 /* Problem Section Component Formats */
 .problem-stat-card {
-  @apply w-full lg:w-[555px] min-h-[96px] bg-white border border-[#F3F3F3] rounded-[12px] p-6 lg:px-8 lg:py-6 flex flex-row items-center gap-6 lg:gap-[32px] transition-all duration-300;
+  @apply w-full lg:max-w-[555px] min-h-[96px] bg-white border border-[#F3F3F3] rounded-[12px] p-6 lg:px-8 lg:py-6 flex flex-row items-center gap-6 lg:gap-[32px] transition-all duration-300;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .problem-stat-number {
-  @apply text-[#1A7A4A] font-bold text-[32px] lg:text-[35px] leading-[46px] w-[110px] shrink-0;
+  @apply text-brand-primary font-semibold text-[32px] lg:text-[35px] leading-[46px] w-[110px] shrink-0;
 }
 
 .problem-stat-text {

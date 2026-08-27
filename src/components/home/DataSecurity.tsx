@@ -37,12 +37,12 @@ const DataSecurity: React.FC = () => {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      <div className="container-wide flex flex-col items-center px-6 lg:px-[100px] gap-16">
+      <div className="container-wide flex flex-col items-center gap-16">
         
         {/* Top Text Block */}
         <div className="flex flex-col items-center text-center gap-8 max-w-[700px]">
           <h3 className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase">
-            Data Security
+            Trust & Safety
           </h3>
           
           <div className="flex flex-col gap-4">
@@ -56,30 +56,30 @@ const DataSecurity: React.FC = () => {
         </div>
 
         {/* Icon Containers with Multi-Color Shadows */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full">
+        <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-6 w-full">
           
           {/* Card 1 */}
           <div 
-            className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
+            className="flex items-center justify-center w-full md:w-[321px] md:min-w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '4px 4px 8px rgba(0, 218, 252, 0.08), 1px -1px 8px rgba(244, 146, 255, 0.25)' }}
           >
-            <img src={secure1} alt="Security Standard 1" className="max-h-[75px] w-auto object-contain" />
+            <img src={secure1} alt="Security Standard 1" className="h-[60px] w-auto max-w-full object-contain" />
           </div>
 
           {/* Card 2 */}
           <div 
-            className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
+            className="flex items-center justify-center w-full md:w-[321px] md:min-w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '-3px -1px 8px rgba(0, 218, 252, 0.11), 0px 6px 8px rgba(244, 146, 255, 0.08)' }}
           >
-            <img src={secure2} alt="Security Standard 2" className="max-h-[75px] w-auto object-contain" />
+            <img src={secure2} alt="Security Standard 2" className="h-[64px] w-auto max-w-full object-contain" />
           </div>
 
           {/* Card 3 */}
           <div 
-            className="flex items-center justify-center w-full md:w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
+            className="flex items-center justify-center w-full md:w-[321px] md:min-w-[321px] h-[110px] bg-[#FFFFFF] border border-[#F3F3F3] rounded-[16px]"
             style={{ boxShadow: '3px 4px 6.1px rgba(0, 218, 252, 0.11), 0px -4px 8px rgba(244, 146, 255, 0.08)' }}
           >
-            <img src={secure3} alt="Security Standard 3" className="max-h-[75px] w-auto object-contain" />
+            <img src={secure3} alt="Security Standard 3" className="h-[62px] w-auto max-w-full object-contain" />
           </div>
 
         </div>
