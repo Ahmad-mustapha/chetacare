@@ -18,7 +18,7 @@ interface BlogFiltersProps {
 
 const BlogFilters: React.FC<BlogFiltersProps> = ({ activeCategory, setActiveCategory }) => {
   return (
-    <div className="border-b border-[#E5E7EB] mb-8 overflow-x-auto scrollbar-hide w-full">
+    <div className="border-b-0 sm:border-b border-[#E5E7EB] mb-0 sm:mb-8 overflow-x-auto scrollbar-hide w-full">
       <div className="flex items-center gap-2 pb-3 min-w-max">
         {categories.map((category) => {
           const isActive = activeCategory === category;

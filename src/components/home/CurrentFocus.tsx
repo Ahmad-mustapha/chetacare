@@ -25,7 +25,7 @@ const Currentfocus: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-[#FFFFFF] py-[80px] px-[10px] flex flex-col items-center justify-center transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#FFFFFF] py-[80px] section-px flex flex-col items-center justify-center transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >

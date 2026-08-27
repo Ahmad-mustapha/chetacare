@@ -27,7 +27,7 @@ const OurPartners: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-[#F9FAFB] py-12 lg:py-[80px] px-4 md:px-8 lg:px-[100px] transition-opacity duration-[800ms] ease-in-out ${
+      className={`w-full bg-[#F9FAFB] py-12 lg:py-[80px] section-px transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >

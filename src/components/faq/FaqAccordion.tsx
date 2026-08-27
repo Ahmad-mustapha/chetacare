@@ -65,7 +65,7 @@ const FaqAccordion: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-[1030px] mx-auto space-y-4 px-4 sm:px-0">
+    <div className="w-full max-w-[1030px] mx-auto space-y-4">
       {faqData.map((item, index) => {
         const isOpen = openIndex === index;
         return (

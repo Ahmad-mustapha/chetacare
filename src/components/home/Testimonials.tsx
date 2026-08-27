@@ -105,7 +105,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-16 lg:py-24 bg-[#FFFFFF] overflow-hidden">
-      <div className="container-wide w-full max-w-figma px-4 lg:px-100 mx-auto">
+      <div className="container-wide w-full mx-auto">
         
         {/* Header Section - Matches BlogSection alignment and scale rules */}
         <div className="flex flex-col items-center gap-6 lg:gap-8 w-full text-center mb-12">

@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
       />
       
       {/* Outer wrapper maps exactly to Figma body padding (80px top/bottom -> py-20) and container gaps */}
-      <div className="w-full max-w-[1440px] mx-auto py-20 px-4 md:px-[100px] flex flex-col gap-20">
+      <div className="w-full max-w-[1440px] mx-auto py-20 section-px flex flex-col gap-20">
         
         {/* Title Container Section (Frame 1000007754 equivalent) with strict 32px gap (gap-8) */}
         <section className="text-center flex flex-col items-center gap-8 w-full">
@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         </section>
 
         {/* Main Split Content Layout - Configured with exact 20px row gaps between layout blocks */}
-        <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+        <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-5 items-start">
           
           {/* Left Column wrapper matching the target 610px width footprint proportions */}
           <div className="lg:col-span-6 w-full max-w-[610px]">

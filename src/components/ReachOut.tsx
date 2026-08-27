@@ -28,7 +28,7 @@ const ReachOut: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`relative max-w-[1440px] mx-auto w-full h-[495px] flex items-center justify-center px-6 bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
+      className={`relative max-w-[1440px] mx-auto w-full h-[495px] flex items-center justify-center section-px bg-cover bg-no-repeat bg-center lg:bg-left-top transition-opacity duration-[800ms] ease-in-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{ backgroundImage: `url(${ctaBgImage})` }}

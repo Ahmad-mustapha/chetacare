@@ -3,7 +3,7 @@ import React from 'react';
 const ContactForm: React.FC = () => {
   return (
     <div className="bg-white">
-      <h2 className="text-2xl font-bold text-[#101828] mb-4">Send Us Message</h2>
+      <h2 className="text-2xl font-bold text-[#101828] mb-4">Send us a message</h2>
       <p className="text-[#475467] mb-10">
         Feel free to fill up the form and our team will get back to you within 24 hours.
       </p>
