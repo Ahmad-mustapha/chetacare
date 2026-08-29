@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { addresses, emailAddress, phoneNumber, socialLinks } from '../../data/contactData';
+import { Mail, MapPin } from 'lucide-react';
+import { addresses, emailAddress, socialLinks } from '../../data/contactData';
 
 const ContactDetails: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const ContactDetails: React.FC = () => {
 
         <div className="flex flex-col gap-6 w-full">
           
-          {/* Phone row */}
+          {/* Phone row
           <div className="flex items-start gap-4 w-full">
             <div className="w-[54px] h-[54px] bg-white border border-[#1A7A4A] rounded-[12px] flex items-center justify-center text-[#1A7A4A] shrink-0">
               <Phone className="w-7 h-7" />
@@ -33,7 +33,7 @@ const ContactDetails: React.FC = () => {
                 {phoneNumber}
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Email row */}
           <div className="flex items-start gap-4 w-full">

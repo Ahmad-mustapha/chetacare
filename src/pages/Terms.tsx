@@ -126,7 +126,6 @@ const termsData = [
   {
     title: "18. Contact Information",
     content: "For any legal inquiries, data queries, or support clarifications regarding these Terms of Service, please contact us at:",
-    content2: <>No 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State. <br /> No 4 Abepe Oduwaye Community, Adedeji close, Ido-Eruwa road, Ologuneru, Ibadan.</>,
     list: [
       <><strong>Email:</strong> Support@chetacare.com</>,
       <><strong>Official Website:</strong> www.chetacare.com</>
