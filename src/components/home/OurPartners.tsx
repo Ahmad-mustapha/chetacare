@@ -40,7 +40,7 @@ const OurPartners: React.FC = () => {
             OUR PARTNERS
           </span>
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] font-sans max-w-[802px]">
-            The people helping us on our mission
+            We are on a Mission
           </h2>
         </div>
 

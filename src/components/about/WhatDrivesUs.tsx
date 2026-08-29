@@ -5,8 +5,8 @@ import { IoPeopleOutline } from "react-icons/io5";
 
 // Mock asset paths for the card header illustrations 
 const patientsImg = "/assets/drives_patients.png";
-const familiesImg = "/assets/drives_families.png";
-const communitiesImg = "/assets/drives_communities.png";
+const familiesImg = "/assets/drives_families.jpeg";
+const communitiesImg = "/assets/drives_communities.jpeg";
 
 const WhatDrivesUs: React.FC = () => {
   const impacts = [

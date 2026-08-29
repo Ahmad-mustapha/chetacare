@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import { addresses, emailAddress, phoneNumber, socialLinks } from '../data/contactData';
+import { Mail} from 'lucide-react';
+import { emailAddress, socialLinks } from '../data/contactData';
 
 const logoImage = "/assets/chetacare-white-logo.png";
 
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             <div className="w-full flex flex-col items-start gap-4">
               
               {/* Location Rows */}
-              <div className="flex flex-row items-start gap-4 w-full">
+              {/* <div className="flex flex-row items-start gap-4 w-full">
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <MapPin size={20} />
                 </div>
@@ -55,17 +55,17 @@ const Footer: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Phone Row */}
-              <div className="flex flex-row items-center gap-4 w-full">
+              {/* <div className="flex flex-row items-center gap-4 w-full">
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <Phone size={20} />
                 </div>
                 <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
                   {phoneNumber}
                 </span>
-              </div>
+              </div> */}
 
               {/* Email Row */}
               <div className="flex flex-row items-center gap-4 w-full">

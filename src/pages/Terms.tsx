@@ -4,132 +4,131 @@ import Seo from '../components/Seo';
 
 const termsData = [
   {
-    title: "1. Introduction",
-    content: "Welcome to Chetacare. By accessing or using Chetacare services, you agree to be bound by these Terms of Service."
+    title: "1. Acceptance of Terms",
+    content: "Welcome to Chetacare (“we,” “us,” or “our”). Chetacare is an AI-driven digital health platform registered under the laws of the Federal Republic of Nigeria. By accessing or using our website, WhatsApp services, Interactive Voice Response (IVR) systems, and other support channels (collectively, the \"Services\"), you agree to be bound by these Terms of Service. If you do not agree to these Terms, you must immediately discontinue using our Services."
   },
   {
     title: "2. About Chetacare",
-    content: "Chetacare is a predictive chronic disease management platform designed to support individuals living with chronic conditions such as hypertension and diabetes through remote monitoring, educational support and engagement channels.",
-    content2: "Chetacare provides health support services but does not operate as a hospital or emergency medical provider."
+    content: "Chetacare is a predictive chronic disease management platform designed to support individuals living with chronic conditions, such as hypertension, diabetes, and many more, through continuous remote monitoring, medication adherence support, lifestyle tracking, and clinician-guided intervention.",
+    content2: <>Chetacare provides supportive and preventive care optimization; <strong>we do not operate as a physical hospital, diagnostic laboratory, or emergency medical provider.</strong></>
   },
   {
     title: "3. Eligibility",
-    content: "You must:",
+    content: "To be eligible to create an account and utilize the services, you must:",
     list: [
-      "Be at least 18 years old, or",
-      "Use the service under the supervision of a legal guardian or caregiver.",
-      "By using Chetacare, you confirm that the information you provide is accurate and truthful."
+      "Be at least 18 years of age, or",
+      "Access the service under the explicit supervision and responsibility of a legal guardian or caregiver who agrees to these Terms.",
+      "By using Chetacare, you warrant that all identification, contact, and health metrics you provide are accurate, truthful, and updated in real time."
     ]
   },
   {
     title: "4. Nature of Services",
-    content: "Chetacare provides:",
+    content2: "Chetacare provides:",
     list: [
-      "Remote patient monitoring",
-      "Medication reminders",
-      "Health education and lifestyle guidance",
-      "Structured health data collection",
-      "Access to health logs and support",
-      "Our services are intended to support, not replace, professional medical advice."
+      "Remote patient monitoring and tracking of physiological metrics (e.g., blood pressure, blood glucose, weight, height and other relevant metrics).",
+      "Automated medication and clinical follow-up reminders.",
+      "Health education, lifestyle coaching, and wellness guidance.",
+      "AI-assisted risk identification and trend analysis.",
+      "Human clinical triage and decision support managed by licensed care professionals."
+    ],
+    content: <><strong>Chetacare’s services are intended solely to support, complement, and optimize, not replace professional medical care, diagnoses, or prescriptions from your primary physician.</strong></>
+  },
+  {
+    title: "5. Strictly not emergency medical services",
+    content: <><strong>CHETACARE DOES NOT PROVIDE EMERGENCY MEDICAL SERVICES AND IS NOT A CRISIS INTERVENTION PLATFORM.</strong></>,
+    content2: "Our AI models, WhatsApp bots, and clinical care teams do not monitor inputs in real-time for immediate life-threatening events. If you experience clinical symptoms of a medical emergency (such as severe chest pain, shortness of breath, sudden numbness, or extreme spikes/drops in vitals):",
+    list: [
+      "You must immediately contact your nearest physical hospital or call local emergency medical services.",
+      <><strong>Do not message Chetacare or wait for an AI/clinical response during an emergency urgent health situation that requires immediate health assistance.</strong></>
     ]
   },
   {
-    title: "5. Not Emergency Medical Services",
-    content: "Chetacare does not provide emergency medical services.",
-    content2: "If you experience a medical emergency, you must immediately contact:",
+    title: "6. Subscriptions, Fees, and Billing",
+    content: "Subscription Tiers: Certain features of the Chetacare platform require a paid recurring subscription. Pricing, billing cycles, and feature access will be clearly detailed during the checkout process.",
     list: [
-      "Your nearest hospital or,",
-      "Local emergency services.",
-      "No activity on Chetacare is urgent for life-threatening situations."
+      "Payment Terms: All payments are processed through secure, authorized third-party payment gateways operating in Nigeria. You agree to provide valid payment credentials and authorize recurring billing if applicable.",
+      "Non-Payment: Failure to successfully process payment will result in the suspension or downgrading of your access to premium health tracking, clinical oversight, or AI insights.",
+      "Refund Policy: Except as expressly mandated by consumer protection regulations in Nigeria, all subscription fees are non-refundable."
     ]
   },
   {
-    title: "6. User Responsibilities",
-    content: "Users agree to:",
+    title: "7. User Responsibilities",
+    content: "As a user of Chetacare, you agree to:",
     list: [
-      "Provide accurate health information",
-      "Follow medical instruction from verified doctors",
-      "Use the data responsibly",
-      "Maintain confidentiality of personal access channels",
-      "Notify Chetacare of significant health changes when possible"
+      "Provide completely accurate, timely health logs and clinical numbers.",
+      "Continue to follow all medical advice, treatments, and prescriptions issued by your primary physical healthcare professionals.",
+      "Use the platform strictly for personal, non-commercial health management.",
+      "Maintain the privacy and security of your personal WhatsApp account and device access channels.",
+      "Promptly notify Chetacare if you experience a major change in your underlying health status."
     ]
   },
   {
-    title: "7. Communication Channels",
-    content: "Chetacare delivers services through:",
+    title: "8. Communication Channels and Carrier Charges",
+    content: "Chetacare delivers its multi-channel services through automated WhatsApp messaging, interactive voice response (IVR) phone systems, SMS, email, and website interactions.",
+    content2: "By enrolling, you grant your explicit consent to receive health-related data transmission, clinical reports, and reminders across these channels.",
     list: [
-      "WhatsApp messaging",
-      "IVR phone systems",
-      "Email",
-      "Website interface.",
-      "If you opt-in to receiving health tips, communications, reminders, and updates, standard data charges from your provider may apply."
+      "You acknowledge that standard network data, telecom, or messaging rates applied by your telecommunications provider are your sole financial responsibility."
     ]
   },
   {
-    title: "8. Artificial Intelligence and Human Oversight",
-    content: "Chetacare uses artificial intelligence to help assess risk and identify trends. AI-generated insights are reviewed by appropriate health support professionals. All medical decisions remain a progression of clinical judgement."
-  },
-  {
-    title: "9. Medical Disclaimer",
-    content: "Information provided on Chetacare is for health awareness and educational purposes only.",
-    content2: "Chetacare:",
+    title: "9. Artificial Intelligence and Human-in-the-Loop Oversight",
+    content: "Chetacare utilizes proprietary and third-party machine learning models and artificial intelligence tools to assist in monitoring trends and running risk detection algorithms.",
     list: [
-      "Does not replace professional medical diagnosis",
-      "Does not replace prescriptions",
-      "Does not guarantee prevention of disease complications.",
-      "Healthcare decisions remain the responsibility of users and their healthcare providers."
+      "Limitations of AI: AI-generated automated insights are supplemental tools and are prone to operational limits, data delays, or formatting errors. They do not constitute independent medical diagnoses.",
+      "Human-in-the-Loop: High-risk indicators triggered by our AI models are routed to our human care teams for review and clinical triage where appropriate. However, technical latency can occur, and this oversight does not replace regular independent check-ups with your doctor."
     ]
   },
   {
-    title: "10. Privacy and Data Protection",
-    content: "Use of Chetacare services is also governed by our Privacy Policy, which details how personal and health information is collected, used, and protected."
+    title: "10. Comprehensive Medical Disclaimer",
+    content: <>All information, automated feedback, articles, and recommendations provided through Chetacare are for general health support and educational purposes only. <strong>Chetacare does not practice medicine through its software, does not independently issue medical prescriptions, and does not guarantee the prevention or reversal of chronic disease complications.</strong> Healthcare management decisions remain the joint responsibility of users and their primary physical healthcare providers.</>
   },
   {
-    title: "11. Intellectual Property",
-    content: "All content, including images, branding, and materials associated with Chetacare, are the property of Chetacare Limited and may not be copied, reproduced, or used without permission."
+    title: "11. Privacy and Data Protection",
+    content: <>Your use of our Services is strictly governed by the <strong>Chetacare Privacy Policy</strong>, which is incorporated by reference into these Terms. Our data management practices comply fully with the <strong>Nigeria Data Protection Act (NDPA) 2023.</strong></>
   },
   {
-    title: "12. Service Availability",
-    content: "We strive to provide consistent service but do not guarantee uninterrupted or error-free access. Services may be modified or suspended periodically to improve platform features and safety."
+    title: "12. Intellectual Property",
+    content: "All software architecture, proprietary AI models, data frameworks, algorithms, platform content, source code, branding, logos, and materials associated with Chetacare are the exclusive property of Chetacare. Users are granted a limited, non-transferable, revocable license to access the platform for personal use. You may not reverse-engineer, copy, scrape, or distribute any part of our platform without our explicit prior written consent."
   },
   {
-    title: "13. Third-Party Services",
-    content: "Chetacare may use third-party platforms, including messaging services like WhatsApp for information outreach and data collection.",
-    content2: "We are not responsible for outages on platforms owned by third-party providers."
+    title: "13. Service Availability and Third-Party Dependency",
+    content: "While we aim to deliver reliable health monitoring, Chetacare does not warrant that our services will be completely uninterrupted, timely, secure, or error-free.",
+    content2: <>We rely heavily on third-party digital infrastructure, including the <strong>Meta/WhatsApp Business API</strong>, local cloud web hosting (e.g., AWS/Google Cloud), and national telecommunication networks. <strong>Chetacare shall not be held legally or operationally responsible for data delivery failures, message drops, or system outages caused by third-party provider limitations.</strong></>
   },
   {
-    title: "14. Limitation of Liability",
-    content: "To the extent permitted by law, Chetacare shall not be liable for:",
+    title: "14. Limitation of Liability and Indemnity",
+    content: "To the maximum extent permitted by applicable Nigerian law:",
     list: [
-      "Indirect or consequential damages",
-      "Health outcomes resulting from failure to follow medical advice",
-      "Service interruptions beyond our control.",
-      "Our services are provided on a best-effort basis to support patient care."
+      "Liability Cap: Chetacare, its directors, employees, clinicians, and software suppliers shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to adverse health outcomes, injuries, or personal distress resulting from a user's failure to seek physical medical attention or a user's misinterpretation of AI-generated insights.",
+      "Indemnification: You agree to defend, indemnify, and hold harmless Chetacare and its affiliates from and against any claims, liabilities, damages, losses, or legal costs arising out of your violation of these Terms or your misuse of the platform."
     ]
   },
   {
-    title: "15. Termination of Use",
-    content: "Chetacare may suspend or terminate access if:",
+    title: "15. Suspension and Termination of Use",
+    content: "Chetacare reserves the absolute right to suspend or permanently terminate your account and access to our services at our sole discretion, without prior notice, if:",
     list: [
-      "Terms are violated",
-      "Service is misused",
-      "False information is provided",
-      "Continued use presents a safety risk",
-      "Business operations require suspension"
+      "You violate any provision of these Terms.",
+      "You provide fraudulent, inaccurate, or falsified identity or medical data.",
+      "Your interaction patterns present a systemic safety or security risk to our servers, care teams, or other users.",
+      "You may discontinue your subscription and request the deletion of your account profile at any time by contacting our support team."
     ]
   },
   {
-    title: "16. Updates to Terms",
-    content: "We may update these Terms of Service periodically. Continued use of Chetacare after updates constitutes acceptance of new terms."
+    title: "16. Governing Law and Dispute Resolution",
+    content: <>These Terms of Service shall be governed by, construed, and enforced in accordance with the laws of the <strong>Federal Republic of Nigeria</strong>. Any dispute, controversy, or claim arising out of or relating to these Terms shall first be attempted to be resolved amicably through good-faith mediation before escalating to courts of competent jurisdiction in Nigeria.</>
   },
   {
-    title: "17. Governing Law",
-    content: "These Terms shall be governed by the applicable laws of the Federal Republic of Nigeria."
+    title: "17. Updates to These Terms",
+    content: "We reserve the right to modify or replace these Terms of Service periodically. We will notify you of material changes by updating the \"Last Updated\" date at the top of this document. Your continued use of the Chetacare platform following the posting of updated Terms constitutes your binding legal acceptance of the revisions."
   },
   {
     title: "18. Contact Information",
-    content: "For questions regarding these Terms:",
-    content2: "Email: Support@chetacare.com | Website: www.chetacare.com"
+    content: "For any legal inquiries, data queries, or support clarifications regarding these Terms of Service, please contact us at:",
+    content2: <>No 28, Ologbo Quarters, Ologuneru - Eleyele, Ibadan, Oyo State. <br /> No 4 Abepe Oduwaye Community, Adedeji close, Ido-Eruwa road, Ologuneru, Ibadan.</>,
+    list: [
+      <><strong>Email:</strong> Support@chetacare.com</>,
+      <><strong>Official Website:</strong> www.chetacare.com</>
+    ]
   }
 ];
 

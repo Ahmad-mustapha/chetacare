@@ -6,6 +6,7 @@ import testimony1 from '/assets/testimony1.png';
 import testimony2 from '/assets/testimony2.png';
 import testimony3 from '/assets/testimony3.png';
 import testimony4 from '/assets/testimony4.png';
+import testimony5 from '/assets/User3.png';
 
 const testimonialsData = [
   {
@@ -42,10 +43,10 @@ const testimonialsData = [
   },
   {
     id: 5,
-    image: testimony1,
-    name: 'Grace Adeleke',
+    image: testimony5,
+    name: 'Chimeremma Osayi',
     role: 'peri-urban Nigeria',
-    quote: 'Chetacare helps me manage my blood pressure every day. I get reminders, and I feel safe knowing someone is monitoring me.',
+    quote: 'Chetacare has helped me personally to manage diabetes, now I know what food to take and how to manage my health properly.',
     stars: 5,
   },
   {

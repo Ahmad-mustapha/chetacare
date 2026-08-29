@@ -42,7 +42,7 @@ const Currentfocus: React.FC = () => {
           
           {/* Main Focus Heading Content */}
           <h2 className="text-[#1F2A24] font-normal text-[24px] md:text-[32px] leading-[32px] md:leading-[40px] text-center font-sans max-w-[820px]">
-            We currently focus on hypertension and diabetes, two of Africa’s most common chronic conditions. Our predictive care system is designed to expand to many other long-term health conditions over time.*
+            We currently focus on hypertension and diabetes, two of Africa’s most common chronic conditions. Our predictive care system is designed to expand to many other long-term health conditions over time.
           </h2>
 
           {/* Subheading / Disclaimer Statement */}
