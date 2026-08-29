@@ -2,6 +2,8 @@ import React from 'react';
 import ReachOut from '../components/ReachOut';
 import Seo from '../components/Seo';
 
+const LAST_UPDATED = "April 27, 2026";
+
 const privacyData = [
   {
     title: "1. About Chetacare",
@@ -151,9 +153,12 @@ const Privacy: React.FC = () => {
               <div className="inline-block px-4 py-1.5 border border-[#D1FADF] bg-[#ECFDF3] rounded-md mb-6">
                 <span className="text-[#039855] font-medium text-sm">Legal</span>
               </div>
-              <h1 className="text-[40px] md:text-[56px] font-bold text-[#101828] leading-[1.1] mb-6">
+              <h1 className="text-[40px] md:text-[56px] font-bold text-[#101828] leading-[1.1] mb-4">
                 Privacy Policy
               </h1>
+              <p className="text-[#667085] text-base md:text-lg font-medium mb-6">
+                <strong>Last Updated:</strong> {LAST_UPDATED}
+              </p>
               <p className="text-[#475467] text-lg lg:text-xl max-w-2xl leading-relaxed mb-20">
                 At Chetacare, we are committed to protecting the privacy and security of individuals who use our platform. Chetacare (“we,” “us,” or “our”) operates under the <strong>Nigeria Data Protection Act (NDPA)</strong>. This Privacy Policy explains how we collect, use, disclose, and safeguard personal and health information when you access our services through our website, WhatsApp services, Interactive Voice Response (IVR) systems, and other support channels. <br />
                 By using Chetacare services, you agree to the collection and use of information in accordance with this policy and the legal frameworks of the Federal Republic of Nigeria.
@@ -199,7 +204,7 @@ const Privacy: React.FC = () => {
                             {sub.list.map((li, i) => (
                               <li key={i} className="flex items-start gap-3 text-[#475467] text-base md:text-lg leading-relaxed">
                                 <span className="mt-2.5 w-1.5 h-1.5 bg-[#475467] rounded-full flex-shrink-0" />
-                                {li}
+                                <span>{li}</span>
                               </li>
                             ))}
                           </ul>
@@ -213,7 +218,7 @@ const Privacy: React.FC = () => {
                       {item.list.map((li, i) => (
                         <li key={i} className="flex items-start gap-3 text-[#475467] text-base md:text-lg leading-relaxed">
                           <span className="mt-2.5 w-1.5 h-1.5 bg-[#475467] rounded-full flex-shrink-0" />
-                          {li}
+                          <span>{li}</span>
                         </li>
                       ))}
                     </ul>

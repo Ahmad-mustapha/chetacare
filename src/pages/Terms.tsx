@@ -2,6 +2,8 @@ import React from 'react';
 import ReachOut from '../components/ReachOut';
 import Seo from '../components/Seo';
 
+const LAST_UPDATED = "April 27, 2026";
+
 const termsData = [
   {
     title: "1. Acceptance of Terms",
@@ -147,9 +149,12 @@ const Terms: React.FC = () => {
               <div className="inline-block px-4 py-1.5 border border-[#D1FADF] bg-[#ECFDF3] rounded-md mb-6">
                 <span className="text-[#039855] font-medium text-sm">Legal</span>
               </div>
-              <h1 className="text-[40px] md:text-[56px] font-bold text-[#101828] leading-[1.1] mb-6">
+              <h1 className="text-[40px] md:text-[56px] font-bold text-[#101828] leading-[1.1] mb-4">
                 Terms of service
               </h1>
+              <p className="text-[#667085] text-base md:text-lg font-medium mb-6">
+                <strong>Last Updated:</strong> {LAST_UPDATED}
+              </p>
               <p className="text-[#475467] text-lg lg:text-xl max-w-2xl leading-relaxed mb-20">
                 This is a legal agreement between you and Chetacare Limited that governs 
                 your use of the Chetacare platform and the services we provide across Nigeria.
@@ -186,7 +191,7 @@ const Terms: React.FC = () => {
                       {item.list.map((li, i) => (
                         <li key={i} className="flex items-start gap-3 text-[#475467] text-base md:text-lg leading-relaxed">
                           <span className="mt-2.5 w-1.5 h-1.5 bg-[#475467] rounded-full flex-shrink-0" />
-                          {li}
+                          <span>{li}</span>
                         </li>
                       ))}
                     </ul>
