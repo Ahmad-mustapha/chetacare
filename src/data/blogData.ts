@@ -1,4 +1,4 @@
-
+// src/data/blogData.ts
 
 export interface BlogPostContent {
   type: 'paragraph' | 'heading' | 'list' | 'quote' | 'image';
@@ -9,7 +9,7 @@ export interface BlogPostContent {
 
 export interface BlogPost {
   id: number;
-  category: string;
+  category: string[]; // Changed from string to string[]
   readTime: string;
   date: string;
   author: string;
@@ -22,19 +22,19 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    category: 'Health Awareness',
+    category: ['Chronic Conditions', 'Preventive Care', 'Care Tips'],
     readTime: '6 min read',
     date: 'Monday, April 14, 2025',
     author: 'Chetacare Team',
     title: 'Why Many Nigerians May Have High Blood Pressure Without Knowing',
-    description: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls...',
-    image: '/assets/blog1.jpg',
+    description: 'High blood pressure, also known as hypertension, is a long‑term health condition in which the force of blood against the walls of the arteries is persistently too high, increasing the workload on the heart and blood vessels and raising the risk of heart attack, stroke, kidney disease, and other complications.',
+    image: '/assets/blog1.png',
     fullContent: [
       {
         type: 'paragraph',
         content: 'High blood pressure, also known as hypertension, is a long-term health condition in which the force of blood against the walls of the arteries remains consistently elevated. Over time, if not detected and managed, it can increase the risk of complications affecting the heart, brain, kidneys, and eyes.'
       },
-      {
+            {
         type: 'paragraph',
         content: 'One of the challenges with hypertension is that it often develops without obvious symptoms. Many individuals may feel completely well while their blood pressure is already higher than normal. For this reason, it is frequently referred to in medical practice as a “silent condition.”'
       },
@@ -140,19 +140,19 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-    category: 'Nutrition',
+    category: ['Nutrition', 'Chronic Conditions', 'Lifestyle & Wellness'],
     readTime: '5 min read',
     date: 'Thursday, January 5, 2025',
     author: 'Chetacare Team',
     title: 'Foods That Can Raise Blood Sugar Levels More Quickly',
     description: 'Many people living with or at risk of diabetes are often advised to “watch their diet.” However, this advice can seem very unclear...',
-    image: '/assets/blog2.jpg',
+    image: '/assets/blog2.png',
     fullContent: [
       {
         type: 'paragraph',
         content: 'Many people living with or at risk of diabetes are often advised to “watch their diet.” However, this advice can seem very unclear without understanding which foods tend to affect blood sugar more significantly.'
       },
-      {
+            {
         type: 'paragraph',
         content: 'In Nigeria, where meals are often rich in carbohydrates and refined ingredients, some commonly eaten foods may contribute to faster increases in blood sugar levels, especially when consumed in large portions or without balance.'
       },
@@ -255,13 +255,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-    category: 'Health Awareness',
+    category: ['Chronic Conditions', 'Preventive Care', 'Care Tips'],
     readTime: '6 min read',
     date: 'Tuesday, April 15, 2025',
     author: 'Chetacare Team',
     title: 'Early Signs of Diabetes Many Nigerians Often Ignore',
     description: 'Diabetes is a long-term health condition that affects how the body regulates blood sugar (glucose). Learn the early warning signs that are often overlooked.',
-    image: '/assets/blog3.jpg',
+    image: '/assets/blog3.png',
     fullContent: [
       {
         type: 'paragraph',
@@ -397,7 +397,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    category: 'Health Awareness',
+    category: ['Chronic Conditions', 'Lifestyle & Wellness', 'Preventive Care'],
     readTime: '6 min read',
     date: 'Wednesday, February 12, 2025',
     author: 'Chetacare Team',
@@ -524,19 +524,19 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 5,
-    category: 'Health Awareness',
+    category: ['Chronic Conditions', 'Preventive Care', 'Lifestyle & Wellness'],
     readTime: '6 min read',
     date: 'Wednesday, April 16, 2025',
     author: 'Chetacare Team',
     title: "Nigeria’s Silent Health Emergency: Why Chronic Diseases Are Rising Faster Than We Think",
     description: 'Across Nigeria, a silent health emergency is unfolding. Chronic diseases such as hypertension and diabetes are rising rapidly, often undetected until severe complications occur.',
-    image: '/assets/blogimg.png',
+    image: '/assets/blog5.png',
     fullContent: [
       {
         type: 'paragraph',
         content: "For many Nigerians, illness still feels like something sudden, dramatic, and unavoidable. A stroke happens overnight. A neighbour collapses without warning. A parent who seemed healthy suddenly becomes bedridden overnight."
       },
-      {
+            {
         type: 'paragraph',
         content: "But the truth is different."
       },
@@ -583,8 +583,8 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        content: "Access preventive support through Chetacare today. ✅"
+        content: "Access preventive support through Chetacare today."
       }
     ]
-  },
+  }
 ];

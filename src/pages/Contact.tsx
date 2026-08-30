@@ -10,29 +10,37 @@ const Contact: React.FC = () => {
         title="Chetacare | Contact"
         description="Contact Chetacare to ask questions about chronic disease care support, partnerships, and preventive health guidance."
       />
-      {/* Header Section */}
-      <section className="pt-20 pb-16 text-center">
-        <div className="container-wide">
-          <h1 className="text-[32px] md:text-[64px] font-bold text-[#101828] tracking-tight mb-6">
+      
+      {/* Outer wrapper maps exactly to Figma body padding (80px top/bottom -> py-20) and container gaps */}
+      <div className="w-full max-w-[1440px] mx-auto py-20 section-px flex flex-col gap-20">
+        
+        {/* Title Container Section (Frame 1000007754 equivalent) with strict 32px gap (gap-8) */}
+        <section className="text-center flex flex-col items-center gap-8 w-full">
+          <h1 className="text-4xl md:text-6xl lg:text-[70px] font-medium text-[#1F2A24] tracking-[-2px] leading-tight lg:leading-[75px]">
             Contact Us
           </h1>
-          <p className="text-lg md:text-[20px] text-[#475467] max-w-2xl mx-auto">
-            We're constantly pushing the boundaries of what's possible and seeking new ways to improve our services.
+          <p className="text-base md:text-[20px] font-normal text-[#1F2A24] leading-relaxed md:leading-[24px] max-w-[848px]">
+            Whether you are a patient, caregiver, healthcare provider, or organization, the Chetacare team is ready to support you.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* Main Content Section */}
-      <section className="pb-24">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Main Split Content Layout - Configured with exact 20px row gaps between layout blocks */}
+        <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-5 items-start">
+          
+          {/* Left Column wrapper matching the target 610px width footprint proportions */}
+          <div className="lg:col-span-6 w-full max-w-[610px]">
             <ContactDetails />
-            <div className="bg-white rounded-2xl shadow-sm border border-[#EAECF0] overflow-hidden">
+          </div>
+          
+          {/* Right Column wrapper matching the target 554.5px width container properties */}
+          <div className="lg:col-span-6 w-full max-w-[554.5px] lg:ml-auto">
+            <div className="bg-white border border-[#F3F3F3] shadow-[0px_2px_4px_rgba(0,0,0,0.05)] rounded-[12px] overflow-hidden p-8">
               <ContactForm />
             </div>
           </div>
-        </div>
-      </section>
+
+        </section>
+      </div>
     </div>
   );
 };

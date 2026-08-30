@@ -1,107 +1,124 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Blog', path: '/blog' },
-  // { name: 'Partner With Us', path: '/partner' },
   { name: 'Contact Us', path: '/contact' },
   { name: 'FAQ', path: '/faq' },
 ];
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Hook to track the current URL path
 
-  // Prevent background scroll when sidebar is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-white py-6 border-b border-gray-100 sticky top-0 z-[100]">
-      <div className="container-wide flex items-center justify-between">
-        <Link to="/" className="w-[155px] md:w-[170] lg:w-[200px]">
-          <img src="/assets/chetacare.png" alt="logo" className='w-full h-full object-contain' />
+    <nav className="bg-[#FFFFFF] h-[72px] lg:h-[89px] sticky top-0 z-[100] shadow-[0px_2px_4px_rgba(145,145,145,0.25)] flex items-center">
+      <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between section-px lg:py-[18px]">
+        
+        {/* Logo */}
+        <Link to="/" className="w-[148px] h-[28px] lg:w-[210px] lg:h-[40px] z-[101]">
+          <img src="/assets/Full-Logo-Transparent.png" alt="Chetacare" className="w-full h-full object-contain" />
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center space-x-10 text-gray-600 font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="hover:text-brand-green transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* Desktop Links - Dynamic highlight added */}
+        <div className="hidden lg:flex items-center gap-[40px] font-normal text-[16px]">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`transition-colors leading-[24px] ${
+                  isActive ? 'text-[#1A7A4A] font-medium' : 'text-[#282828] hover:text-[#1A7A4A]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center space-x-4">
+        {/* Desktop CTA & Mobile Toggle */}
+        <div className="flex items-center">
+          
+          {/* Desktop Get Started Button */}
           <Link
-            to="#"
-            className="hidden lg:block bg-[#1A7A4A] text-white px-6 py-3 lg:px-[28px] lg:py-[14px] xl:px-8 xl:py-4 rounded-lg font-semibold hover:bg-green-800 transition-all shadow-sm"
+            to="/contact"
+            className="hidden lg:flex bg-[#1A7A4A] text-[#FFFFFF] w-[153px] h-[53px] rounded-[12px] font-bold text-[18px] hover:bg-green-800 transition-all items-center justify-center"
           >
             Get Started
           </Link>
 
-          {/* Hamburger Menu Icon */}
+          {/* Mobile Hamburger Button */}
           <button
-            className="lg:hidden p-2 text-gray-600 focus:outline-none relative z-[101]"
+            className="lg:hidden flex items-center justify-center w-[40px] h-[40px] rounded-[8px] border-[2px] border-[#344054] text-[#344054] z-[101] focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Navigation"
           >
             {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-[24px] h-[24px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
-      <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
+      {/* Mobile Dropdown Menu */}
+      <div 
+        className={`fixed inset-0 top-[72px] bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
         onClick={() => setIsMenuOpen(false)}
-      />
-
-      <div
-        className={`fixed top-0 right-0 h-full w-[70%] max-w-sm bg-white shadow-2xl transition-transform duration-300 ease-in-out z-[99] lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
       >
-        <div className="flex flex-col h-full pt-28 px-8 pb-10">
-          <div className="flex flex-col space-y-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="text-[20px] text-gray-800 hover:text-brand-green transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+        <div 
+          className={`absolute top-0 left-0 w-full bg-[#FFFFFF] border-b border-[#EAECF0] flex flex-col transition-transform duration-300 ease-in-out origin-top ${
+            isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex flex-col py-[24px] w-full">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="flex items-center px-[16px] py-[12px] w-full hover:bg-gray-50 active:bg-gray-100"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className={`text-[16px] leading-[24px] transition-colors ${
+                    isActive ? 'text-[#1A7A4A] font-bold' : 'text-[#101828] font-semibold'
+                  }`}>
+                    {link.name}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="mt-auto">
+          {/* Get Started Button for Mobile */}
+          <div className="flex flex-col items-center px-[16px] pb-[48px] w-full">
             <Link
-              to="#"
-              className="block w-full text-center bg-[#1A7A4A] text-white px-6 py-4 rounded-xl font-bold text-lg hover:bg-green-800 transition-all shadow-lg"
+              to="/contact"
+              className="bg-[#1A7A4A] text-[#FFFFFF] w-full flex justify-center items-center rounded-[12px] px-[32px] py-[16px] font-bold text-[18px] hover:bg-green-800 transition-all"
               onClick={() => setIsMenuOpen(false)}
             >
               Get Started

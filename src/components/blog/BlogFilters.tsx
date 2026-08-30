@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const categories = [
   'All Blog',
-  'Mental Health',
+  // 'Mental Health',
   'Nutrition',
   'Chronic Conditions',
   'Medication & Treatment',
@@ -11,25 +11,31 @@ const categories = [
   'Lifestyle & Wellness'
 ];
 
-const BlogFilters: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('All Blog');
+interface BlogFiltersProps {
+  activeCategory: string;
+  setActiveCategory: (category: string) => void;
+}
 
+const BlogFilters: React.FC<BlogFiltersProps> = ({ activeCategory, setActiveCategory }) => {
   return (
-    <div className="border-b border-gray-100 mb-12 overflow-x-auto scrollbar-hide">
-      <div className="flex items-center space-x-2 pb-4 min-w-max">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 border ${
-              activeCategory === category
-                ? 'bg-[#F2FFF8] text-[#1A7A4A] border-[#D1FADF]'
-                : 'bg-white text-[#475467] border-gray-100 hover:bg-gray-50'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
+    <div className="border-b-0 sm:border-b border-[#E5E7EB] mb-0 sm:mb-8 overflow-x-auto scrollbar-hide w-full">
+      <div className="flex items-center gap-2 pb-3 min-w-max">
+        {categories.map((category) => {
+          const isActive = activeCategory === category;
+          return (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`py-3 px-6 rounded-[8px] text-[14px] font-semibold leading-[20px] transition-all duration-200 border ${
+                isActive
+                  ? 'bg-[#E8F5EE] text-[#1A7A4A] border-transparent'
+                  : 'bg-white text-[#777777] border-[#F3F3F3] hover:bg-gray-50'
+              }`}
+            >
+              {category}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

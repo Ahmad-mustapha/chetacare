@@ -1,14 +1,16 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import Problem from '../components/Problem';
-import HowWeWork from '../components/HowWeWork';
-import WhoAreWeFor from '../components/WhoAreWeFor';
-import Scale from '../components/Scale';
-import Currentfocus from '../components/Currentfocus';
-import Testimonials from '../components/Testimonials';
-import BlogSection from '../components/BlogSection';
+import Hero from '../components/home/Hero';
+import Problem from '../components/home/Problem';
+import HowWeWork from '../components/home/HowWeWork';
+import WhoAreWeFor from '../components/home/WhoWeServe';
+import Scale from '../components/home/Scale';
+import Currentfocus from '../components/home/CurrentFocus';
+import DataSecurity from '../components/home/DataSecurity';
+import Testimonials from '../components/home/Testimonials';
+import BlogSection from '../components/home/BlogSection';
 import ReachOut from '../components/ReachOut';
 import Seo from '../components/Seo';
+import OurPartners from '../components/home/OurPartners';
 
 const Home: React.FC = () => {
   return (
@@ -40,7 +42,9 @@ const Home: React.FC = () => {
       <WhoAreWeFor />
       <Scale />
       <Currentfocus />
+      <DataSecurity />
       <Testimonials />
+      <OurPartners />
       <BlogSection />
       <ReachOut />
     </div>
