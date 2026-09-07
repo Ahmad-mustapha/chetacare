@@ -68,7 +68,7 @@ const WhoAreWeFor: React.FC = () => {
         
         {/* Title Block */}
         <div className="w-full flex flex-col items-center text-center gap-4 max-w-[1242px]">
-          <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider font-sans">
+          <span className="section-kicker">
             WHO WE SERVE
           </span>
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] tracking-normal font-sans">
@@ -100,7 +100,7 @@ const WhoAreWeFor: React.FC = () => {
                   <h3 className="text-white font-bold text-[24px] leading-[32px] font-sans">
                     {card.title}
                   </h3>
-                  <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                  <p className="body-text text-white">
                     {card.description}
                   </p>
                 </div>

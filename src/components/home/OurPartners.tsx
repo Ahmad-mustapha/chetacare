@@ -36,7 +36,7 @@ const OurPartners: React.FC = () => {
         
         {/* Header Text Block */}
         <div className="w-full flex flex-col items-center text-center gap-4">
-          <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider font-sans max-w-[200px]">
+          <span className="section-kicker max-w-[200px]">
             OUR PARTNERS
           </span>
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] font-sans max-w-[802px]">

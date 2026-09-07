@@ -9,9 +9,10 @@ declare global {
   }
 }
 
-// Analytics is suppressed for now. While this is false no tracking script is
-// loaded and the consent banner stays hidden, since there is nothing to consent
-// to. Flip to true to restore Google Analytics and the banner.
+// Master switch for Google Analytics. While true the consent banner is shown to
+// visitors who have not answered yet, and the tracking script is injected only
+// after they accept. Flip to false to suppress analytics entirely: no script is
+// loaded and the banner stays hidden, since there is nothing to consent to.
 const ANALYTICS_ENABLED = true;
 
 const CookieBanner: React.FC = () => {

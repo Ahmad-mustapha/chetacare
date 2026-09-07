@@ -35,13 +35,13 @@ const Mission: React.FC = () => {
               <div className="w-8 h-8 flex items-center justify-center bg-transparent">
                 {item.icon}
               </div>
-              <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider">
+              <span className="section-kicker">
                 {item.kicker}
               </span>
             </div>
 
             {/* Core Value Statement */}
-            <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px] w-full">
+            <p className="body-text text-[#1F2A24] w-full">
               {item.description}
             </p>
           </div>

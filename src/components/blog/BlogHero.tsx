@@ -9,7 +9,7 @@ const BlogHero: React.FC = () => {
   return (
     <section className="pt-16 sm:pt-20 pb-0 section-px flex flex-col items-center gap-8 sm:gap-20 w-full max-w-[1440px] mx-auto">
       <div className="text-center flex flex-col items-center gap-4 max-w-[800px] w-full">
-        <p className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase tracking-wider">
+        <p className="section-kicker">
           Blog
         </p>
         

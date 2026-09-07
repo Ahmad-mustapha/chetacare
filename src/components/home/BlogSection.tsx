@@ -89,7 +89,7 @@ const BlogSection: React.FC = () => {
         
         <div className="w-full flex flex-row items-end justify-between gap-4 max-w-[1240px]">
           <div className="flex flex-col items-start text-left gap-4">
-            <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider font-sans max-w-[60px]">
+            <span className="section-kicker max-w-[60px]">
               BLOGS
             </span>
             <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] font-sans max-w-[607px]">

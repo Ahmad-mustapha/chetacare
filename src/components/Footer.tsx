@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
               <Link to="/" className="block w-[154px] h-[28.69px]">
                 <img src={logoImage} alt="Chetacare Inverse Logo" className="w-full h-full object-contain" />
               </Link>
-              <div className="flex flex-col gap-4 text-[18px] leading-[26px] font-sans">
+              <div className="flex flex-col gap-4 body-text">
                 <p className="font-normal text-white">
                   Help that stays with you before, during, and after care.
                 </p>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col gap-4">
                   {addresses.map((address) => (
                     <div key={address} className="flex flex-col gap-1">
-                      <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                      <span className="body-text text-white">
                         {address}
                       </span>
                     </div>
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <Phone size={20} />
                 </div>
-                <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                <span className="body-text text-white">
                   {phoneNumber}
                 </span>
               </div> */}
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                 <div className="w-12 h-12 shrink-0 bg-[#208552] border border-[#43A373] rounded-xl flex items-center justify-center text-[#D0FECF]">
                   <Mail size={20} />
                 </div>
-                <span className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                <span className="body-text text-white">
                   {emailAddress}
                 </span>
               </div>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Company
               </h4>
-              <ul className="flex flex-col items-start gap-4 text-[18px] leading-[26px] font-sans">
+              <ul className="flex flex-col items-start gap-4 body-text">
                 <li><Link to="/about" className="hover:underline">About Us</Link></li>
                 <li><Link to="/#how-it-works" className="hover:underline">How It Works</Link></li>
                 <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
               <h4 className="text-white font-bold text-[20px] leading-[24px] font-sans">
                 Resources
               </h4>
-              <ul className="flex flex-col items-start gap-4 text-[18px] leading-[26px] font-sans">
+              <ul className="flex flex-col items-start gap-4 body-text">
                 <li><Link to="/contact" className="hover:underline">Contact Us</Link></li>
                 <li><Link to="/privacy" className="hover:underline">Privacy Policy</Link></li>
                 <li><Link to="/terms" className="hover:underline">Terms of Service</Link></li>
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                 Stay Connected
               </h4>
               
-              <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
+              <p className="body-text text-white">
                 Follow our journey on social media.
               </p>
               

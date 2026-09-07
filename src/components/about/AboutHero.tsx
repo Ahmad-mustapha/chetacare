@@ -41,7 +41,7 @@ const AboutHero: React.FC = () => {
           
           {/* Header Block */}
           <div className="w-full flex flex-col justify-center items-start gap-4">
-            <span className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider">
+            <span className="section-kicker">
               Our Origin
             </span>
             <h1 className="text-[#1F2A24] font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] tracking-tight">

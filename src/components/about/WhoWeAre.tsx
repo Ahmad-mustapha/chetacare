@@ -22,7 +22,7 @@ const WhoWeAre: React.FC = () => {
           
           {/* Title Block with 16px gap-4 */}
           <div className="w-full flex flex-col items-start gap-4">
-            <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider">
+            <span className="section-kicker">
               Who We Are
             </span>
             <h2 className="text-[#1F2A24] font-normal text-3xl md:text-[32px] leading-[40px]">
@@ -31,7 +31,7 @@ const WhoWeAre: React.FC = () => {
           </div>
 
           {/* Body Paragraphs Block */}
-          <div className="text-[#1F2A24] font-normal text-[18px] leading-[26px] space-y-4">
+          <div className="body-text text-[#1F2A24] space-y-4">
             <p>
               Chetacare is Africa's first predictive chronic disease management platform. We help people living with hypertension, diabetes, and other chronic conditions stay healthy through continuous monitoring, medication reminders, and early clinical intervention, delivered directly via WhatsApp.
             </p>

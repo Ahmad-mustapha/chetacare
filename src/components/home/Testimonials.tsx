@@ -110,7 +110,7 @@ export default function Testimonials() {
         
         {/* Header Section - Matches BlogSection alignment and scale rules */}
         <div className="flex flex-col items-center gap-6 lg:gap-8 w-full text-center mb-12">
-          <p className="text-[#1A7A4A] font-bold text-lg uppercase tracking-wider">
+          <p className="section-kicker">
             Testimonials
           </p>
           <h2 className="text-[#1F2A24] font-medium text-[28px] md:text-[32px] leading-[40px]">
