@@ -49,7 +49,7 @@ const OurPartners: React.FC = () => {
           
           {/* Card Item 1 */}
           <div 
-            className="w-full max-w-[321px] h-[108.95px] bg-white border border-[#F3F3F3] rounded-[16px] flex items-center justify-center p-4 transition-transform duration-300 hover:scale-[1.02]"
+            className="w-full max-w-[321px] h-[108.95px] bg-white border border-[#F3F3F3] rounded-[16px] flex items-center justify-center p-4"
             style={{
               filter: 'drop-shadow(4px 4px 8px rgba(0, 218, 252, 0.08)) drop-shadow(1px -1px 8px rgba(244, 146, 255, 0.25))'
             }}
@@ -63,7 +63,7 @@ const OurPartners: React.FC = () => {
 
           {/* Card Item 2 */}
           <div 
-            className="w-full max-w-[321px] h-[108.95px] bg-white border border-[#F3F3F3] rounded-[16px] flex items-center justify-center p-4 transition-transform duration-300 hover:scale-[1.02]"
+            className="w-full max-w-[321px] h-[108.95px] bg-white border border-[#F3F3F3] rounded-[16px] flex items-center justify-center p-4"
             style={{
               filter: 'drop-shadow(-3px -1px 8px rgba(0, 218, 252, 0.11)) drop-shadow(0px 6px 8px rgba(244, 146, 255, 0.08))'
             }}

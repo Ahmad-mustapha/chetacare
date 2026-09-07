@@ -13,7 +13,7 @@ const WhoWeAre: React.FC = () => {
           <img
             src={whoWeAreImg}
             alt="Chetacare Team - Healthcare Professionals"
-            className="w-full max-w-[409px] h-auto rounded-[16px] figma-glow-shadow transition-transform duration-300 hover:scale-[1.01]"
+            className="w-full max-w-[409px] h-auto rounded-[16px] figma-glow-shadow"
           />
         </div>
 

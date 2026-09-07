@@ -87,7 +87,7 @@ const AboutHero: React.FC = () => {
           <img
             src={heroImage}
             alt="Chetacare background hero asset"
-            className="w-full max-w-[491px] h-auto rounded-2xl figma-glow-shadow transition-transform duration-300 hover:scale-[1.01]"
+            className="w-full max-w-[491px] h-auto rounded-2xl figma-glow-shadow"
           />
         </div>
 

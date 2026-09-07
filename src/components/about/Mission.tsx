@@ -28,7 +28,7 @@ const Mission: React.FC = () => {
         {values.map((item, index) => (
           <div
             key={index}
-            className="w-full bg-white p-10 rounded-2xl flex flex-col items-start gap-8 mission-glow-shadow transition-transform duration-300 hover:translate-y-[-2px]"
+            className="w-full bg-white p-10 rounded-2xl flex flex-col items-start gap-8 mission-glow-shadow"
           >
             {/* Tagline Row (Icon + Kicker side-by-side with 16px gap) */}
             <div className="flex flex-row items-center gap-4">
@@ -40,8 +40,8 @@ const Mission: React.FC = () => {
               </span>
             </div>
 
-            {/* Core Value Statement - 20px Medium Heading */}
-            <p className="text-[#1F2A24] font-medium text-[20px] leading-[24px] w-full">
+            {/* Core Value Statement */}
+            <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px] w-full">
               {item.description}
             </p>
           </div>

@@ -7,6 +7,11 @@ interface BlogPaginationProps {
 }
 
 export default function BlogPagination({ currentPage, totalPages, onPageChange }: BlogPaginationProps) {
+  // Nothing to navigate when every post fits on one page
+  if (totalPages <= 1) {
+    return null;
+  }
+
   const visiblePages = Math.max(3, totalPages);
 
   return (

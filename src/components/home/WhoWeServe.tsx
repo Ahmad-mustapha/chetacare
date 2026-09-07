@@ -81,11 +81,11 @@ const WhoAreWeFor: React.FC = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-full min-h-[256px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 md:p-10 group transition-transform duration-300 hover:scale-[1.01]"
+              className="w-full min-h-[256px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 md:p-10"
               style={{ backgroundImage: `url(${card.bgImage})` }}
             >
               {/* Tint Layer: Black with 60% opacity overlay matching Figma constraints */}
-              <div className="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/65 z-0" />
+              <div className="absolute inset-0 bg-black/60 z-0" />
 
               {/* Foreground Content Frame - Set to z-10 to stay on top of tint */}
               <div className="relative z-10 flex flex-col gap-6 w-full">

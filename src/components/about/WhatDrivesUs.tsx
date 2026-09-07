@@ -48,7 +48,7 @@ const WhatDrivesUs: React.FC = () => {
         {impacts.map((item, index) => (
           <div
             key={index}
-            className="w-full bg-white rounded-2xl overflow-hidden flex flex-col items-center pb-8 text-center drives-card-shadow transition-transform duration-300 hover:translate-y-[-4px]"
+            className="w-full bg-white rounded-2xl overflow-hidden flex flex-col items-center pb-8 text-center drives-card-shadow"
           >
             {/* Top Card Image Cover Area */}
             <img 
