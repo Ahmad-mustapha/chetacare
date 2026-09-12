@@ -15,7 +15,7 @@ export default function Faq() {
         <div className="container-wide w-full text-center">
           <div className="flex flex-col items-center gap-4 max-w-[820px] mx-auto">
             {/* Badge Category Token */}
-            <p className="text-[#1A7A4A] font-bold text-[18px] leading-[27px] uppercase tracking-wider">
+            <p className="section-kicker">
               FAQ
             </p>
             {/* Master Headline */}

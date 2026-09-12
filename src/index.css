@@ -176,3 +176,21 @@ body {
 .problem-stat-text {
   @apply text-[#1F2A24] font-medium text-[18px] lg:text-[20px] leading-[24px] flex-grow;
 }
+/* --- 6. Shared Typography --- */
+
+/* These two live in @layer components so ordinary Tailwind utilities still
+   win over them at a call site (e.g. `body-text text-[16px] lg:text-[18px]`
+   for a responsive override). */
+@layer components {
+  /* Green uppercase kicker that sits above a section/subsection heading. */
+  .section-kicker {
+    @apply text-brand-primary font-bold text-[18px] leading-[27px] uppercase tracking-wider;
+  }
+
+  /* Standard body copy. Colour is deliberately left to the call site: the same
+     copy appears dark on light sections, white on image-overlay cards, and
+     inherited in the footer. */
+  .body-text {
+    @apply font-normal text-[18px] leading-[26px];
+  }
+}

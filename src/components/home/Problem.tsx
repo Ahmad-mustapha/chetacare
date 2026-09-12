@@ -34,7 +34,7 @@ const Problem: React.FC = () => {
         {/* Left Column: Text Container */}
         <div className="w-full lg:flex-1 min-w-0 flex flex-col items-start gap-8 lg:gap-4">
           <div className="w-full flex flex-col items-start gap-4 lg:gap-[16px]">
-            <span className="text-[#1A7A4A] font-bold text-[18px] leading-[150%] uppercase tracking-wider">
+            <span className="section-kicker">
               THE CHALLENGE
             </span>
             <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px]">

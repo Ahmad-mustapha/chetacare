@@ -35,7 +35,7 @@ const WhatDrivesUs: React.FC = () => {
       
       {/* Title Header Block with 16px gap-4 */}
       <div className="w-full flex flex-col items-center text-center gap-4 max-w-[606px]">
-        <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider">
+        <span className="section-kicker">
           What Drives Us
         </span>
         <h2 className="text-[#1F2A24] font-normal text-3xl md:text-[32px] leading-[40px]">
@@ -48,7 +48,7 @@ const WhatDrivesUs: React.FC = () => {
         {impacts.map((item, index) => (
           <div
             key={index}
-            className="w-full bg-white rounded-2xl overflow-hidden flex flex-col items-center pb-8 text-center drives-card-shadow transition-transform duration-300 hover:translate-y-[-4px]"
+            className="w-full bg-white rounded-2xl overflow-hidden flex flex-col items-center pb-8 text-center drives-card-shadow"
           >
             {/* Top Card Image Cover Area */}
             <img 
@@ -71,7 +71,7 @@ const WhatDrivesUs: React.FC = () => {
               </div>
 
               {/* Description Content Layer */}
-              <p className="text-[#1F2A24] font-normal text-[18px] leading-[26px] max-w-[336px]">
+              <p className="body-text text-[#1F2A24] max-w-[336px]">
                 {item.description}
               </p>
             </div>

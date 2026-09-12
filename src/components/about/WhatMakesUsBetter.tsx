@@ -73,7 +73,7 @@ const WhatMakesUsBetter: React.FC = () => {
         
         {/* Title Block */}
         <div className="w-full flex flex-col items-center text-center gap-4 max-w-[610px]">
-          <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider font-sans">
+          <span className="section-kicker">
             What Makes Us Better
           </span>
           <h2 className="text-[#1F2A24] font-normal text-3xl md:text-[32px] leading-[40px] font-sans">
@@ -86,11 +86,11 @@ const WhatMakesUsBetter: React.FC = () => {
           {features.map((item, index) => (
             <div
               key={index}
-              className="w-full min-h-[248px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 group transition-transform duration-300 hover:scale-[1.01]"
+              className="w-full min-h-[248px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 group transition-transform duration-300"
               style={{ backgroundImage: `url(${item.bgImage})` }}
             >
               {/* Tint Layer */}
-              <div className="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/65 z-0" />
+              <div className="absolute inset-0 bg-black/60 transition-colors duration-300 z-0" />
 
               {/* Foreground Content Frame */}
               <div className="relative z-10 flex flex-col gap-8 w-full">
@@ -105,7 +105,7 @@ const WhatMakesUsBetter: React.FC = () => {
                   <h3 className="text-white font-bold text-[24px] leading-[32px] font-sans">
                     {item.title}
                   </h3>
-                  <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                  <p className="body-text text-white">
                     {item.description}
                   </p>
                 </div>

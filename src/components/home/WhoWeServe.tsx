@@ -68,7 +68,7 @@ const WhoAreWeFor: React.FC = () => {
         
         {/* Title Block */}
         <div className="w-full flex flex-col items-center text-center gap-4 max-w-[1242px]">
-          <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider font-sans">
+          <span className="section-kicker">
             WHO WE SERVE
           </span>
           <h2 className="text-[#1F2A24] font-normal text-[28px] md:text-[32px] leading-[36px] lg:leading-[40px] tracking-normal font-sans">
@@ -81,11 +81,11 @@ const WhoAreWeFor: React.FC = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="w-full min-h-[256px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 md:p-10 group transition-transform duration-300 hover:scale-[1.01]"
+              className="w-full min-h-[256px] rounded-[16px] overflow-hidden relative card-bg-overlay flex flex-col justify-center items-start p-8 md:p-10"
               style={{ backgroundImage: `url(${card.bgImage})` }}
             >
               {/* Tint Layer: Black with 60% opacity overlay matching Figma constraints */}
-              <div className="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/65 z-0" />
+              <div className="absolute inset-0 bg-black/60 z-0" />
 
               {/* Foreground Content Frame - Set to z-10 to stay on top of tint */}
               <div className="relative z-10 flex flex-col gap-6 w-full">
@@ -100,7 +100,7 @@ const WhoAreWeFor: React.FC = () => {
                   <h3 className="text-white font-bold text-[24px] leading-[32px] font-sans">
                     {card.title}
                   </h3>
-                  <p className="text-white font-normal text-[18px] leading-[26px] font-sans">
+                  <p className="body-text text-white">
                     {card.description}
                   </p>
                 </div>

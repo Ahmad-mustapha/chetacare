@@ -28,20 +28,20 @@ const Mission: React.FC = () => {
         {values.map((item, index) => (
           <div
             key={index}
-            className="w-full bg-white p-10 rounded-2xl flex flex-col items-start gap-8 mission-glow-shadow transition-transform duration-300 hover:translate-y-[-2px]"
+            className="w-full bg-white p-10 rounded-2xl flex flex-col items-start gap-8 mission-glow-shadow"
           >
             {/* Tagline Row (Icon + Kicker side-by-side with 16px gap) */}
             <div className="flex flex-row items-center gap-4">
               <div className="w-8 h-8 flex items-center justify-center bg-transparent">
                 {item.icon}
               </div>
-              <span className="text-[#1A7A4A] font-bold text-[18px] uppercase tracking-wider">
+              <span className="section-kicker">
                 {item.kicker}
               </span>
             </div>
 
-            {/* Core Value Statement - 20px Medium Heading */}
-            <p className="text-[#1F2A24] font-medium text-[20px] leading-[24px] w-full">
+            {/* Core Value Statement */}
+            <p className="body-text text-[#1F2A24] w-full">
               {item.description}
             </p>
           </div>
